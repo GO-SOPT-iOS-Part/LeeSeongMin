@@ -15,6 +15,8 @@
 		3E6D7B7A29D7FAFE0000D73C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6D7B7829D7FAFE0000D73C /* LaunchScreen.storyboard */; };
 		3E6D7B8229D806A80000D73C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6D7B8129D806A80000D73C /* MainViewController.swift */; };
 		3E6D7B8429D80A7F0000D73C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6D7B8329D80A7F0000D73C /* SecondViewController.swift */; };
+		3E6D7BAE29DC78BD0000D73C /* ProfileImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6D7BAD29DC78BD0000D73C /* ProfileImagePickerViewController.swift */; };
+		3E6D7BB129DC7F440000D73C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3E6D7BB029DC7F440000D73C /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,7 @@
 		3E6D7B7B29D7FAFE0000D73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E6D7B8129D806A80000D73C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3E6D7B8329D80A7F0000D73C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		3E6D7BAD29DC78BD0000D73C /* ProfileImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6D7BB129DC7F440000D73C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +73,7 @@
 				3E6D7B7B29D7FAFE0000D73C /* Info.plist */,
 				3E6D7B8129D806A80000D73C /* MainViewController.swift */,
 				3E6D7B8329D80A7F0000D73C /* SecondViewController.swift */,
+				3E6D7BAD29DC78BD0000D73C /* ProfileImagePickerViewController.swift */,
 			);
 			path = First_Seminar;
 			sourceTree = "<group>";
@@ -89,6 +94,9 @@
 			dependencies = (
 			);
 			name = First_Seminar;
+			packageProductDependencies = (
+				3E6D7BB029DC7F440000D73C /* SnapKit */,
+			);
 			productName = First_Seminar;
 			productReference = 3E6D7B6A29D7FAFC0000D73C /* First_Seminar.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 3E6D7B6129D7FAFC0000D73C;
+			packageReferences = (
+				3E6D7BAF29DC7F440000D73C /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3E6D7B6B29D7FAFC0000D73C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,6 +157,7 @@
 			files = (
 				3E6D7B7229D7FAFC0000D73C /* ViewController.swift in Sources */,
 				3E6D7B6E29D7FAFC0000D73C /* AppDelegate.swift in Sources */,
+				3E6D7BAE29DC78BD0000D73C /* ProfileImagePickerViewController.swift in Sources */,
 				3E6D7B7029D7FAFC0000D73C /* SceneDelegate.swift in Sources */,
 				3E6D7B8429D80A7F0000D73C /* SecondViewController.swift in Sources */,
 				3E6D7B8229D806A80000D73C /* MainViewController.swift in Sources */,
@@ -224,7 +236,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -278,7 +290,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -366,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3E6D7BAF29DC7F440000D73C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E6D7BB029DC7F440000D73C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E6D7BAF29DC7F440000D73C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E6D7B6229D7FAFC0000D73C /* Project object */;
 }
