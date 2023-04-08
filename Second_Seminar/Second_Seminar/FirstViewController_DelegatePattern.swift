@@ -21,7 +21,7 @@ final class FirstViewController_DelegatePattern: UIViewController {
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("다음으로!", for: .normal)
-        button.backgroundColor = .yellow
+        button.backgroundColor = .systemCyan
         button.setTitleColor(.blue, for: .normal)
         button.addTarget(self,
                          action: #selector(pushToSecondViewController),

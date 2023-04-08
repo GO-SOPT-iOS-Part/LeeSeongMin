@@ -82,10 +82,10 @@ private extension SecondViewController_DelegatePattern {
                                      backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
                                      backButton.heightAnchor.constraint(equalToConstant: 48)])
     }
-
-        @objc
+    
+    @objc
     func popSecondViewController() {
- 
+        
         if let text = nameTextField.text {
             delegate?.dataBind(text: text)
         }
