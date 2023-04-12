@@ -12,9 +12,9 @@ extension UIFont {
         return UIFont(name: "Pretendard-" + weight, size: size)!
     }
     
-//    static var bold: UIFont {
-//        return font("bold", ofSize: 15)
-//    }
+    static var bold: UIFont {
+        return font("bold", ofSize: 15)
+    }
     
     static var regular: UIFont {
         return font("Regular", ofSize: 15)

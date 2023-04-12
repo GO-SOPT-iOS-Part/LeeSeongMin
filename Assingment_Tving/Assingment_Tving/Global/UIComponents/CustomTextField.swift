@@ -116,7 +116,6 @@ private extension CustomTextField {
         self.layer.cornerRadius = 4
         self.layer.masksToBounds = true
         self.isSecureTextEntry = textFieldType.isSecure
-        layoutSubviews()
     }
     
     private func setSideViews() {

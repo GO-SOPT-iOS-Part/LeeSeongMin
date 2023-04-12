@@ -13,31 +13,11 @@ final class LoginViewController: UIViewController {
     
     // MARK: - properties
     
-    private let usernameTextField: CustomTextField = {
-        let textfield = CustomTextField(type: .username)
-        textfield.textColor = .gray2
-        return textfield
-    }()
+    private let usernameTextField = CustomTextField(type: .username)
     
-    private let passwordTextField: CustomTextField = {
-        let textfield = CustomTextField(type: .password)
-        return textfield
-    }()
+    private let passwordTextField = CustomTextField(type: .password)
     
-//    private let textfield: UITextField = {
-//        let textfield = UITextField()
-//        textfield.backgroundColor = .white
-//        textfield.textColor = .gray2
-//        textfield.placeholder = "test"
-//        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
-//        textfield.leftView = leftView
-//        textfield.leftViewMode = .always
-//        let rightView = UIImageView(image: ImageLiteral.textfieldEye)
-//        textfield.rightView = rightView
-//        textfield.rightViewMode = .a
-//        return textfield
-//    }()
-    
+    private let loginButton = CustomButton(status: .disabled, with: "로그인")
     
     // MARK: - life cycle
     
@@ -46,23 +26,11 @@ final class LoginViewController: UIViewController {
         setLayout()
         setStyle()
         setDelegate()
-        hidesKeyboardWhenTappedAround()
-        getFontName()
+        setKeyboard()
     }
     
     // MARK: - functions
     
-    func getFontName() {
-            for family in UIFont.familyNames {
-
-                let sName: String = family as String
-                print("family: \(sName)")
-                        
-                for name in UIFont.fontNames(forFamilyName: sName) {
-                    print("name: \(name as String)")
-                }
-            }
-        }
     
     // MARK: - objc functions
     
@@ -84,6 +52,13 @@ private extension LoginViewController {
         passwordTextField.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.top.equalTo(usernameTextField.snp.bottom).offset(10)
+            $0.height.equalTo(52)
+        }
+        
+        view.addSubview(loginButton)
+        loginButton.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
             $0.height.equalTo(52)
         }
     }
@@ -121,6 +96,17 @@ extension LoginViewController: UITextFieldDelegate {
             self.passwordTextField.removeAllButton.isHidden = true
         } else if textField == self.usernameTextField {
             self.usernameTextField.removeAllButton.isHidden = true
+        }
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        // TODO: removeAllButton tap 시 status 변경되지 않음
+        // TODO: customTextField에 정규식 추가 후 만족할 때만 activate
+        if usernameTextField.hasText && passwordTextField.hasText {
+            loginButton.status = .activated
+        } else {
+            loginButton.status = .disabled
         }
     }
 }
