@@ -15,8 +15,8 @@ enum ImageLiteral {
     
     // MARK: - textfield
     
-    static let textfieldEye = UIImage.load(name: "textfieldEye")
-    static let textfieldRemove = UIImage.load(name: "textfieldRemove")
+    static let textfieldEye = UIImage.load(name: "textfieldEye").withRenderingMode(.alwaysTemplate)
+    static let textfieldRemove = UIImage.load(name: "textfieldRemove").withRenderingMode(.alwaysTemplate)
 }
 
 extension UIImage {

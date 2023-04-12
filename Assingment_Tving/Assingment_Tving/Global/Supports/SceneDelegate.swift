@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Inject
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -20,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         
         let navigationController = UINavigationController(rootViewController: LoginViewController())
-        self.window?.rootViewController = navigationController
+        let injectViewController = Inject.ViewControllerHost(LoginViewController())
+        self.window?.rootViewController = injectViewController
         self.window?.makeKeyAndVisible()
     }
 

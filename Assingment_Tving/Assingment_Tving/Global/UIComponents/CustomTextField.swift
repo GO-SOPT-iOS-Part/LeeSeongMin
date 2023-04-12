@@ -30,25 +30,34 @@ enum TextFieldType {
             return "비밀번호"
         }
     }
+    
+    var buttonCount: Int {
+        switch self {
+        case .username:
+            return 1
+        case .password:
+            return 2
+        }
+    }
 }
 
 final class CustomTextField: UITextField {
     
     private enum Size {
-        static let buttonSize: CGFloat = 44
+        static let buttonSize = 20
+        static let buttonPadding = 10
     }
     
     let textFieldType: TextFieldType
     
     // MARK: - properties
     
-    private lazy var rightButtonView = UIView()
-    
-    private lazy var removeAllButton: UIButton = {
+    lazy var removeAllButton: UIButton = {
         let button = UIButton()
         button.setImage(ImageLiteral.textfieldRemove, for: .normal)
         button.tintColor = .gray2
         button.addTarget(self, action: #selector(tappedRemoveAllButton), for: .touchUpInside)
+        button.isHidden = true
         return button
     }()
     
@@ -98,19 +107,7 @@ final class CustomTextField: UITextField {
 
 private extension CustomTextField {
     private func setLayout() {
-        rightButtonView.addSubview(removeAllButton)
-        removeAllButton.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(10)
-            $0.centerY.equalToSuperview()
-        }
         
-        if textFieldType == .password {
-            rightButtonView.addSubview(revealSecureTextButton)
-            revealSecureTextButton.snp.makeConstraints {
-                $0.trailing.equalTo(removeAllButton.snp.leading).offset(-8)
-                $0.centerY.equalToSuperview()
-            }
-        }
     }
     
     private func setStyle() {
@@ -124,16 +121,36 @@ private extension CustomTextField {
     
     private func setSideViews() {
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
+        let rightView = UIView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: textFieldType.buttonCount * (Size.buttonSize + Size.buttonPadding),
+            height: Size.buttonSize
+        ))
+        switch textFieldType {
+        case .username:
+            removeAllButton.frame = .init(x: 0, y: 0, width: Size.buttonSize, height: Size.buttonSize)
+            rightView.addSubview(removeAllButton)
+        case .password:
+            removeAllButton.frame = .init(x: 0, y: 0, width: Size.buttonSize, height: Size.buttonSize)
+            revealSecureTextButton.frame = .init(x: Size.buttonSize + Size.buttonPadding, y: 0, width: Size.buttonSize, height: Size.buttonSize)
+            rightView.addSubview(removeAllButton)
+            rightView.addSubview(revealSecureTextButton)
+        }
+        
         self.leftView = leftView
         self.leftViewMode = .always
-        self.rightView = rightButtonView
-        self.rightViewMode = .whileEditing
+        self.rightView = rightView
+        self.rightViewMode = .always
     }
     
     private func setPlaceholder() {
         let placeholder = NSAttributedString(
             string: textFieldType.placeholder,
-            attributes: [.foregroundColor: UIColor.gray2]
+            attributes: [
+                .foregroundColor: UIColor.gray2,
+                .font: UIFont.regular
+            ]
         )
         self.attributedPlaceholder = placeholder
     }

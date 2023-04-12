@@ -46,10 +46,23 @@ final class LoginViewController: UIViewController {
         setLayout()
         setStyle()
         setDelegate()
+        hidesKeyboardWhenTappedAround()
+        getFontName()
     }
     
     // MARK: - functions
     
+    func getFontName() {
+            for family in UIFont.familyNames {
+
+                let sName: String = family as String
+                print("family: \(sName)")
+                        
+                for name in UIFont.fontNames(forFamilyName: sName) {
+                    print("name: \(name as String)")
+                }
+            }
+        }
     
     // MARK: - objc functions
     
@@ -73,13 +86,6 @@ private extension LoginViewController {
             $0.top.equalTo(usernameTextField.snp.bottom).offset(10)
             $0.height.equalTo(52)
         }
-        
-//        view.addSubview(textfield)
-//        textfield.snp.makeConstraints {
-//            $0.horizontalEdges.equalToSuperview().inset(20)
-//            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
-//            $0.height.equalTo(52)
-//        }
     }
     
     private func setStyle() {
@@ -98,11 +104,23 @@ extension LoginViewController: UITextFieldDelegate {
             textField.layer.borderWidth = 1
             textField.layer.borderColor = UIColor.gray2.cgColor
         }
+        
+        if textField == self.passwordTextField {
+            self.passwordTextField.removeAllButton.isHidden = false
+        } else if textField == self.usernameTextField {
+            self.usernameTextField.removeAllButton.isHidden = false
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.2) {
             textField.layer.borderWidth = 0
+        }
+        
+        if textField == self.passwordTextField {
+            self.passwordTextField.removeAllButton.isHidden = true
+        } else if textField == self.usernameTextField {
+            self.usernameTextField.removeAllButton.isHidden = true
         }
     }
 }
