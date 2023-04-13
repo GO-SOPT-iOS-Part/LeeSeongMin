@@ -72,13 +72,15 @@ final class CustomButton: UIButton {
     // MARK: - functions
     
     private func setStyle() {
-        self.backgroundColor = status.backgroundColor
-        self.layer.borderColor = status.borderColor?.cgColor
-        self.layer.borderWidth = status.borderWidth
-        self.layer.cornerRadius = 3
-        self.layer.masksToBounds = true
-        self.setTitle(buttonTitle, for: .normal)
-        self.titleLabel?.textColor = status.titleColor
-        self.titleLabel?.font = UIFont.bold
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundColor = self.status.backgroundColor
+            self.layer.borderColor = self.status.borderColor?.cgColor
+            self.layer.borderWidth = self.status.borderWidth
+            self.layer.cornerRadius = 3
+            self.layer.masksToBounds = true
+            self.setTitle(self.buttonTitle, for: .normal)
+            self.titleLabel?.textColor = self.status.titleColor
+            self.titleLabel?.font = UIFont.bold
+        }
     }
 }

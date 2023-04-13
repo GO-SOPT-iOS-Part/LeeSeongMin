@@ -9,10 +9,21 @@ import UIKit
 
 extension UIViewController {
     
-    // MARK: - navigation bar
+    // MARK: - navigation
     
     func makeNavigationBarButton<T: UIView>(with view: T) -> UIBarButtonItem {
         return UIBarButtonItem(customView: view)
+    }
+    
+    func makeNavigationBarItemArea(with button: UIButton) -> UIView {
+        let offsetView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        offsetView.addSubview(button)
+        return offsetView
+    }
+    
+    @objc
+    func popViewController() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - keyboard gesture

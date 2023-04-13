@@ -26,7 +26,12 @@ final class LoginViewController: BaseViewController {
     
     private let passwordTextField = CustomTextField(type: .password)
     
-    private let loginButton = CustomButton(status: .disabled, with: "로그인")
+    private let loginButton: CustomButton = {
+        let button = CustomButton(status: .disabled, with: "로그인")
+        button.isEnabled = false
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        return button
+    }()
     
     private let findView = UIView()
     
@@ -92,14 +97,19 @@ final class LoginViewController: BaseViewController {
     
     // MARK: - objc functions
     
+    @objc
+    private func loginButtonTapped() {
+        let viewController = LoginCompletViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     
     // MARK: - setup
     
     override func setNavigationBar() {
         super.setNavigationBar()
         
-        let backButton = UIButton()
-        backButton.setImage(ImageLiteral.navigationBack, for: .normal)
+        let backButton = BackButton()
         navigationItem.leftBarButtonItem = makeNavigationBarButton(with: backButton)
     }
     
@@ -200,14 +210,17 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
-        // TODO: removeAllButton tap 시 status 변경되지 않음
-        // TODO: customTextField에 정규식 추가 후 만족할 때만 activate
-        usernameTextField.removeAllButton.isHidden = usernameTextField.hasText ? false : true
-        passwordTextField.removeAllButton.isHidden = passwordTextField.hasText ? false : true
-        if usernameTextField.hasText && passwordTextField.hasText {
+        let usernameTextFieldHasText = usernameTextField.hasText
+        let passwordTextFieldHasText = passwordTextField.hasText
+        
+        usernameTextField.removeAllButton.isHidden = usernameTextFieldHasText ? false : true
+        passwordTextField.removeAllButton.isHidden = passwordTextFieldHasText ? false : true
+        if usernameTextFieldHasText && passwordTextFieldHasText {
             loginButton.status = .activated
+            loginButton.isEnabled = true
         } else {
             loginButton.status = .disabled
+            loginLabel.isEnabled = false
         }
     }
 }
