@@ -26,7 +26,7 @@ final class LoginViewController: BaseViewController {
     
     private let passwordTextField = CustomTextField(type: .password)
     
-    private let loginButton: CustomButton = {
+    private lazy var loginButton: CustomButton = {
         let button = CustomButton(status: .disabled, with: "로그인")
         button.isEnabled = false
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -69,7 +69,7 @@ final class LoginViewController: BaseViewController {
         return label
     }()
     
-    private let createAccountQuestionButton: UIButton = {
+    private lazy var createAccountQuestionButton: UIButton = {
         let button = UIButton()
         let attributedText = NSAttributedString(
             string: "닉네임 만들러가기",
@@ -99,7 +99,9 @@ final class LoginViewController: BaseViewController {
     
     @objc
     private func loginButtonTapped() {
-        let viewController = LoginCompletViewController()
+        let viewController = LoginCompleteViewController()
+        guard let username = usernameTextField.text else { return }
+        viewController.bindId(username)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -122,8 +124,8 @@ final class LoginViewController: BaseViewController {
         
         view.addSubview(usernameTextField)
         usernameTextField.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.top.equalTo(loginLabel.snp.bottom).offset(30)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
         
@@ -223,4 +225,11 @@ extension LoginViewController: UITextFieldDelegate {
             loginLabel.isEnabled = false
         }
     }
+}
+
+
+// MARK: - UISheet delegate
+
+extension LoginViewController: UISheetPresentationControllerDelegate {
+    
 }
