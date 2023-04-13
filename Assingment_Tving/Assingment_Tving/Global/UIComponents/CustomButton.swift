@@ -58,35 +58,18 @@ final class CustomButton: UIButton {
     
     let buttonTitle: String
     
-    // MARK: - properties
-    
-    
     // MARK: - life cycle
     
     init(status: Status, with buttonTitle: String) {
         self.status = status
         self.buttonTitle = buttonTitle
         super.init(frame: .zero)
-        setLayout()
         setStyle()
     }
     
     required init?(coder: NSCoder) { nil }
     
     // MARK: - functions
-    
-    
-    // MARK: - objc functions
-    
-}
-
-
-// MARK: - setup extension
-
-private extension CustomButton {
-    private func setLayout() {
-        
-    }
     
     private func setStyle() {
         self.backgroundColor = status.backgroundColor
