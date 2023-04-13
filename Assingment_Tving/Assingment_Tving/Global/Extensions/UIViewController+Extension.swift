@@ -9,6 +9,12 @@ import UIKit
 
 extension UIViewController {
     
+    // MARK: - navigation bar
+    
+    func makeNavigationBarButton<T: UIView>(with view: T) -> UIBarButtonItem {
+        return UIBarButtonItem(customView: view)
+    }
+    
     // MARK: - keyboard gesture
     
     func setKeyboard() {

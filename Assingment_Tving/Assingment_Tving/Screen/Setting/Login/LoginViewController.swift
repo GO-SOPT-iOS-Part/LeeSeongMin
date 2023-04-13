@@ -9,9 +9,18 @@ import UIKit
 
 import SnapKit
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: BaseViewController {
     
     // MARK: - properties
+    
+    private let loginLabel: UILabel = {
+        let label = UILabel()
+        label.text = "TVING ID 로그인"
+        label.textColor = .gray1
+        label.font = .title
+        label.textAlignment = .center
+        return label
+    }()
     
     private let usernameTextField = CustomTextField(type: .username)
     
@@ -23,8 +32,6 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLayout()
-        setStyle()
         setDelegate()
         setKeyboard()
     }
@@ -34,17 +41,28 @@ final class LoginViewController: UIViewController {
     
     // MARK: - objc functions
     
-}
-
-
-// MARK: - setup extension
-
-private extension LoginViewController {
-    private func setLayout() {
+    
+    // MARK: - setup
+    
+    override func setNavigationBar() {
+        super.setNavigationBar()
+        
+        let backButton = UIButton()
+        backButton.setImage(ImageLiteral.navigationBack, for: .normal)
+        navigationItem.leftBarButtonItem = makeNavigationBarButton(with: backButton)
+    }
+    
+    override func setLayout() {
+        view.addSubview(loginLabel)
+        loginLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+        }
+        
         view.addSubview(usernameTextField)
         usernameTextField.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(loginLabel.snp.bottom).offset(30)
             $0.height.equalTo(52)
         }
         
@@ -63,15 +81,14 @@ private extension LoginViewController {
         }
     }
     
-    private func setStyle() {
-        view.backgroundColor = .black1
-    }
-    
     private func setDelegate() {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
     }
 }
+
+
+// MARK: - textfield delegate
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {

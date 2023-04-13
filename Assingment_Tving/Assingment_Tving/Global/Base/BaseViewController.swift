@@ -15,11 +15,30 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black1
+        setNavigationBar()
+        setLayout()
+        setStyle()
     }
     
-    // MARK: - functions
+    // MARK: - setup functions
     
+    func setNavigationBar() {
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .black1
+        
+        navigationBar.standardAppearance = appearance
+        navigationBar.compactAppearance = appearance
+        navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    func setLayout() {
+        // override to use
+    }
+    
+    func setStyle() {
+        view.backgroundColor = .black1
+    }
     
     // MARK: - objc functions
 }

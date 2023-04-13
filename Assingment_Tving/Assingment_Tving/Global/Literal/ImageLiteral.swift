@@ -9,6 +9,10 @@ import UIKit
 
 enum ImageLiteral {
     
+    // MARK: - main
+    
+    static let mainPoster = UIImage.load(name: "mainPoster")
+    
     // MARK: - navigation
     
     static let navigationBack = UIImage.load(name: "navigationBack")
