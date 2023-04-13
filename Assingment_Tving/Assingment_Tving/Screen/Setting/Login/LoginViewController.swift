@@ -79,23 +79,11 @@ extension LoginViewController: UITextFieldDelegate {
             textField.layer.borderWidth = 1
             textField.layer.borderColor = UIColor.gray2.cgColor
         }
-        
-        if textField == self.passwordTextField {
-            self.passwordTextField.removeAllButton.isHidden = false
-        } else if textField == self.usernameTextField {
-            self.usernameTextField.removeAllButton.isHidden = false
-        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.2) {
             textField.layer.borderWidth = 0
-        }
-        
-        if textField == self.passwordTextField {
-            self.passwordTextField.removeAllButton.isHidden = true
-        } else if textField == self.usernameTextField {
-            self.usernameTextField.removeAllButton.isHidden = true
         }
     }
     
@@ -103,6 +91,8 @@ extension LoginViewController: UITextFieldDelegate {
         
         // TODO: removeAllButton tap 시 status 변경되지 않음
         // TODO: customTextField에 정규식 추가 후 만족할 때만 activate
+        usernameTextField.removeAllButton.isHidden = usernameTextField.hasText ? false : true
+        passwordTextField.removeAllButton.isHidden = passwordTextField.hasText ? false : true
         if usernameTextField.hasText && passwordTextField.hasText {
             loginButton.status = .activated
         } else {

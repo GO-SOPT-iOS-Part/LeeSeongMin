@@ -140,7 +140,7 @@ private extension CustomTextField {
         self.leftView = leftView
         self.leftViewMode = .always
         self.rightView = rightView
-        self.rightViewMode = .always
+        self.rightViewMode = .whileEditing
     }
     
     private func setPlaceholder() {
