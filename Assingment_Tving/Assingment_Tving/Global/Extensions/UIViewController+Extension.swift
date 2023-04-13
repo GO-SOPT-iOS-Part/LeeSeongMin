@@ -13,7 +13,6 @@ extension UIViewController {
     
     func setKeyboard() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
-        tap.cancelsTouchesInView = false
         tap.delegate = self
         view.addGestureRecognizer(tap)
     }
