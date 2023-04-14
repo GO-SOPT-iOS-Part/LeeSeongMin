@@ -23,8 +23,20 @@ final class CreateAccountViewController: BaseViewController {
     
     private let usernameTextField = CustomTextField(type: .username)
     
+    private let saveButton: CustomButton = {
+        let button = CustomButton(status: .disabled, with: "저장하기")
+        button.isEnabled = false
+        
+        return button
+    }()
+    
     // MARK: - life cycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setKeyboard()
+        setDelegate()
+    }
     
     // MARK: - functions
     
@@ -46,6 +58,46 @@ final class CreateAccountViewController: BaseViewController {
             $0.top.equalTo(setUsernameLabel.snp.bottom).offset(30)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(52)
+        }
+        
+        view.addSubview(saveButton)
+        saveButton.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.top.equalTo(usernameTextField.snp.bottom).offset(20)
+            $0.height.equalTo(52)
+        }
+    }
+    
+    override func setStyle() {
+        view.backgroundColor = .gray5
+    }
+    
+    private func setDelegate() {
+        usernameTextField.delegate = self
+    }
+}
+
+
+// MARK: - textfield delegate
+
+extension CreateAccountViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.2) {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.gray2.cgColor
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.2) {
+            textField.layer.borderWidth = 0
+        }
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField.hasText {
+            usernameTextField.removeAllButton.isHidden = false
+            saveButton.status = .activated
         }
     }
 }

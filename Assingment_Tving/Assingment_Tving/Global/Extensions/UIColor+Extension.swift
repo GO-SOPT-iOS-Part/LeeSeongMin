@@ -27,6 +27,7 @@ extension UIColor {
     static let gray2 = UIColor(hex: "#9C9C9C")
     static let gray3 = UIColor(hex: "#626262")
     static let gray4 = UIColor(hex: "#2E2E2E")
+    static let gray5 = UIColor(hex: "#171717")
 }
 
 
