@@ -55,7 +55,6 @@ final class CustomTextField: UITextField {
     lazy var removeAllButton: UIButton = {
         let button = UIButton()
         button.setImage(ImageLiteral.textfieldRemove, for: .normal)
-        button.tintColor = .gray2
         button.addTarget(self, action: #selector(tappedRemoveAllButton), for: .touchUpInside)
         button.isHidden = true
         return button
@@ -64,7 +63,6 @@ final class CustomTextField: UITextField {
     private lazy var revealSecureTextButton: UIButton = {
         let button = UIButton()
         button.setImage(ImageLiteral.textfieldEye, for: .normal)
-        button.tintColor = .gray2
         button.addTarget(self, action: #selector(tappedRevealSecureTextButton), for: .touchUpInside)
         return button
     }()
