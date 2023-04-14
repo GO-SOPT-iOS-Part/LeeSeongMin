@@ -33,9 +33,7 @@ final class LoginViewController: BaseViewController {
         return button
     }()
     
-    private let findView = UIView()
-    
-    private let findIDButton: UIButton = {
+    private lazy var findIDButton: UIButton = {
         let button = UIButton()
         button.setTitle("아이디 찾기", for: .normal)
         button.setTitleColor(.gray2, for: .normal)
@@ -44,7 +42,7 @@ final class LoginViewController: BaseViewController {
         return button
     }()
     
-    private let findPasswordButton: UIButton = {
+    private lazy var findPasswordButton: UIButton = {
         let button = UIButton()
         button.setTitle("비밀번호 찾기", for: .normal)
         button.setTitleColor(.gray2, for: .normal)
@@ -59,8 +57,6 @@ final class LoginViewController: BaseViewController {
         return view
     }()
     
-    private let createAccountQuestionView = UIView()
-    
     private let createAccountQuestionLabel: UILabel = {
         let label = UILabel()
         label.text = "아직 계정이 없으신가요?"
@@ -69,7 +65,7 @@ final class LoginViewController: BaseViewController {
         return label
     }()
     
-    private lazy var createAccountQuestionButton: UIButton = {
+    private lazy var createAccountButton: UIButton = {
         let button = UIButton()
         let attributedText = NSAttributedString(
             string: "닉네임 만들러가기",
@@ -79,8 +75,9 @@ final class LoginViewController: BaseViewController {
                 .font: UIFont.regular,
                 .foregroundColor: UIColor.gray2
             ])
+        button.frame = .init(x: 0, y: 0, width: 10, height: 10)
         button.setAttributedTitle(attributedText, for: .normal)
-        // FIXME: add button action
+        button.addTarget(self, action: #selector(createAccountButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -103,6 +100,17 @@ final class LoginViewController: BaseViewController {
         guard let username = usernameTextField.text else { return }
         viewController.bindId(username)
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @objc
+    private func createAccountButtonTapped() {
+        let modal = CreateAccountViewController()
+        if let sheet = modal.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
+            sheet.delegate = self
+        }
+        self.present(modal, animated: true)
     }
     
     
@@ -143,47 +151,36 @@ final class LoginViewController: BaseViewController {
             $0.height.equalTo(52)
         }
         
-        view.addSubview(findView)
-        findView.snp.makeConstraints {
+        view.addSubview(findViewDivider)
+        findViewDivider.snp.makeConstraints {
             $0.top.equalTo(loginButton.snp.bottom).offset(40)
             $0.centerX.equalToSuperview()
-            $0.horizontalEdges.equalToSuperview().inset(24)
-        }
-        
-        findView.addSubview(findViewDivider)
-        findViewDivider.snp.makeConstraints {
-            $0.center.equalToSuperview()
             $0.height.equalTo(12)
             $0.width.equalTo(1)
         }
 
-        findView.addSubview(findIDButton)
+        view.addSubview(findIDButton)
         findIDButton.snp.makeConstraints {
             $0.trailing.equalTo(findViewDivider.snp.leading).offset(-36)
-            $0.centerY.equalToSuperview()
+            $0.centerY.equalTo(findViewDivider)
         }
 
-        findView.addSubview(findPasswordButton)
+        view.addSubview(findPasswordButton)
         findPasswordButton.snp.makeConstraints {
             $0.leading.equalTo(findViewDivider.snp.centerX).offset(36)
-            $0.centerY.equalToSuperview()
+            $0.centerY.equalTo(findViewDivider)
         }
         
-        view.addSubview(createAccountQuestionView)
-        createAccountQuestionView.snp.makeConstraints {
-            $0.top.equalTo(findView.snp.bottom).offset(40)
-            $0.horizontalEdges.equalToSuperview().inset(50)
-        }
-        
-        createAccountQuestionView.addSubview(createAccountQuestionLabel)
+        view.addSubview(createAccountQuestionLabel)
         createAccountQuestionLabel.snp.makeConstraints {
-            $0.leading.centerY.equalToSuperview()
+            $0.top.equalTo(findViewDivider.snp.bottom).offset(40)
+            $0.leading.equalToSuperview().inset(50)
         }
         
-        createAccountQuestionView.addSubview(createAccountQuestionButton)
-        createAccountQuestionButton.snp.makeConstraints {
-            $0.trailing.centerY.equalToSuperview()
-            $0.width.equalTo(128)
+        view.addSubview(createAccountButton)
+        createAccountButton.snp.makeConstraints {
+            $0.centerY.equalTo(createAccountQuestionLabel)
+            $0.trailing.equalToSuperview().inset(50)
         }
     }
     

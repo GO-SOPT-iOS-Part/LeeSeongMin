@@ -37,7 +37,7 @@ final class CreateAccountViewController: BaseViewController {
     override func setLayout() {
         view.addSubview(setUsernameLabel)
         setUsernameLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(30)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
