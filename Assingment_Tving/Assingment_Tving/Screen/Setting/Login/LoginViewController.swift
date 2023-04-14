@@ -11,6 +11,8 @@ import SnapKit
 
 final class LoginViewController: BaseViewController {
     
+    var nickname: String?
+    
     // MARK: - properties
     
     private let loginLabel: UILabel = {
@@ -97,14 +99,18 @@ final class LoginViewController: BaseViewController {
     @objc
     private func loginButtonTapped() {
         let viewController = LoginCompleteViewController()
-        guard let username = usernameTextField.text else { return }
-        viewController.bindId(username)
+        if let nickname {
+            viewController.bindId(nickname)
+        } else if let username = usernameTextField.text {
+            viewController.bindId(username)
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc
     private func createAccountButtonTapped() {
         let modal = CreateAccountViewController()
+        modal.delegate = self
         if let sheet = modal.sheetPresentationController {
             sheet.detents = [.medium()]
             sheet.prefersGrabberVisible = true
@@ -229,4 +235,13 @@ extension LoginViewController: UITextFieldDelegate {
 
 extension LoginViewController: UISheetPresentationControllerDelegate {
     
+}
+
+
+// MARK: - SaveUsernaemeProtocol delegate
+
+extension LoginViewController: SaveUsernaemeProtocol {
+    func saveUsername(_ name: String) {
+        print(name)
+    }
 }

@@ -24,6 +24,10 @@ extension UIFont {
         return font("Regular", ofSize: 15)
     }
     
+    static var smallRegular: UIFont {
+        return font("Regular", ofSize: 12)
+    }
+    
 //    static var thin: UIFont {
 //        return font("Thin", ofSize: 15)
 //    }
