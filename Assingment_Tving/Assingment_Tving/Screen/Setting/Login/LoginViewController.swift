@@ -132,7 +132,7 @@ final class LoginViewController: BaseViewController {
     override func setLayout() {
         view.addSubview(loginLabel)
         loginLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(30)
             $0.horizontalEdges.equalToSuperview()
         }
         
@@ -242,6 +242,6 @@ extension LoginViewController: UISheetPresentationControllerDelegate {
 
 extension LoginViewController: SaveUsernaemeProtocol {
     func saveUsername(_ name: String) {
-        print(name)
+        nickname = name
     }
 }

@@ -90,7 +90,7 @@ final class CreateAccountViewController: BaseViewController {
         view.addSubview(saveButton)
         saveButton.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.top.equalTo(usernameTextField.snp.bottom).offset(30)
+            $0.top.equalTo(usernameTextField.snp.bottom).offset(20)
             $0.height.equalTo(52)
         }
     }
