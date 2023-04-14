@@ -72,7 +72,6 @@ final class CustomTextField: UITextField {
     init(type: TextFieldType) {
         self.textFieldType = type
         super.init(frame: .zero)
-        setLayout()
         setStyle()
         setSideViews()
         setPlaceholder()
@@ -98,15 +97,8 @@ final class CustomTextField: UITextField {
             self.isSecureTextEntry = true
         }
     }
-}
-
-
-// MARK: - setup extension
-
-private extension CustomTextField {
-    private func setLayout() {
-        
-    }
+    
+    // MARK: - setup
     
     private func setStyle() {
         self.backgroundColor = .gray4
@@ -152,3 +144,4 @@ private extension CustomTextField {
         self.attributedPlaceholder = placeholder
     }
 }
+
