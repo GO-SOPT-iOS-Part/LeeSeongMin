@@ -9,39 +9,39 @@ import UIKit
 
 import SnapKit
 
-enum TextFieldType {
-    case username
-    case password
-    
-    var isSecure: Bool {
-        switch self {
-        case .username:
-            return false
-        case .password:
-            return true
-        }
-    }
-    
-    var placeholder: String {
-        switch self {
-        case .username:
-            return "아이디"
-        case .password:
-            return "비밀번호"
-        }
-    }
-    
-    var buttonCount: Int {
-        switch self {
-        case .username:
-            return 1
-        case .password:
-            return 2
-        }
-    }
-}
-
 final class CustomTextField: UITextField {
+    
+    enum TextFieldType {
+        case username
+        case password
+        
+        var isSecure: Bool {
+            switch self {
+            case .username:
+                return false
+            case .password:
+                return true
+            }
+        }
+        
+        var placeholder: String {
+            switch self {
+            case .username:
+                return "아이디"
+            case .password:
+                return "비밀번호"
+            }
+        }
+        
+        var buttonCount: Int {
+            switch self {
+            case .username:
+                return 1
+            case .password:
+                return 2
+            }
+        }
+    }
     
     private enum Size {
         static let buttonSize = 20
