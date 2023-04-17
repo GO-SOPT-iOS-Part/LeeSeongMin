@@ -25,7 +25,10 @@ enum ImageLiteral {
 
 extension UIImage {
     static func load(name: String) -> UIImage {
-        guard let image = UIImage(named: name) else { return UIImage() }
+        guard let image = UIImage(named: name) else {
+            print("Image load failed: \(name)")
+            return UIImage()
+        }
         return image
     }
 }
