@@ -93,11 +93,7 @@ final class CustomTextField: UITextField {
     
     @objc
     private func tappedRevealSecureTextButton() {
-        if self.isSecureTextEntry == true {
-            self.isSecureTextEntry = false
-        } else {
-            self.isSecureTextEntry = true
-        }
+        isSecureTextEntry.toggle()
     }
     
     // MARK: - setup
