@@ -201,14 +201,13 @@ final class LoginViewController: BaseViewController {
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.2) {
-            textField.layer.borderWidth = 1
-            textField.layer.borderColor = UIColor.gray2.cgColor
+            textField.setBorder(color: .gray2, andWidth: 1)
         }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.2) {
-            textField.layer.borderWidth = 0
+            textField.setBorder(color: .gray2, andWidth: 0)
         }
     }
     

@@ -56,6 +56,7 @@ final class CustomTextField: UITextField {
         let button = UIButton()
         button.setImage(ImageLiteral.textfieldRemove, for: .normal)
         button.addTarget(self, action: #selector(tappedRemoveAllButton), for: .touchUpInside)
+        button.tintColor = .gray2
         button.isHidden = true
         return button
     }()
@@ -64,6 +65,7 @@ final class CustomTextField: UITextField {
         let button = UIButton()
         button.setImage(ImageLiteral.textfieldEye, for: .normal)
         button.addTarget(self, action: #selector(tappedRevealSecureTextButton), for: .touchUpInside)
+        button.tintColor = .gray2
         return button
     }()
     
@@ -101,10 +103,9 @@ final class CustomTextField: UITextField {
     // MARK: - setup
     
     private func setStyle() {
+        setCornerRadius(to: 4)
         self.backgroundColor = .gray4
         self.textColor = .gray2
-        self.layer.cornerRadius = 4
-        self.layer.masksToBounds = true
         self.isSecureTextEntry = textFieldType.isSecure
     }
     

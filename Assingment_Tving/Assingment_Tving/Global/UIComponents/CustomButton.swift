@@ -24,10 +24,10 @@ final class CustomButton: UIButton {
             }
         }
         
-        var borderColor: UIColor? {
+        var borderColor: UIColor {
             switch self {
             case .activated:
-                return nil
+                return .red1
             case .disabled:
                 return .gray4
             }
@@ -53,7 +53,7 @@ final class CustomButton: UIButton {
     }
     
     var status: Status {
-        didSet { setStyle() }
+        didSet { changeStyle() }
     }
     
     let buttonTitle: String
@@ -72,15 +72,17 @@ final class CustomButton: UIButton {
     // MARK: - functions
     
     private func setStyle() {
+        setCornerRadius(to: 3)
+        setBorder(color: status.borderColor, andWidth: status.borderWidth)
+        setTitle(self.buttonTitle, for: .normal)
+        titleLabel?.textColor = self.status.titleColor
+        titleLabel?.font = UIFont.bold
+    }
+    
+    private func changeStyle() {
         UIView.animate(withDuration: 0.2) {
             self.backgroundColor = self.status.backgroundColor
-            self.layer.borderColor = self.status.borderColor?.cgColor
-            self.layer.borderWidth = self.status.borderWidth
-            self.layer.cornerRadius = 3
-            self.layer.masksToBounds = true
-            self.setTitle(self.buttonTitle, for: .normal)
-            self.titleLabel?.textColor = self.status.titleColor
-            self.titleLabel?.font = UIFont.bold
+            self.setBorder(color: self.status.borderColor, andWidth: self.status.borderWidth)
         }
     }
 }
