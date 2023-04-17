@@ -9,48 +9,48 @@ import UIKit
 
 import SnapKit
 
-enum Status {
-    case activated
-    case disabled
-    
-    var backgroundColor: UIColor {
-        switch self {
-        case .activated:
-            return .red1
-        case .disabled:
-            return .black1
-        }
-    }
-    
-    var borderColor: UIColor? {
-        switch self {
-        case .activated:
-            return nil
-        case .disabled:
-            return .gray4
-        }
-    }
-    
-    var borderWidth: CGFloat {
-        switch self {
-        case .activated:
-            return 0
-        case .disabled:
-            return 1
-        }
-    }
-    
-    var titleColor: UIColor {
-        switch self {
-        case .activated:
-            return .white1
-        case .disabled:
-            return .gray2
-        }
-    }
-}
-
 final class CustomButton: UIButton {
+    
+    enum Status {
+        case activated
+        case disabled
+        
+        var backgroundColor: UIColor {
+            switch self {
+            case .activated:
+                return .red1
+            case .disabled:
+                return .black1
+            }
+        }
+        
+        var borderColor: UIColor? {
+            switch self {
+            case .activated:
+                return nil
+            case .disabled:
+                return .gray4
+            }
+        }
+        
+        var borderWidth: CGFloat {
+            switch self {
+            case .activated:
+                return 0
+            case .disabled:
+                return 1
+            }
+        }
+        
+        var titleColor: UIColor {
+            switch self {
+            case .activated:
+                return .white1
+            case .disabled:
+                return .gray2
+            }
+        }
+    }
     
     var status: Status {
         didSet { setStyle() }
