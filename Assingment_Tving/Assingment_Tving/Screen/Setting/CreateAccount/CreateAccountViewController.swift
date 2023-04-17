@@ -127,8 +127,8 @@ extension CreateAccountViewController: UITextFieldDelegate {
             guard let text = textField.text else { return }
             let textIsOnlyKorean = text.isOnlyKorean()
             saveButton.status = textIsOnlyKorean ? .activated : .disabled
-            saveButton.isEnabled = textIsOnlyKorean ? true : false
-            usernameAlertLabel.isHidden = textIsOnlyKorean ? true : false
+            saveButton.isEnabled = textIsOnlyKorean
+            usernameAlertLabel.isHidden = textIsOnlyKorean
         } else {
             saveButton.status = .disabled
             saveButton.isEnabled = false
