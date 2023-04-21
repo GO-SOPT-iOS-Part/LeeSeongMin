@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CED29ED80850076FA7A /* UIView+Extension.swift */; };
-		3EF53CF129EDB9720076FA7A /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CEF29EDB9720076FA7A /* BottomSheetView.swift */; };
-		3EF53CF229EDB9720076FA7A /* PassThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CF029EDB9720076FA7A /* PassThroughView.swift */; };
 		3EF790B629E678D00052578E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B529E678D00052578E /* AppDelegate.swift */; };
 		3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B729E678D00052578E /* SceneDelegate.swift */; };
 		3EF790BF29E678D10052578E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF790BE29E678D10052578E /* Assets.xcassets */; };
@@ -41,8 +39,6 @@
 
 /* Begin PBXFileReference section */
 		3EF53CED29ED80850076FA7A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		3EF53CEF29EDB9720076FA7A /* BottomSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
-		3EF53CF029EDB9720076FA7A /* PassThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassThroughView.swift; sourceTree = "<group>"; };
 		3EF790B229E678D00052578E /* Assingment_Tving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assingment_Tving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF790B529E678D00052578E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EF790B729E678D00052578E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,15 +81,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3EF53CDF29EAAC9D0076FA7A /* CustomBottomSheet */ = {
-			isa = PBXGroup;
-			children = (
-				3EF53CEF29EDB9720076FA7A /* BottomSheetView.swift */,
-				3EF53CF029EDB9720076FA7A /* PassThroughView.swift */,
-			);
-			path = CustomBottomSheet;
-			sourceTree = "<group>";
-		};
 		3EF790A929E678D00052578E = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +131,6 @@
 		3EF790D029E67AA30052578E /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				3EF53CDF29EAAC9D0076FA7A /* CustomBottomSheet */,
 				3EF790D629E67B430052578E /* CustomTextField.swift */,
 				3EF790FC29E710ED0052578E /* CustomButton.swift */,
 				3EF7910529E86FAE0052578E /* BackButton.swift */,
@@ -337,8 +323,6 @@
 				3EF790B629E678D00052578E /* AppDelegate.swift in Sources */,
 				3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */,
 				3EF790FD29E710EE0052578E /* CustomButton.swift in Sources */,
-				3EF53CF229EDB9720076FA7A /* PassThroughView.swift in Sources */,
-				3EF53CF129EDB9720076FA7A /* BottomSheetView.swift in Sources */,
 				3EF790DE29E6801C0052578E /* UIViewController+Extension.swift in Sources */,
 				3EF790E129E687F40052578E /* ImageLiteral.swift in Sources */,
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
