@@ -74,8 +74,8 @@ final class CustomButton: UIButton {
     private func setStyle() {
         setCornerRadius(to: 3)
         setBorder(color: status.borderColor, andWidth: status.borderWidth)
+        setTitleColor(status.titleColor, for: .normal)
         setTitle(self.buttonTitle, for: .normal)
-        titleLabel?.textColor = self.status.titleColor
         titleLabel?.font = UIFont.bold
     }
     
