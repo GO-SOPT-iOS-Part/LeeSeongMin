@@ -79,9 +79,9 @@ extension GalleryViewController: UICollectionViewDelegate {
     
 }
 
-extension GalleryViewController: UICollectionViewFlowLayout {
-    
-}
+//extension GalleryViewController: UICollectionViewFlowLayout {
+//
+//}
 
 extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

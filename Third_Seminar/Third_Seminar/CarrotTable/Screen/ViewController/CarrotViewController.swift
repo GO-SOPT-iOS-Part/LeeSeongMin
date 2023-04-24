@@ -7,7 +7,11 @@
 
 import UIKit
 
+import SnapKit
+
 final class CarrotViewController: UIViewController {
+    
+    let dummy = CarrotModel.dummy()
     
     // MARK: - properties
     
@@ -29,11 +33,16 @@ final class CarrotViewController: UIViewController {
     }
     
     private func setLayout() {
-        
+        view.addSubview(carrotTableView)
+        carrotTableView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.bottom.equalToSuperview()
+        }
     }
     
     private func setDelegate() {
-        
+        carrotTableView.delegate = self
+        carrotTableView.dataSource = self
     }
     
     // MARK: - functions
@@ -43,4 +52,20 @@ final class CarrotViewController: UIViewController {
     // MARK: - objc functions
     
 
+}
+
+extension CarrotViewController: UITableViewDelegate {
+    
+}
+
+extension CarrotViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dummy.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CarrotTableViewCell.identifier) as? CarrotTableViewCell else { return UITableViewCell() }
+        cell.configureCell(dummy[indexPath.row])
+        return cell
+    }
 }
