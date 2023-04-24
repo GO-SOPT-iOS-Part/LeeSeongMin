@@ -9,31 +9,21 @@ import UIKit
 
 final class GalleryViewController: UIViewController {
     
-    private var dummy = PhotoModel.dummy()
+    private var dummy = PhotoModel.dummy() {
+        didSet {
+            galleryCollectionView.reloadData()
+        }
+    }
     
     // MARK: - properties
     
-    private lazy var galleryCollectionView: UICollectionView = {
-        let collectionView = UICollectionView()
-        collectionView.register(
-            GalleryCollectionViewCell.self,
-            forCellWithReuseIdentifier: GalleryCollectionViewCell.identifier
-        )
-        collectionView.collectionViewLayout = flowLayout
-        collectionView.showsVerticalScrollIndicator = false
-        
-        return collectionView
-    }()
-    
+    private lazy var galleryCollectionView = GalleryCollectionView(frame: .zero, collectionViewLayout: flowLayout)
     private let flowLayout: UICollectionViewFlowLayout = {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(
-            width: (UIScreen.main.bounds.width - 6) / 3,
-            height: (UIScreen.main.bounds.width - 6) / 3
-        )
-        flowLayout.minimumLineSpacing = 3
-        flowLayout.minimumInteritemSpacing = 3
-        return flowLayout
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 6) / 3, height: (UIScreen.main.bounds.width - 6) / 3)
+        layout.minimumLineSpacing = 3
+        layout.minimumInteritemSpacing = 3
+        return layout
     }()
     
     // MARK: - life cycles
@@ -49,7 +39,7 @@ final class GalleryViewController: UIViewController {
     // MARK: - set
     
     private func setStyle() {
-        
+        view.backgroundColor = .white
     }
     
     private func setLayout() {
@@ -65,23 +55,12 @@ final class GalleryViewController: UIViewController {
         galleryCollectionView.dataSource = self
     }
     
-    // MARK: - functions
-    
-    
-    
-    // MARK: - objc functions
-    
-
 }
 
 
 extension GalleryViewController: UICollectionViewDelegate {
     
 }
-
-//extension GalleryViewController: UICollectionViewFlowLayout {
-//
-//}
 
 extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -94,6 +73,12 @@ extension GalleryViewController: UICollectionViewDataSource {
             withReuseIdentifier: GalleryCollectionViewCell.identifier,
             for: indexPath
         ) as? GalleryCollectionViewCell else { return UICollectionViewCell() }
+        cell.configureCell(dummy[indexPath.row])
+        
+        cell.handler = { [weak self] in
+            guard let self else { return }
+            self.dummy[indexPath.row].favorite.toggle()
+        }
         
         return cell
     }

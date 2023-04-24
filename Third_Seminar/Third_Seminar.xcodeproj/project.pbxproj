@@ -23,6 +23,7 @@
 		3E83B0E129F3BFD20015A7E0 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0E029F3BFD20015A7E0 /* GalleryViewController.swift */; };
 		3E83B0E429F3BFF60015A7E0 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0E329F3BFF60015A7E0 /* PhotoModel.swift */; };
 		3E83B0E829F3C0AC0015A7E0 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0E729F3C0AC0015A7E0 /* GalleryCollectionViewCell.swift */; };
+		3E83B0EA29F6B5440015A7E0 /* GalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0E929F6B5440015A7E0 /* GalleryCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		3E83B0E029F3BFD20015A7E0 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		3E83B0E329F3BFF60015A7E0 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		3E83B0E729F3C0AC0015A7E0 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E83B0E929F6B5440015A7E0 /* GalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				3E83B0E729F3C0AC0015A7E0 /* GalleryCollectionViewCell.swift */,
+				3E83B0E929F6B5440015A7E0 /* GalleryCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				3E83B0A229F3A2760015A7E0 /* AppDelegate.swift in Sources */,
 				3E83B0BA29F3A7820015A7E0 /* MainView.swift in Sources */,
 				3E83B0E429F3BFF60015A7E0 /* PhotoModel.swift in Sources */,
+				3E83B0EA29F6B5440015A7E0 /* GalleryCollectionView.swift in Sources */,
 				3E83B0A429F3A2760015A7E0 /* SceneDelegate.swift in Sources */,
 				3E83B0D929F3B7220015A7E0 /* CarrotModel.swift in Sources */,
 				3E83B0DD29F3B9460015A7E0 /* UIImage+.swift in Sources */,
