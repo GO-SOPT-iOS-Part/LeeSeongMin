@@ -19,7 +19,9 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setNavigationBar()
+        setButtonTarget()
         setLayout()
         setStyle()
     }
@@ -34,6 +36,10 @@ class BaseViewController: UIViewController {
         navigationBar.standardAppearance = appearance
         navigationBar.compactAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    func setButtonTarget() {
+        // override to use
     }
     
     // FIXME: setlayout 과 setstyle 은 baseview 에서 실행

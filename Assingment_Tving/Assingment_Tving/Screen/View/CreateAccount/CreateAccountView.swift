@@ -38,12 +38,6 @@ final class CreateAccountView: BaseView {
         return button
     }()
     
-    // MARK: - init
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
     // MARK: -  set
     
     override func setLayout() {

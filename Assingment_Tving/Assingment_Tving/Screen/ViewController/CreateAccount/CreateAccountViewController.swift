@@ -32,17 +32,16 @@ final class CreateAccountViewController: BaseViewController {
         
         setKeyboard()
         setDelegate()
-        setButtonTarget()
     }
     
-    // MARK: - setup
+    // MARK: - set
+    
+    override func setButtonTarget() {
+        baseView.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+    }
     
     private func setDelegate() {
         baseView.usernameTextField.delegate = self
-    }
-    
-    private func setButtonTarget() {
-        baseView.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - objc functions
