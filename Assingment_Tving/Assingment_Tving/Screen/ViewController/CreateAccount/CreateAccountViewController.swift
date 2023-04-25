@@ -31,7 +31,6 @@ final class CreateAccountViewController: BaseViewController {
         super.viewDidLoad()
         
         setKeyboard()
-        setDelegate()
     }
     
     // MARK: - set
@@ -40,7 +39,7 @@ final class CreateAccountViewController: BaseViewController {
         baseView.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
     
-    private func setDelegate() {
+    override func setDelegate() {
         baseView.usernameTextField.delegate = self
     }
     

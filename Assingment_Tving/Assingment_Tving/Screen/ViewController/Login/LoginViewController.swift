@@ -15,84 +15,40 @@ final class LoginViewController: BaseViewController {
     
     // MARK: - properties
     
-    private let loginLabel: UILabel = {
-        let label = UILabel()
-        label.text = "TVING ID 로그인"
-        label.textColor = .gray1
-        label.font = .title
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let usernameTextField = CustomTextField(type: .username)
-    
-    private let passwordTextField = CustomTextField(type: .password)
-    
-    private lazy var loginButton: CustomButton = {
-        let button = CustomButton(status: .disabled, with: "로그인")
-        button.isEnabled = false
-        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var findIDButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("아이디 찾기", for: .normal)
-        button.setTitleColor(.gray2, for: .normal)
-        button.titleLabel?.font = UIFont.bold
-        // FIXME: add button action
-        return button
-    }()
-    
-    private lazy var findPasswordButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("비밀번호 찾기", for: .normal)
-        button.setTitleColor(.gray2, for: .normal)
-        button.titleLabel?.font = UIFont.bold
-        // FIXME: add button action
-        return button
-    }()
-    
-    private let findViewDivider: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray4
-        return view
-    }()
-    
-    private let createAccountQuestionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "아직 계정이 없으신가요?"
-        label.font = UIFont.regular
-        label.textColor = .gray3
-        return label
-    }()
-    
-    private lazy var createAccountButton: UIButton = {
-        let button = UIButton()
-        let attributedText = NSAttributedString(
-            string: "닉네임 만들러가기",
-            attributes: [
-                .underlineStyle: NSUnderlineStyle.single.rawValue,
-                .underlineColor: UIColor.gray2,
-                .font: UIFont.regular,
-                .foregroundColor: UIColor.gray2
-            ])
-        button.frame = .init(x: 0, y: 0, width: 10, height: 10)
-        button.setAttributedTitle(attributedText, for: .normal)
-        button.addTarget(self, action: #selector(createAccountButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private let baseView = LoginView()
     
     // MARK: - life cycle
     
+    override func loadView() {
+        self.view = baseView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDelegate()
+        
         setKeyboard()
     }
     
-    // MARK: - functions
+    // MARK: - set
     
+    override func setNavigationBar() {
+        super.setNavigationBar()
+        
+        let backButton = BackButton()
+        navigationItem.leftBarButtonItem = makeNavigationBarButton(with: backButton)
+    }
+    
+    override func setButtonTarget() {
+        baseView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        baseView.createAccountButton.addTarget(self, action: #selector(createAccountButtonTapped), for: .touchUpInside)
+        // FIXME: findIdButton target 추가
+        // FIXME: findPasswordButton target 추가
+    }
+    
+    override func setDelegate() {
+        baseView.usernameTextField.delegate = self
+        baseView.passwordTextField.delegate = self
+    }
     
     // MARK: - objc functions
     
@@ -101,7 +57,7 @@ final class LoginViewController: BaseViewController {
         let viewController = LoginCompleteViewController()
         if let nickname {
             viewController.bindId(nickname)
-        } else if let username = usernameTextField.text {
+        } else if let username = baseView.usernameTextField.text {
             viewController.bindId(username)
         }
         self.navigationController?.pushViewController(viewController, animated: true)
@@ -118,81 +74,6 @@ final class LoginViewController: BaseViewController {
         self.present(modal, animated: true)
     }
     
-    
-    // MARK: - setup
-    
-    override func setNavigationBar() {
-        super.setNavigationBar()
-        
-        let backButton = BackButton()
-        navigationItem.leftBarButtonItem = makeNavigationBarButton(with: backButton)
-    }
-    
-    override func setLayout() {
-        view.addSubview(loginLabel)
-        loginLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(30)
-            $0.horizontalEdges.equalToSuperview()
-        }
-        
-        view.addSubview(usernameTextField)
-        usernameTextField.snp.makeConstraints {
-            $0.top.equalTo(loginLabel.snp.bottom).offset(30)
-            $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.height.equalTo(52)
-        }
-        
-        view.addSubview(passwordTextField)
-        passwordTextField.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.top.equalTo(usernameTextField.snp.bottom).offset(10)
-            $0.height.equalTo(52)
-        }
-        
-        view.addSubview(loginButton)
-        loginButton.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
-            $0.height.equalTo(52)
-        }
-        
-        view.addSubview(findViewDivider)
-        findViewDivider.snp.makeConstraints {
-            $0.top.equalTo(loginButton.snp.bottom).offset(40)
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(12)
-            $0.width.equalTo(1)
-        }
-
-        view.addSubview(findIDButton)
-        findIDButton.snp.makeConstraints {
-            $0.trailing.equalTo(findViewDivider.snp.leading).offset(-36)
-            $0.centerY.equalTo(findViewDivider)
-        }
-
-        view.addSubview(findPasswordButton)
-        findPasswordButton.snp.makeConstraints {
-            $0.leading.equalTo(findViewDivider.snp.centerX).offset(36)
-            $0.centerY.equalTo(findViewDivider)
-        }
-        
-        view.addSubview(createAccountQuestionLabel)
-        createAccountQuestionLabel.snp.makeConstraints {
-            $0.top.equalTo(findViewDivider.snp.bottom).offset(40)
-            $0.leading.equalToSuperview().inset(50)
-        }
-        
-        view.addSubview(createAccountButton)
-        createAccountButton.snp.makeConstraints {
-            $0.centerY.equalTo(createAccountQuestionLabel)
-            $0.trailing.equalToSuperview().inset(50)
-        }
-    }
-    
-    private func setDelegate() {
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
-    }
 }
 
 
@@ -213,17 +94,19 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
+        let usernameTextField = baseView.usernameTextField
+        let passwordTextField = baseView.passwordTextField
         let usernameTextFieldHasText = usernameTextField.hasText
         let passwordTextFieldHasText = passwordTextField.hasText
         
         usernameTextField.removeAllButton.isHidden = usernameTextFieldHasText ? false : true
         passwordTextField.removeAllButton.isHidden = passwordTextFieldHasText ? false : true
         if usernameTextFieldHasText && passwordTextFieldHasText {
-            loginButton.status = .activated
-            loginButton.isEnabled = true
+            baseView.loginButton.status = .activated
+            baseView.loginButton.isEnabled = true
         } else {
-            loginButton.status = .disabled
-            loginLabel.isEnabled = false
+            baseView.loginButton.status = .disabled
+            baseView.loginButton.isEnabled = false
         }
     }
 }

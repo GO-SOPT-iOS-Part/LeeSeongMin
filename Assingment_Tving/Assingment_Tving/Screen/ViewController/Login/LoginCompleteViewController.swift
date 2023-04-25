@@ -48,9 +48,5 @@ final class LoginCompleteViewController: BaseViewController {
         baseView.completeLabel.text = id + "님\n반가워요"
     }
     
-    // MARK: - objc functions
-    
-    
-    
 }
 

@@ -21,9 +21,8 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         setNavigationBar()
+        setDelegate()
         setButtonTarget()
-        setLayout()
-        setStyle()
     }
     
     // MARK: - setup functions
@@ -38,16 +37,12 @@ class BaseViewController: UIViewController {
         navigationBar.scrollEdgeAppearance = appearance
     }
     
+    func setDelegate() {
+        // override to use
+    }
+    
     func setButtonTarget() {
         // override to use
     }
     
-    // FIXME: setlayout 과 setstyle 은 baseview 에서 실행
-    func setLayout() {
-        // override to use
-    }
-    
-    func setStyle() {
-        view.backgroundColor = .black1
-    }
 }
