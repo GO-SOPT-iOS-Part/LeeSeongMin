@@ -11,6 +11,8 @@
 		3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F129F7A2650015A7E0 /* BaseView.swift */; };
 		3E83B0F629F7ABCE0015A7E0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */; };
 		3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F729F7ABE70015A7E0 /* LoginCompleteView.swift */; };
+		3E83B0FC29F82E670015A7E0 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0FB29F82E670015A7E0 /* MyPageView.swift */; };
+		3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0FD29F82E970015A7E0 /* MyPageViewController.swift */; };
 		3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CED29ED80850076FA7A /* UIView+Extension.swift */; };
 		3EF790B629E678D00052578E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B529E678D00052578E /* AppDelegate.swift */; };
 		3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B729E678D00052578E /* SceneDelegate.swift */; };
@@ -46,6 +48,8 @@
 		3E83B0F129F7A2650015A7E0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3E83B0F729F7ABE70015A7E0 /* LoginCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCompleteView.swift; sourceTree = "<group>"; };
+		3E83B0FB29F82E670015A7E0 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		3E83B0FD29F82E970015A7E0 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		3EF53CED29ED80850076FA7A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3EF790B229E678D00052578E /* Assingment_Tving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assingment_Tving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF790B529E678D00052578E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			children = (
 				3E83B0ED29F7A20C0015A7E0 /* CreateAccount */,
 				3E83B0F429F7AB900015A7E0 /* Login */,
+				3E83B0F929F82E470015A7E0 /* MyPage */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			children = (
 				3E83B0F329F7AB7E0015A7E0 /* CreateAccount */,
 				3E83B0EE29F7A2150015A7E0 /* Login */,
+				3E83B0FA29F82E4D0015A7E0 /* MyPage */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -139,6 +145,22 @@
 				3E83B0F729F7ABE70015A7E0 /* LoginCompleteView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3E83B0F929F82E470015A7E0 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B0FB29F82E670015A7E0 /* MyPageView.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		3E83B0FA29F82E4D0015A7E0 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B0FD29F82E970015A7E0 /* MyPageViewController.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		3EF790A929E678D00052578E = {
@@ -366,7 +388,9 @@
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
 				3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */,
 				3EF790D929E67C5E0052578E /* UIColor+Extension.swift in Sources */,
+				3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */,
 				3EF7910629E86FAE0052578E /* BackButton.swift in Sources */,
+				3E83B0FC29F82E670015A7E0 /* MyPageView.swift in Sources */,
 				3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */,
 				3EF790DC29E67E140052578E /* BaseViewController.swift in Sources */,
 			);
