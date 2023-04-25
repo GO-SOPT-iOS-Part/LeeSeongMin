@@ -7,8 +7,6 @@
 
 import UIKit
 
-import SnapKit
-
 final class LoginCompleteViewController: BaseViewController {
     
     // MARK: - properties

@@ -7,8 +7,6 @@
 
 import UIKit
 
-import SnapKit
-
 protocol SaveUsernaemeProtocol: AnyObject {
     func saveUsername(_ name: String)
 }
