@@ -11,6 +11,10 @@ import SnapKit
 
 class BaseViewController: UIViewController {
     
+    // MARK: - properties
+    
+    
+    
     // MARK: - life cycle
     
     override func viewDidLoad() {
@@ -32,6 +36,7 @@ class BaseViewController: UIViewController {
         navigationBar.scrollEdgeAppearance = appearance
     }
     
+    // FIXME: setlayout 과 setstyle 은 baseview 에서 실행
     func setLayout() {
         // override to use
     }
@@ -39,6 +44,4 @@ class BaseViewController: UIViewController {
     func setStyle() {
         view.backgroundColor = .black1
     }
-    
-    // MARK: - objc functions
 }

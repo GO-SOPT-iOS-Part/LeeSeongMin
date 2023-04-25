@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0EF29F7A2350015A7E0 /* CreateAccountView.swift */; };
+		3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F129F7A2650015A7E0 /* BaseView.swift */; };
 		3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CED29ED80850076FA7A /* UIView+Extension.swift */; };
 		3EF790B629E678D00052578E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B529E678D00052578E /* AppDelegate.swift */; };
 		3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B729E678D00052578E /* SceneDelegate.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E83B0EF29F7A2350015A7E0 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		3E83B0F129F7A2650015A7E0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3EF53CED29ED80850076FA7A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3EF790B229E678D00052578E /* Assingment_Tving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assingment_Tving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF790B529E678D00052578E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E83B0EB29F7A1FF0015A7E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B0ED29F7A20C0015A7E0 /* CreateAccount */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E83B0EC29F7A2040015A7E0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B0EE29F7A2150015A7E0 /* Login */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3E83B0ED29F7A20C0015A7E0 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B0EF29F7A2350015A7E0 /* CreateAccountView.swift */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		3E83B0EE29F7A2150015A7E0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		3EF790A929E678D00052578E = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +144,8 @@
 		3EF790CE29E67A940052578E /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				3E83B0EB29F7A1FF0015A7E0 /* View */,
+				3E83B0EC29F7A2040015A7E0 /* ViewController */,
 				3EF790C029E678D10052578E /* LaunchScreen.storyboard */,
 				3EF790D429E67AE40052578E /* Setting */,
 			);
@@ -190,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF790DB29E67E140052578E /* BaseViewController.swift */,
+				3E83B0F129F7A2650015A7E0 /* BaseView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -317,6 +355,7 @@
 				3EF7910929E8768D0052578E /* CreateAccountViewController.swift in Sources */,
 				3EF790D729E67B430052578E /* CustomTextField.swift in Sources */,
 				3EF7910129E865B20052578E /* String+Extension.swift in Sources */,
+				3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */,
 				3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */,
 				3EF7910429E868490052578E /* LoginCompleteViewController.swift in Sources */,
 				3EF790CA29E678F40052578E /* LoginViewController.swift in Sources */,
@@ -328,6 +367,7 @@
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
 				3EF790D929E67C5E0052578E /* UIColor+Extension.swift in Sources */,
 				3EF7910629E86FAE0052578E /* BackButton.swift in Sources */,
+				3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */,
 				3EF790DC29E67E140052578E /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

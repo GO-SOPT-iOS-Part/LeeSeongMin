@@ -41,6 +41,7 @@ final class LoginCompleteViewController: BaseViewController {
     // MARK: - functions
     
     func bindId(_ id: String) {
+        print(id)
         completeLabel.text = id + "님\n반가워요"
     }
     

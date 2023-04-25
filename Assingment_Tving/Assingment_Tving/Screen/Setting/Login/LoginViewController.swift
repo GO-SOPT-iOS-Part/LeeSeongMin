@@ -110,10 +110,10 @@ final class LoginViewController: BaseViewController {
     @objc
     private func createAccountButtonTapped() {
         let modal = CreateAccountViewController()
+        modal.delegate = self
         if let sheet = modal.sheetPresentationController {
             sheet.detents = [.medium()]
             sheet.prefersGrabberVisible = true
-            sheet.delegate = self
         }
         self.present(modal, animated: true)
     }

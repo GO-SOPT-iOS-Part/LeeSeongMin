@@ -19,88 +19,39 @@ final class CreateAccountViewController: BaseViewController {
     
     // MARK: - properties
     
-    private let setUsernameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "닉네임을 입력해주세요"
-        label.font = .title
-        label.textColor = .gray1
-        return label
-    }()
-    
-    private let usernameTextField = CustomTextField(type: .username)
-    
-    private let usernameAlertLabel: UILabel = {
-        let label = UILabel()
-        label.text = "아이디는 한글로 입력해주세요"
-        label.font = UIFont.smallRegular
-        label.textColor = .red1
-        label.isHidden = true
-        return label
-    }()
-    
-    private lazy var saveButton: CustomButton = {
-        let button = CustomButton(status: .disabled, with: "저장하기")
-        button.isEnabled = false
-        button.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private let baseView = CreateAccountView()
     
     // MARK: - life cycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setKeyboard()
-        setDelegate()
+    override func loadView() {
+        self.view = baseView
     }
     
-    // MARK: - functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setKeyboard()
+        setDelegate()
+        setButtonTarget()
+    }
     
+    // MARK: - setup
+    
+    private func setDelegate() {
+        baseView.usernameTextField.delegate = self
+    }
+    
+    private func setButtonTarget() {
+        baseView.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+    }
     
     // MARK: - objc functions
     
     @objc
     private func saveButtonTapped() {
-        guard let name = usernameTextField.text else { return }
+        guard let name = baseView.usernameTextField.text else { return }
         delegate?.saveUsername(name)
         dismiss(animated: true)
-    }
-    
-    // MARK: - setup
-    
-    override func setLayout() {
-        view.addSubview(setUsernameLabel)
-        setUsernameLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(30)
-            $0.horizontalEdges.equalToSuperview().inset(20)
-        }
-        
-        view.addSubview(usernameTextField)
-        usernameTextField.snp.makeConstraints {
-            $0.top.equalTo(setUsernameLabel.snp.bottom).offset(30)
-            $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.height.equalTo(52)
-        }
-        
-        view.addSubview(usernameAlertLabel)
-        usernameAlertLabel.snp.makeConstraints {
-            $0.top.equalTo(usernameTextField.snp.bottom).offset(2)
-            $0.leading.equalTo(usernameTextField.snp.leading).offset(2)
-        }
-        
-        view.addSubview(saveButton)
-        saveButton.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.top.equalTo(usernameTextField.snp.bottom).offset(20)
-            $0.height.equalTo(52)
-        }
-    }
-    
-    override func setStyle() {
-        view.backgroundColor = .gray5
-    }
-    
-    private func setDelegate() {
-        usernameTextField.delegate = self
     }
 }
 
@@ -122,9 +73,15 @@ extension CreateAccountViewController: UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if textField.hasText {
-            usernameTextField.removeAllButton.isHidden = false
-            guard let text = textField.text else { return }
+        
+        let saveButton = baseView.saveButton
+        let usernameAlertLabel = baseView.usernameAlertLabel
+        
+        guard let textfield = textField as? CustomTextField else { return }
+        
+        if textfield.hasText {
+            textfield.removeAllButton.isHidden = false
+            guard let text = textfield.text else { return }
             let textIsOnlyKorean = text.isOnlyKorean()
             saveButton.status = textIsOnlyKorean ? .activated : .disabled
             saveButton.isEnabled = textIsOnlyKorean
