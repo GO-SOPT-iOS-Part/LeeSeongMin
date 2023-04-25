@@ -20,6 +20,10 @@ extension UIFont {
         return font("Bold", ofSize: 15)
     }
     
+    static var largeBold: UIFont {
+        return font("Bold", ofSize: 18)
+    }
+    
     static var regular: UIFont {
         return font("Regular", ofSize: 15)
     }

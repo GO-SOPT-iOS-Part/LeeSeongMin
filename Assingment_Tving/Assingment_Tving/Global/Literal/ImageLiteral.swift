@@ -9,6 +9,7 @@ import UIKit
 
 enum ImageLiteral {
     
+    // MARK: components
     // MARK: - main
     
     static let mainPoster = UIImage.load(name: "mainPoster")
@@ -21,6 +22,13 @@ enum ImageLiteral {
     
     static let textfieldEye = UIImage.load(name: "textfieldEye").withRenderingMode(.alwaysTemplate)
     static let textfieldRemove = UIImage.load(name: "textfieldRemove").withRenderingMode(.alwaysTemplate)
+    
+    
+    // MARK: views
+    // MARK: - mypage
+    
+    static let profileImage = UIImage.load(name: "profileImage")
+    
 }
 
 extension UIImage {
