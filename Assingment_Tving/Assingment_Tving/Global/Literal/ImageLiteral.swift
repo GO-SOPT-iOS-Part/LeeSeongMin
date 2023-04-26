@@ -17,6 +17,10 @@ enum ImageLiteral {
     // MARK: - navigation
     
     static let navigationBack = UIImage.load(name: "navigationBack")
+    static let notification = UIImage(systemName: "bell")
+    static let setting = UIImage(systemName: "gearshape")
+    static let ticket = UIImage(systemName: "ticket")
+    static let cash = UIImage(systemName: "c.circle")
     
     // MARK: - textfield
     
