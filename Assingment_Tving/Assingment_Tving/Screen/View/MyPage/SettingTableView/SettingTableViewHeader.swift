@@ -11,7 +11,7 @@ import SnapKit
 
 final class SettingtableViewHeader: UITableViewHeaderFooterView {
     
-    static let identifier = "SettingtableViewHeader"
+    static let identifier = "SettingTableViewHeader"
     
     // MARK: - properties
     
@@ -34,7 +34,7 @@ final class SettingtableViewHeader: UITableViewHeaderFooterView {
         let button = UIButton()
         // FIXME: contentInset 사라짐... inset 어떻게?
         button.setTitle("  프로필 전환  ", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.white1, for: .normal)
         button.titleLabel?.font = .smallRegular
         button.setBorder(color: .gray4, andWidth: 1)
         button.setCornerRadius(to: 4)
