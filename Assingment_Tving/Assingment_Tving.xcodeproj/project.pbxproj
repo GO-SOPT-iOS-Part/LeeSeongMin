@@ -16,7 +16,6 @@
 		3E83B10029F8314E0015A7E0 /* SizeLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0FF29F8314E0015A7E0 /* SizeLiteral.swift */; };
 		3E83B10429F8338E0015A7E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10329F8338E0015A7E0 /* MainView.swift */; };
 		3E83B10629F834190015A7E0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10529F834190015A7E0 /* MainViewController.swift */; };
-		3E83B10829F8E5E20015A7E0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10729F8E5E20015A7E0 /* UILabel+Extension.swift */; };
 		3E83B10A29F8F49D0015A7E0 /* TextLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10929F8F49D0015A7E0 /* TextLiteral.swift */; };
 		3E83B10C29F8FE050015A7E0 /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10B29F8FE050015A7E0 /* SettingTableView.swift */; };
 		3E83B10E29F8FE1F0015A7E0 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10D29F8FE1F0015A7E0 /* SettingTableViewCell.swift */; };
@@ -61,7 +60,6 @@
 		3E83B0FF29F8314E0015A7E0 /* SizeLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiteral.swift; sourceTree = "<group>"; };
 		3E83B10329F8338E0015A7E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3E83B10529F834190015A7E0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		3E83B10729F8E5E20015A7E0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		3E83B10929F8F49D0015A7E0 /* TextLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLiteral.swift; sourceTree = "<group>"; };
 		3E83B10B29F8FE050015A7E0 /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
 		3E83B10D29F8FE1F0015A7E0 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 				3EF790FA29E70BB80052578E /* UIFont+Extension.swift */,
 				3EF7910029E865B20052578E /* String+Extension.swift */,
 				3EF53CED29ED80850076FA7A /* UIView+Extension.swift */,
-				3E83B10729F8E5E20015A7E0 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -440,7 +437,6 @@
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
 				3E83B10629F834190015A7E0 /* MainViewController.swift in Sources */,
 				3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */,
-				3E83B10829F8E5E20015A7E0 /* UILabel+Extension.swift in Sources */,
 				3EF790D929E67C5E0052578E /* UIColor+Extension.swift in Sources */,
 				3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */,
 				3EF7910629E86FAE0052578E /* BackButton.swift in Sources */,
