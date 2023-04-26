@@ -9,29 +9,26 @@ import UIKit
 
 enum ImageLiteral {
     
-    // MARK: components
-    // MARK: - main
+    // MARK: - icon
     
-    static let mainPoster = UIImage.load(name: "mainPoster")
-    
-    // MARK: - navigation
-    
-    static let navigationBack = UIImage.load(name: "navigationBack")
+    static let previous = UIImage(systemName: "chevron.left")
+    static let next = UIImage(systemName: "chevron.right")
     static let notification = UIImage(systemName: "bell")
     static let setting = UIImage(systemName: "gearshape")
     static let ticket = UIImage(systemName: "ticket")
     static let cash = UIImage(systemName: "c.circle")
     
-    // MARK: - textfield
-    
     static let textfieldEye = UIImage.load(name: "textfieldEye").withRenderingMode(.alwaysTemplate)
     static let textfieldRemove = UIImage.load(name: "textfieldRemove").withRenderingMode(.alwaysTemplate)
     
     
-    // MARK: views
-    // MARK: - mypage
+    // MARK: - image
     
+    static let mainPoster = UIImage.load(name: "mainPoster")
     static let profileImage = UIImage.load(name: "profileImage")
+    static let tvN = UIImage.load(name: "tvN")
+    static let jtbc = UIImage.load(name: "JTBC")
+    
     
 }
 

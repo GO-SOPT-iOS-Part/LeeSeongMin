@@ -113,6 +113,24 @@ final class MyPageView: BaseView {
         return label
     }()
     
+    let buyTicketButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .gray5
+        button.setCornerRadius(to: 4)
+        return button
+    }()
+    
+    private let buyTicketButtonLabel: UILabel = {
+        let label = UILabel()
+        label.attributedText = TextLiteral.buyTicketButtonString
+        label.numberOfLines = 2
+        label.textColor = .gray2
+        label.font = .smallRegular
+        return label
+    }()
+    
+    private let nextImageView = UIImageView(image: ImageLiteral.next?.withTintColor(.gray2, renderingMode: .alwaysOriginal))
+    
     // MARK: - init
     
     
@@ -168,6 +186,25 @@ final class MyPageView: BaseView {
         myCashStatusLabel.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(14)
             $0.centerY.equalTo(myCashLabel)
+        }
+        
+        addSubview(buyTicketButton)
+        buyTicketButton.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.smallSidePadding)
+            $0.top.equalTo(ticketView.snp.bottom).offset(12)
+        }
+        
+        buyTicketButton.addSubview(buyTicketButtonLabel)
+        buyTicketButtonLabel.snp.makeConstraints {
+            $0.leading.bottom.equalToSuperview().inset(14)
+            $0.top.equalToSuperview().inset(15)
+        }
+        
+        buyTicketButton.addSubview(nextImageView)
+        nextImageView.snp.makeConstraints {
+            $0.trailing.equalTo(buyTicketButton).offset(-14)
+            $0.centerY.equalToSuperview()
+//            $0.size.equalTo(18)
         }
     }
 
