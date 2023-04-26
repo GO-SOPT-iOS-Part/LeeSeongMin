@@ -13,6 +13,10 @@ final class MyPageView: BaseView {
     
     // MARK: - properties
     
+    private let scrollView = UIScrollView()
+    
+    private let contentView = UIView()
+    
     let notificationButton: UIButton = {
         let button = UIButton()
         button.setImage(ImageLiteral.notification, for: .normal)
@@ -131,33 +135,43 @@ final class MyPageView: BaseView {
     
     private let nextImageView = UIImageView(image: ImageLiteral.next?.withTintColor(.gray2, renderingMode: .alwaysOriginal))
     
-    // MARK: - init
-    
-    
+    let settingTableView = SettingTableView()
     
     // MARK: -  set
     
     override func setLayout() {
-        addSubview(profileImageView)
+        addSubview(scrollView)
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints {
+            $0.edges.equalTo(scrollView.contentLayoutGuide)
+            $0.width.equalTo(snp.width)
+            
+        }
+        
+        contentView.addSubview(profileImageView)
         profileImageView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(20)
             $0.leading.equalToSuperview().offset(SizeLiteral.sidePadding)
             $0.size.equalTo(72)
         }
         
-        addSubview(usernameLabel)
+        contentView.addSubview(usernameLabel)
         usernameLabel.snp.makeConstraints {
             $0.leading.equalTo(profileImageView.snp.trailing).offset(10)
             $0.centerY.equalTo(profileImageView)
         }
         
-        addSubview(changeProfileButton)
+        contentView.addSubview(changeProfileButton)
         changeProfileButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(SizeLiteral.sidePadding)
             $0.centerY.equalTo(profileImageView)
         }
         
-        addSubview(ticketView)
+        contentView.addSubview(ticketView)
         ticketView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.smallSidePadding)
             $0.top.equalTo(profileImageView.snp.bottom).offset(20)
@@ -188,7 +202,7 @@ final class MyPageView: BaseView {
             $0.centerY.equalTo(myCashLabel)
         }
         
-        addSubview(buyTicketButton)
+        contentView.addSubview(buyTicketButton)
         buyTicketButton.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.smallSidePadding)
             $0.top.equalTo(ticketView.snp.bottom).offset(12)
@@ -204,7 +218,12 @@ final class MyPageView: BaseView {
         nextImageView.snp.makeConstraints {
             $0.trailing.equalTo(buyTicketButton).offset(-14)
             $0.centerY.equalToSuperview()
-//            $0.size.equalTo(18)
+        }
+        
+        contentView.addSubview(settingTableView)
+        settingTableView.snp.makeConstraints {
+            $0.top.equalTo(buyTicketButton.snp.bottom).offset(20)
+            $0.horizontalEdges.bottom.equalToSuperview()
         }
     }
 
