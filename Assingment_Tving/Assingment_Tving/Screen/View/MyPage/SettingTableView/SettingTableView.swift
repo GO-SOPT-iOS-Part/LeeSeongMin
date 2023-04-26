@@ -8,14 +8,7 @@
 import UIKit
 
 final class SettingTableView: UITableView {
-    
-    // MARK: - properties
-    
-    override var intrinsicContentSize: CGSize {
-        return self.contentSize
-    }
 
-    
     // MARK: - init
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -33,13 +26,13 @@ final class SettingTableView: UITableView {
     // MARK: -  set
     
     private func setTableViewCell() {
+        register(SettingtableViewHeader.self, forHeaderFooterViewReuseIdentifier: SettingtableViewHeader.identifier)
         register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
     }
     
     private func setTableViewStyle() {
-        rowHeight = 54
+        rowHeight = SizeLiteral.Button.height
         backgroundColor = .black1
-        isScrollEnabled = false
         separatorStyle = .none
     }
 

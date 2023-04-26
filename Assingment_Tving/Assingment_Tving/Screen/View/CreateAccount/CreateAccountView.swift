@@ -64,7 +64,7 @@ final class CreateAccountView: BaseView {
         saveButton.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.top.equalTo(usernameTextField.snp.bottom).offset(20)
-            $0.height.equalTo(52)
+            $0.height.equalTo(SizeLiteral.Button.height)
         }
     }
     

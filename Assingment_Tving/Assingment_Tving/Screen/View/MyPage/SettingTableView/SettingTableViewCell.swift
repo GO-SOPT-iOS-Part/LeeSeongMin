@@ -46,19 +46,20 @@ final class SettingTableViewCell: UITableViewCell {
     private func setLayout() {
         addSubview(menuTitleLabel)
         menuTitleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(SizeLiteral.sidePadding)
+            $0.leading.equalToSuperview().inset(SizeLiteral.Common.sidePadding)
             $0.centerY.equalToSuperview()
         }
         
         addSubview(nextImageView)
         nextImageView.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(SizeLiteral.sidePadding)
+            $0.trailing.equalToSuperview().inset(SizeLiteral.Common.sidePadding)
             $0.centerY.equalToSuperview()
         }
     }
     
     private func setStyle() {
         backgroundColor = .black1
+        selectionStyle = .none
     }
     
     // MARK: - configure

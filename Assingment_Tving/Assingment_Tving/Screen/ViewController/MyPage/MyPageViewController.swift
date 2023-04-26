@@ -30,6 +30,7 @@ final class MyPageViewController: BaseViewController {
         super.setNavigationBar()
         
         let backButton = BackButton()
+        backButton.addTarget(self, action: #selector(popViewController), for: .touchUpInside)
         navigationItem.leftBarButtonItem = makeNavigationBarButton(with: backButton)
         navigationItem.rightBarButtonItem = makeNavigationBarButton(with: baseView.navigationBarButtonStack)
     }
@@ -39,17 +40,28 @@ final class MyPageViewController: BaseViewController {
         baseView.settingTableView.dataSource = self
     }
     
-    // MARK: - functions
-    
-    
-    
-    // MARK: - objc functions
-    
-
 }
 
 
+// MARK: - UITableViewDelegate extension
+
 extension MyPageViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SettingtableViewHeader.identifier) as? SettingtableViewHeader
+            else { return UITableViewHeaderFooterView() }
+            return header
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 300
+        }
+        return .leastNonzeroMagnitude
+    }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == 0 {
@@ -58,24 +70,37 @@ extension MyPageViewController: UITableViewDelegate {
             seperator.backgroundColor = .gray4
             seperatorView.addSubview(seperator)
             seperator.snp.makeConstraints {
-                $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.smallSidePadding)
+                $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.Common.sideSmallPadding)
                 $0.height.equalTo(1)
                 $0.centerY.equalToSuperview()
             }
             return seperatorView
         } else {
-            return nil
+            let footerView = UIView(frame: .init(x: 0, y: 0, width: tableView.frame.width, height: 72))
+            let logoutButton = CustomButton(status: .disabled, with: "로그아웃")
+            logoutButton.setTitleColor(.gray2, for: .normal)
+            footerView.addSubview(logoutButton)
+            logoutButton.snp.makeConstraints {
+                $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.Common.sidePadding)
+                $0.height.equalTo(SizeLiteral.Button.height)
+                $0.bottom.equalToSuperview()
+            }
+            return footerView
         }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == 0 {
             return 30
+        } else {
+            return 72
         }
-        return 0
     }
     
 }
+
+
+// MARK: - UITableViewDataSource extension
 
 extension MyPageViewController: UITableViewDataSource {
     
