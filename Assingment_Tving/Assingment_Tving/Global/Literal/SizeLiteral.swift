@@ -10,9 +10,9 @@ import UIKit
 enum SizeLiteral {
     
     enum Common {
-        static let sidePadding = 20
-        static let sideMediumPadding = 14
-        static let sideSmallPadding = 10
+        static let sidePadding: CGFloat = 20
+        static let sideMediumPadding: CGFloat = 14
+        static let sideSmallPadding: CGFloat = 10
     }
     
     enum Screen {

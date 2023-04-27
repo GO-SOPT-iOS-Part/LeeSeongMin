@@ -1,5 +1,5 @@
 //
-//  Settingtableview.swift
+//  MyPageHeaderView.swift
 //  Assingment_Tving
 //
 //  Created by 이성민 on 2023/04/26.
@@ -9,9 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class SettingtableViewHeader: UITableViewHeaderFooterView {
-    
-    static let identifier = "SettingTableViewHeader"
+final class MyPageHeaderView: BaseView {
     
     // MARK: - properties
     
@@ -113,8 +111,8 @@ final class SettingtableViewHeader: UITableViewHeaderFooterView {
     
     // MARK: - init
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         setLayout()
         setStyle()
@@ -127,7 +125,7 @@ final class SettingtableViewHeader: UITableViewHeaderFooterView {
     
     // MARK: -  set
     
-    private func setLayout() {
+    override func setLayout() {
         addSubview(profileImageView)
         profileImageView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).offset(20)
@@ -149,7 +147,7 @@ final class SettingtableViewHeader: UITableViewHeaderFooterView {
         
         addSubview(ticketView)
         ticketView.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.Common.sideSmallPadding)
+            $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.Common.sideMediumPadding)
             $0.top.equalTo(profileImageView.snp.bottom).offset(20)
         }
         
@@ -180,7 +178,7 @@ final class SettingtableViewHeader: UITableViewHeaderFooterView {
         
         addSubview(buyTicketButton)
         buyTicketButton.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.Common.sideSmallPadding)
+            $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.Common.sideMediumPadding)
             $0.top.equalTo(ticketView.snp.bottom).offset(12)
         }
         
@@ -197,9 +195,8 @@ final class SettingtableViewHeader: UITableViewHeaderFooterView {
         }
     }
     
-    private func setStyle() {
+    override func setStyle() {
         backgroundColor = .black1
-        
     }
 
 }

@@ -16,6 +16,7 @@ final class SettingTableView: UITableView {
         
         setTableViewCell()
         setTableViewStyle()
+        setTableViewHeaderFooter()
     }
     
     @available(*, unavailable)
@@ -26,7 +27,7 @@ final class SettingTableView: UITableView {
     // MARK: -  set
     
     private func setTableViewCell() {
-        register(SettingtableViewHeader.self, forHeaderFooterViewReuseIdentifier: SettingtableViewHeader.identifier)
+        register(SettingTableViewFooter.self, forHeaderFooterViewReuseIdentifier: SettingTableViewFooter.identifier)
         register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
     }
     
@@ -34,6 +35,23 @@ final class SettingTableView: UITableView {
         rowHeight = SizeLiteral.Button.height
         backgroundColor = .black1
         separatorStyle = .none
+        sectionFooterHeight = 0
+    }
+    
+    private func setTableViewHeaderFooter() {
+        let headerView = MyPageHeaderView()
+        headerView.frame = CGRect(x: 0, y: 0, width: SizeLiteral.Screen.width, height: 300)
+        tableHeaderView = headerView
+        
+        let footerView = UIView()
+        footerView.frame = CGRect(x: 0, y: 0, width: SizeLiteral.Screen.width, height: 72)
+        let footer = CustomButton(status: .disabled, with: "로그아웃")
+        footerView.addSubview(footer)
+        footer.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.Common.sidePadding)
+            $0.verticalEdges.equalToSuperview().inset(10)
+        }
+        tableFooterView = footerView
     }
 
 }

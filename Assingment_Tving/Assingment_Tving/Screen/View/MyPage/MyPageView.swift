@@ -36,7 +36,7 @@ final class MyPageView: BaseView {
         return stackview
     }()
     
-    let settingTableView = SettingTableView(frame: .zero, style: .grouped)
+    let settingTableView = SettingTableView(frame: .init(x: 0, y: 0, width: SizeLiteral.Screen.width, height: 0), style: .plain)
     
     // MARK: -  set
     
