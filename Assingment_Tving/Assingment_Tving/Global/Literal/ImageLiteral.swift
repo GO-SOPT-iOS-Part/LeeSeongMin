@@ -29,6 +29,15 @@ enum ImageLiteral {
     static let tvN = UIImage.load(name: "tvN")
     static let jtbc = UIImage.load(name: "JTBC")
     
+    static let beginAgain = UIImage.load(name: "비긴어게인")
+    static let beforeSunset = UIImage.load(name: "비포선셋")
+    static let aboutTime = UIImage.load(name: "어바웃타임")
+    static let avengers = UIImage.load(name: "어벤저스")
+    static let up = UIImage.load(name: "업")
+    static let insideOut = UIImage.load(name: "인사이드 아웃")
+    static let harryPotterGobletOfFire = UIImage.load(name: "해리포터와 불의 잔")
+    static let harryPotterAndThePrisoner = UIImage.load(name: "해리포터와 아즈카반의 죄수")
+    
     
 }
 
