@@ -9,9 +9,24 @@ import UIKit
 
 final class MyPageViewController: BaseViewController {
     
-    let settingTableList = [
-        ["이용권", "1:1 문의내역", "예약알림", "회원정보 수정", "프로모션 정보 수신 동의"],
-        ["공지사항", "이벤트", "고객센터", "티빙 알아보기"]
+    enum PersonalSettingList: String, CaseIterable {
+        case ticket = "이용권"
+        case serviceChat = "1:1 문의내역"
+        case reservedNotification = "예약알림"
+        case editInfo = "회원정보 수정"
+        case promotion = "프로모션 정보 수신 동의"
+    }
+    
+    enum AppInfoList: String, CaseIterable {
+        case notification = "공지사항"
+        case event = "이벤트"
+        case custemerService = "고객센터"
+        case about = "티빙 알아보기"
+    }
+    
+    let settingList = [
+        PersonalSettingList.allCases.map { $0.rawValue },
+        AppInfoList.allCases.map { $0.rawValue }
     ]
     
     // MARK: - properties
@@ -71,18 +86,18 @@ extension MyPageViewController: UITableViewDelegate {
 extension MyPageViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return settingTableList.count
+        return settingList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingTableList[section].count
+        return settingList[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = baseView.settingTableView.dequeueReusableCell(
             withIdentifier: SettingTableViewCell.identifier) as? SettingTableViewCell
         else { return UITableViewCell() }
-        cell.configureCell(title: settingTableList[indexPath.section][indexPath.row])
+        cell.configureCell(title: settingList[indexPath.section][indexPath.row])
         return cell
     }
     
