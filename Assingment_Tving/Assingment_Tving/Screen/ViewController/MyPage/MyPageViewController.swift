@@ -72,10 +72,7 @@ extension MyPageViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 30
-        }
-        return 0
+        section == 0 ? 30 : 0
     }
     
 }
