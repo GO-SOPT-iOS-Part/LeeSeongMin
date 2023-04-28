@@ -13,21 +13,9 @@ final class MyPageView: BaseView {
     
     // MARK: - properties
     
-    let notificationButton: UIButton = {
-        let button = UIButton()
-        button.setImage(ImageLiteral.notification, for: .normal)
-        button.tintColor = .gray1
-        button.frame = .init(x: 0, y: 0, width: 30, height: 44)
-        return button
-    }()
+    let notificationButton = IconButton(frame: SizeLiteral.Button.iconButtonFrame, icon: ImageLiteral.notification!, with: .gray1)
     
-    let settingButton: UIButton = {
-        let button = UIButton()
-        button.setImage(ImageLiteral.setting, for: .normal)
-        button.tintColor = .gray1
-        button.frame = .init(x: 0, y: 0, width: 30, height: 44)
-        return button
-    }()
+    let settingButton = IconButton(frame: SizeLiteral.Button.iconButtonFrame, icon: ImageLiteral.setting!, with: .gray1)
     
     lazy var navigationBarButtonStack: UIStackView = {
         let stackview = UIStackView(arrangedSubviews: [notificationButton, settingButton])
@@ -36,7 +24,7 @@ final class MyPageView: BaseView {
         return stackview
     }()
     
-    let settingTableView = SettingTableView(frame: .zero, style: .grouped)
+    let settingTableView = SettingTableView(frame: .init(x: 0, y: 0, width: SizeLiteral.Screen.width, height: 0), style: .plain)
     
     // MARK: -  set
     

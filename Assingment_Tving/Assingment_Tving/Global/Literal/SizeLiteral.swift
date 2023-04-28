@@ -10,9 +10,9 @@ import UIKit
 enum SizeLiteral {
     
     enum Common {
-        static let sidePadding = 20
-        static let sideMediumPadding = 14
-        static let sideSmallPadding = 10
+        static let sidePadding: CGFloat = 20
+        static let sideMediumPadding: CGFloat = 14
+        static let sideSmallPadding: CGFloat = 10
     }
     
     enum Screen {
@@ -22,6 +22,7 @@ enum SizeLiteral {
     
     enum Button {
         static let height: CGFloat = 52
+        static let iconButtonFrame: CGRect = .init(x: 0, y: 0, width: 30, height: 44)
     }
     
 }

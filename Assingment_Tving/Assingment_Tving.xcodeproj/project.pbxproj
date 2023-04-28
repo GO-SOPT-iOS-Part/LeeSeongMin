@@ -19,6 +19,9 @@
 		3E83B10A29F8F49D0015A7E0 /* TextLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10929F8F49D0015A7E0 /* TextLiteral.swift */; };
 		3E83B10C29F8FE050015A7E0 /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10B29F8FE050015A7E0 /* SettingTableView.swift */; };
 		3E83B10E29F8FE1F0015A7E0 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10D29F8FE1F0015A7E0 /* SettingTableViewCell.swift */; };
+		3E83B11129F9472B0015A7E0 /* MyPageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B11029F9472B0015A7E0 /* MyPageHeaderView.swift */; };
+		3E83B12229FAABC70015A7E0 /* SettingTableViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B12129FAABC70015A7E0 /* SettingTableViewFooter.swift */; };
+		3E83B12429FAEC5B0015A7E0 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B12329FAEC5B0015A7E0 /* IconButton.swift */; };
 		3E83B11129F9472B0015A7E0 /* SettingTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B11029F9472B0015A7E0 /* SettingTableViewHeader.swift */; };
 		3E83B11629F98B230015A7E0 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B11529F98B230015A7E0 /* MovieModel.swift */; };
 		3E83B11829F98CB60015A7E0 /* MovieCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B11729F98CB60015A7E0 /* MovieCarouselView.swift */; };
@@ -65,6 +68,9 @@
 		3E83B10929F8F49D0015A7E0 /* TextLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLiteral.swift; sourceTree = "<group>"; };
 		3E83B10B29F8FE050015A7E0 /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
 		3E83B10D29F8FE1F0015A7E0 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		3E83B11029F9472B0015A7E0 /* MyPageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHeaderView.swift; sourceTree = "<group>"; };
+		3E83B12129FAABC70015A7E0 /* SettingTableViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewFooter.swift; sourceTree = "<group>"; };
+		3E83B12329FAEC5B0015A7E0 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		3E83B11029F9472B0015A7E0 /* SettingTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewHeader.swift; sourceTree = "<group>"; };
 		3E83B11529F98B230015A7E0 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		3E83B11729F98CB60015A7E0 /* MovieCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCarouselView.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				3E83B10F29F946F60015A7E0 /* SettingTableView */,
+				3E83B11029F9472B0015A7E0 /* MyPageHeaderView.swift */,
 				3E83B0FB29F82E670015A7E0 /* MyPageView.swift */,
 			);
 			path = MyPage;
@@ -206,7 +213,7 @@
 			children = (
 				3E83B10B29F8FE050015A7E0 /* SettingTableView.swift */,
 				3E83B10D29F8FE1F0015A7E0 /* SettingTableViewCell.swift */,
-				3E83B11029F9472B0015A7E0 /* SettingTableViewHeader.swift */,
+				3E83B12129FAABC70015A7E0 /* SettingTableViewFooter.swift */,
 			);
 			path = SettingTableView;
 			sourceTree = "<group>";
@@ -282,6 +289,7 @@
 				3EF790D629E67B430052578E /* CustomTextField.swift */,
 				3EF790FC29E710ED0052578E /* CustomButton.swift */,
 				3EF7910529E86FAE0052578E /* BackButton.swift */,
+				3E83B12329FAEC5B0015A7E0 /* IconButton.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -440,7 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EF7910929E8768D0052578E /* CreateAccountViewController.swift in Sources */,
-				3E83B11129F9472B0015A7E0 /* SettingTableViewHeader.swift in Sources */,
+				3E83B11129F9472B0015A7E0 /* MyPageHeaderView.swift in Sources */,
 				3EF790D729E67B430052578E /* CustomTextField.swift in Sources */,
 				3E83B10E29F8FE1F0015A7E0 /* SettingTableViewCell.swift in Sources */,
 				3E83B10A29F8F49D0015A7E0 /* TextLiteral.swift in Sources */,
@@ -453,10 +461,12 @@
 				3E83B11829F98CB60015A7E0 /* MovieCarouselView.swift in Sources */,
 				3EF790B629E678D00052578E /* AppDelegate.swift in Sources */,
 				3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */,
+				3E83B12229FAABC70015A7E0 /* SettingTableViewFooter.swift in Sources */,
 				3EF790FD29E710EE0052578E /* CustomButton.swift in Sources */,
 				3EF790DE29E6801C0052578E /* UIViewController+Extension.swift in Sources */,
 				3EF790E129E687F40052578E /* ImageLiteral.swift in Sources */,
 				3E83B0F629F7ABCE0015A7E0 /* LoginView.swift in Sources */,
+				3E83B12429FAEC5B0015A7E0 /* IconButton.swift in Sources */,
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
 				3E83B10629F834190015A7E0 /* MainViewController.swift in Sources */,
 				3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */,
