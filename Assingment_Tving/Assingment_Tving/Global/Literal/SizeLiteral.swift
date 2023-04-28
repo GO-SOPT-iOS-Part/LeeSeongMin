@@ -22,6 +22,7 @@ enum SizeLiteral {
     
     enum Button {
         static let height: CGFloat = 52
+        static let iconButtonFrame: CGRect = .init(x: 0, y: 0, width: 30, height: 44)
     }
     
 }
