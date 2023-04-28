@@ -13,12 +13,19 @@ final class MainView: BaseView {
     
     // MARK: - properties
     
-    let myPageButton: UIButton = {
-        let button = UIButton()
-        button.setImage(ImageLiteral.profileImage, for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
-        return button
+    lazy var segmentedButtonsView = SegmentedButtonsView()
+    
+    lazy var pageControlCollectionView = PageControlCollectionView(frame: .zero, collectionViewLayout: flowLayout)
+
+    let flowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = .init(width: SizeLiteral.Screen.width, height: SizeLiteral.Screen.height)
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        return layout
     }()
+    
+//    let pageControl = UIPageControl()
     
     // MARK: - init
     
@@ -27,9 +34,16 @@ final class MainView: BaseView {
     // MARK: -  set
     
     override func setLayout() {
-        addSubview(myPageButton)
-        myPageButton.snp.makeConstraints {
-            $0.center.equalToSuperview()
+        addSubview(pageControlCollectionView)
+        pageControlCollectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        addSubview(segmentedButtonsView)
+        segmentedButtonsView.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(50)
         }
     }
 

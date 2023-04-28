@@ -23,6 +23,11 @@
 		3E83B11629F98B230015A7E0 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B11529F98B230015A7E0 /* MovieModel.swift */; };
 		3E83B12229FAABC70015A7E0 /* SettingTableViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B12129FAABC70015A7E0 /* SettingTableViewFooter.swift */; };
 		3E83B12429FAEC5B0015A7E0 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B12329FAEC5B0015A7E0 /* IconButton.swift */; };
+		3E83B12B29FBBDDC0015A7E0 /* PageControlCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B12A29FBBDDC0015A7E0 /* PageControlCollectionView.swift */; };
+		3E83B12E29FBBF000015A7E0 /* PageControlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B12D29FBBF000015A7E0 /* PageControlCollectionViewCell.swift */; };
+		3E83B13029FBC2E70015A7E0 /* IdentifierLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B12F29FBC2E70015A7E0 /* IdentifierLiteral.swift */; };
+		3E83B13229FBD5D90015A7E0 /* SegmentedButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B13129FBD5D90015A7E0 /* SegmentedButtonsView.swift */; };
+		3E83B15F29FC080C0015A7E0 /* SegmentedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B15E29FC080C0015A7E0 /* SegmentedButton.swift */; };
 		3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CED29ED80850076FA7A /* UIView+Extension.swift */; };
 		3EF790B629E678D00052578E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B529E678D00052578E /* AppDelegate.swift */; };
 		3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B729E678D00052578E /* SceneDelegate.swift */; };
@@ -70,6 +75,11 @@
 		3E83B11529F98B230015A7E0 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		3E83B12129FAABC70015A7E0 /* SettingTableViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewFooter.swift; sourceTree = "<group>"; };
 		3E83B12329FAEC5B0015A7E0 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		3E83B12A29FBBDDC0015A7E0 /* PageControlCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlCollectionView.swift; sourceTree = "<group>"; };
+		3E83B12D29FBBF000015A7E0 /* PageControlCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E83B12F29FBC2E70015A7E0 /* IdentifierLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierLiteral.swift; sourceTree = "<group>"; };
+		3E83B13129FBD5D90015A7E0 /* SegmentedButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButtonsView.swift; sourceTree = "<group>"; };
+		3E83B15E29FC080C0015A7E0 /* SegmentedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButton.swift; sourceTree = "<group>"; };
 		3EF53CED29ED80850076FA7A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3EF790B229E678D00052578E /* Assingment_Tving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assingment_Tving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF790B529E678D00052578E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +200,7 @@
 		3E83B10129F833790015A7E0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3E83B12C29FBBEED0015A7E0 /* SegmentedControl */,
 				3E83B10329F8338E0015A7E0 /* MainView.swift */,
 			);
 			path = Main;
@@ -219,6 +230,17 @@
 				3E83B11529F98B230015A7E0 /* MovieModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3E83B12C29FBBEED0015A7E0 /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B12A29FBBDDC0015A7E0 /* PageControlCollectionView.swift */,
+				3E83B12D29FBBF000015A7E0 /* PageControlCollectionViewCell.swift */,
+				3E83B13129FBD5D90015A7E0 /* SegmentedButtonsView.swift */,
+				3E83B15E29FC080C0015A7E0 /* SegmentedButton.swift */,
+			);
+			path = SegmentedControl;
 			sourceTree = "<group>";
 		};
 		3EF790A929E678D00052578E = {
@@ -327,6 +349,7 @@
 				3EF790E029E687F40052578E /* ImageLiteral.swift */,
 				3E83B0FF29F8314E0015A7E0 /* SizeLiteral.swift */,
 				3E83B10929F8F49D0015A7E0 /* TextLiteral.swift */,
+				3E83B12F29FBC2E70015A7E0 /* IdentifierLiteral.swift */,
 			);
 			path = Literal;
 			sourceTree = "<group>";
@@ -446,6 +469,7 @@
 				3E83B10029F8314E0015A7E0 /* SizeLiteral.swift in Sources */,
 				3EF790CA29E678F40052578E /* LoginViewController.swift in Sources */,
 				3EF790B629E678D00052578E /* AppDelegate.swift in Sources */,
+				3E83B15F29FC080C0015A7E0 /* SegmentedButton.swift in Sources */,
 				3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */,
 				3E83B12229FAABC70015A7E0 /* SettingTableViewFooter.swift in Sources */,
 				3EF790FD29E710EE0052578E /* CustomButton.swift in Sources */,
@@ -456,7 +480,9 @@
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
 				3E83B10629F834190015A7E0 /* MainViewController.swift in Sources */,
 				3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */,
+				3E83B13029FBC2E70015A7E0 /* IdentifierLiteral.swift in Sources */,
 				3EF790D929E67C5E0052578E /* UIColor+Extension.swift in Sources */,
+				3E83B12E29FBBF000015A7E0 /* PageControlCollectionViewCell.swift in Sources */,
 				3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */,
 				3E83B11629F98B230015A7E0 /* MovieModel.swift in Sources */,
 				3EF7910629E86FAE0052578E /* BackButton.swift in Sources */,
@@ -465,6 +491,8 @@
 				3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */,
 				3EF790DC29E67E140052578E /* BaseViewController.swift in Sources */,
 				3E83B10C29F8FE050015A7E0 /* SettingTableView.swift in Sources */,
+				3E83B12B29FBBDDC0015A7E0 /* PageControlCollectionView.swift in Sources */,
+				3E83B13229FBD5D90015A7E0 /* SegmentedButtonsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
