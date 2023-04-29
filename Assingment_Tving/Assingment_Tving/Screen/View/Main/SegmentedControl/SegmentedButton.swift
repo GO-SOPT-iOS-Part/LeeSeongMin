@@ -28,7 +28,7 @@ final class SegmentedButton: UIButton {
     private func setButton(title: String) {
         setTitle(title, for: .normal)
         setTitleColor(.white1, for: .normal)
-        titleLabel?.font = .regular
+        titleLabel?.font = .sfMedium
     }
 
 }

@@ -8,31 +8,30 @@
 import UIKit
 
 extension UIFont {
-    static func font(_ weight: String, ofSize size: CGFloat) -> UIFont {
-        return UIFont(name: "Pretendard-" + weight, size: size)!
+    static func pretendardFont(_ weight: String, ofSize size: CGFloat) -> UIFont {
+        guard let customFont = UIFont(name: "Pretendard-" + weight, size: size) else {
+            return UIFont.systemFont(ofSize: size)
+        }
+        return customFont
     }
     
     static var title: UIFont {
-        return font("SemiBold", ofSize: 24)
+        return pretendardFont("SemiBold", ofSize: 24)
     }
     
     static var bold: UIFont {
-        return font("Bold", ofSize: 15)
+        return pretendardFont("Bold", ofSize: 15)
     }
     
     static var largeBold: UIFont {
-        return font("Bold", ofSize: 18)
+        return pretendardFont("Bold", ofSize: 18)
     }
     
     static var regular: UIFont {
-        return font("Regular", ofSize: 15)
+        return pretendardFont("Regular", ofSize: 15)
     }
     
     static var smallRegular: UIFont {
-        return font("Regular", ofSize: 12)
+        return pretendardFont("Regular", ofSize: 12)
     }
-    
-//    static var thin: UIFont {
-//        return font("Thin", ofSize: 15)
-//    }
 }
