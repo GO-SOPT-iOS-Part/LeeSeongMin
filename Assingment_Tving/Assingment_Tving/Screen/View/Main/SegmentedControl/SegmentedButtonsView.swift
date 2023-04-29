@@ -26,7 +26,7 @@ final class SegmentedButtonsView: UIView {
     
     enum Titles: String, CaseIterable {
         case home = "홈"
-        case live = "􀵨 실시간"
+        case live = " 실시간"
         case tvProgram = "TV프로그램"
         case movie = "영화"
         case paramount = "파라마운트"
@@ -106,6 +106,11 @@ final class SegmentedButtonsView: UIView {
     private func setTitleButtons() {
         for (i, title) in titles.enumerated() {
             let segmentButton = SegmentedButton(title: title)
+            if i == 1 {
+                let title = title.setAttrubutedString(with: ImageLiteral.liveTV!)
+                segmentButton.replaceTitleWithAttributedTitle(title)
+            }
+            
             let action = UIAction { [weak self] _ in
                 self?.configBottomSelector(to: i)
             }
@@ -122,7 +127,7 @@ final class SegmentedButtonsView: UIView {
         for button in segmentButtons[0..<i] {
             xPos += button.frame.width + 30
         }
-        let scale = segmentButtons[i].frame.width
+//        let scale = segmentButtons[i].frame.width
         UIView.animate(withDuration: 0.2) {
             self.bottomBorderView.transform = CGAffineTransform(translationX: xPos, y: 0)
         }

@@ -17,6 +17,7 @@ enum ImageLiteral {
     static let setting = UIImage(systemName: "gearshape")
     static let ticket = UIImage(systemName: "ticket")
     static let cash = UIImage(systemName: "c.circle")
+    static let liveTV = UIImage(systemName: "play.tv")
     
     static let textfieldEye = UIImage.load(name: "textfieldEye").withRenderingMode(.alwaysTemplate)
     static let textfieldRemove = UIImage.load(name: "textfieldRemove").withRenderingMode(.alwaysTemplate)

@@ -15,7 +15,8 @@ final class SegmentedButton: UIButton {
     
     init(title: String) {
         super.init(frame: .zero)
-        setButton(title: title)
+        setButton()
+        setTitle(title, for: .normal)
     }
     
     @available(*, unavailable)
@@ -25,10 +26,15 @@ final class SegmentedButton: UIButton {
     
     // MARK: -  set
     
-    private func setButton(title: String) {
-        setTitle(title, for: .normal)
+    private func setButton() {
         setTitleColor(.white1, for: .normal)
-        titleLabel?.font = .sfMedium
+        titleLabel?.font = .regular
+    }
+    
+    // MARK: - functions
+    
+    func replaceTitleWithAttributedTitle(_ title: NSMutableAttributedString) {
+        setAttributedTitle(title, for: .normal)
     }
 
 }
