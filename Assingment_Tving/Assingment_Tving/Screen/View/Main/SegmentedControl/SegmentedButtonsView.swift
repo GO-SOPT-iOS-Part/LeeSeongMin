@@ -37,12 +37,6 @@ final class SegmentedButtonsView: UIView {
     
     weak var segementedControlDelegate: SegmentedControlDelegate?
     
-    var selectedButtonIndex: Int = 0 {
-        didSet {
-            configBottomSelector(to: selectedButtonIndex)
-        }
-    }
-    
     // MARK: - properties
     
     let segmentButtonsScrollView: UIScrollView = {
@@ -59,7 +53,7 @@ final class SegmentedButtonsView: UIView {
         return stackView
     }()
     
-    let bottomBorderView: UIView = {
+    let bottomIndicatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
@@ -92,8 +86,8 @@ final class SegmentedButtonsView: UIView {
             $0.edges.equalToSuperview()
         }
         
-        segmentButtonsStackView.addSubview(bottomBorderView)
-        bottomBorderView.snp.makeConstraints {
+        segmentButtonsStackView.addSubview(bottomIndicatorView)
+        bottomIndicatorView.snp.makeConstraints {
             $0.top.equalTo(segmentButtonsStackView.snp.bottom).offset(4)
             $0.leading.width.equalTo(segmentButtons[0].buttonTitleLabel)
             $0.height.equalTo(4)
@@ -109,7 +103,7 @@ final class SegmentedButtonsView: UIView {
             }
             
             let action = UIAction { [weak self] _ in
-                self?.configBottomSelector(to: i)
+                self?.configBottomIndicator(to: i)
                 self?.segementedControlDelegate?.indexChanged(to: i)
             }
             segmentButton.addAction(action, for: .touchUpInside)
@@ -119,16 +113,16 @@ final class SegmentedButtonsView: UIView {
     
     // MARK: - functions
     
-    private func configBottomSelector(to i: Int) {
-        var xPos: CGFloat = 15
+    private func configBottomIndicator(to i: Int) {
+        var posX: CGFloat = 15
         for button in segmentButtons[0..<i] {
-            xPos += button.frame.width
+            posX += button.frame.width
         }
-        let originY = bottomBorderView.frame.origin.y
+        let originY = bottomIndicatorView.frame.origin.y
         let changedWidth = segmentButtons[i].buttonTitleLabel.frame.width
         UIView.animate(withDuration: 0.3) {
-            self.bottomBorderView.transform = CGAffineTransform(translationX: xPos, y: 0)
-            self.bottomBorderView.frame = .init(x: xPos, y: originY, width: changedWidth, height: 4)
+            self.bottomIndicatorView.transform = CGAffineTransform(translationX: posX, y: 0)
+            self.bottomIndicatorView.frame = .init(x: posX, y: originY, width: changedWidth, height: 4)
         }
     }
 
