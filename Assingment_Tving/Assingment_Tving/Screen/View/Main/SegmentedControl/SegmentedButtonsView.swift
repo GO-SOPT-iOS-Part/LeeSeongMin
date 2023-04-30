@@ -51,12 +51,12 @@ final class SegmentedButtonsView: UIView {
         return scrollView
     }()
     
-    lazy var segmentButtons = [UIButton]()
+    lazy var segmentButtons = [SegmentedButton]()
     
     lazy var segmentButtonsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: segmentButtons)
         stackView.axis = .horizontal
-        stackView.spacing = 30
+//        stackView.spacing = 30
         return stackView
     }()
     
@@ -73,7 +73,7 @@ final class SegmentedButtonsView: UIView {
         
         setTitleButtons()
         setLayout()
-        configBottomSelector(to: 0)
+//        configBottomSelector(to: 0)
     }
     
     @available(*, unavailable)
@@ -97,8 +97,7 @@ final class SegmentedButtonsView: UIView {
         segmentButtonsScrollView.addSubview(bottomBorderView)
         bottomBorderView.snp.makeConstraints {
             $0.top.equalTo(segmentButtonsStackView.snp.bottom).offset(10)
-            $0.leading.equalToSuperview()
-            $0.width.equalTo(segmentButtons[0].snp.width)
+            $0.leading.width.equalTo(segmentButtons[0].buttonTitleLabel)
             $0.height.equalTo(4)
         }
     }
@@ -122,14 +121,15 @@ final class SegmentedButtonsView: UIView {
     // MARK: - functions
     
     private func configBottomSelector(to i: Int) {
-        // bottomBorderView 의 크기를 설정
-        var xPos: CGFloat = 0
+        var xPos: CGFloat = 15
         for button in segmentButtons[0..<i] {
-            xPos += button.frame.width + 30
+            xPos += button.frame.width
         }
-//        let scale = segmentButtons[i].frame.width
+        let originY = bottomBorderView.frame.origin.y
+        let changedWidth = segmentButtons[i].buttonTitleLabel.frame.width
         UIView.animate(withDuration: 0.2) {
             self.bottomBorderView.transform = CGAffineTransform(translationX: xPos, y: 0)
+            self.bottomBorderView.frame = .init(x: xPos, y: originY, width: changedWidth, height: 4)
         }
     }
 
@@ -138,11 +138,11 @@ final class SegmentedButtonsView: UIView {
 extension SegmentedButtonsView: CollectionViewStartScrollDelegate {
     
     func collectionViewStartScroll(to x: CGFloat) {
-        if x < 0 && selectedButtonIndex < titles.count - 1 {
-            selectedButtonIndex += 1
-        } else if x > 0 && selectedButtonIndex > 1 {
-            selectedButtonIndex -= 1
-        }
+//        if x < 0 && selectedButtonIndex < titles.count - 1 {
+//            selectedButtonIndex += 1
+//        } else if x > 0 && selectedButtonIndex > 1 {
+//            selectedButtonIndex -= 1
+//        }
     }
     
 }

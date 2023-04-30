@@ -42,6 +42,7 @@ final class MainViewController: BaseViewController {
         baseView.segmentedButtonsView.segementedControlDelegate = self
         baseView.pageControlCollectionView.delegate = self
         baseView.pageControlCollectionView.dataSource = self
+        baseView.segmentedButtonsView.segmentButtonsScrollView.delegate = self
     }
     
     override func setButtonTarget() {
@@ -83,19 +84,19 @@ final class MainViewController: BaseViewController {
 extension MainViewController: SegmentedControlDelegate {
     
     func indexChanged(to index: Int) {
-        let xOffset = SizeLiteral.Screen.width * CGFloat(index)
-        moveToFrame(contentOffset: xOffset)
+//        let xOffset = SizeLiteral.Screen.width * CGFloat(index)
+//        moveToFrame(contentOffset: xOffset)
     }
     
     func moveToFrame(contentOffset: CGFloat) {
-        let collectionView = self.baseView.pageControlCollectionView
-        let frame = CGRect(
-            x: contentOffset,
-            y: collectionView.contentOffset.y,
-            width: collectionView.frame.width,
-            height: collectionView.frame.height
-        )
-        collectionView.scrollRectToVisible(frame, animated: true)
+//        let collectionView = self.baseView.pageControlCollectionView
+//        let frame = CGRect(
+//            x: contentOffset,
+//            y: collectionView.contentOffset.y,
+//            width: collectionView.frame.width,
+//            height: collectionView.frame.height
+//        )
+//        collectionView.scrollRectToVisible(frame, animated: true)
     }
     
 }
@@ -103,9 +104,10 @@ extension MainViewController: SegmentedControlDelegate {
 extension MainViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollDelegate = baseView.segmentedButtonsView
-        scrollDelegate?.collectionViewStartScroll(to: scrollView.contentOffset.x)
+        
+        print("scroll")
     }
+    
     
 }
 

@@ -11,12 +11,21 @@ import SnapKit
 
 final class SegmentedButton: UIButton {
     
+    // MARK: - properties
+    
+    let buttonTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .regular
+        label.textColor = .white1
+        return label
+    }()
+    
     // MARK: - init
     
     init(title: String) {
         super.init(frame: .zero)
-        setButton()
-        setTitle(title, for: .normal)
+        setLayout()
+        setTitleLabel(title)
     }
     
     @available(*, unavailable)
@@ -26,15 +35,22 @@ final class SegmentedButton: UIButton {
     
     // MARK: -  set
     
-    private func setButton() {
-        setTitleColor(.white1, for: .normal)
-        titleLabel?.font = .regular
+    private func setLayout() {
+        addSubview(buttonTitleLabel)
+        buttonTitleLabel.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview().inset(15)
+            $0.centerY.equalToSuperview()
+        }
+    }
+    
+    private func setTitleLabel(_ title: String) {
+        buttonTitleLabel.text = title
     }
     
     // MARK: - functions
     
     func replaceTitleWithAttributedTitle(_ title: NSMutableAttributedString) {
-        setAttributedTitle(title, for: .normal)
+        buttonTitleLabel.attributedText = title
     }
 
 }
