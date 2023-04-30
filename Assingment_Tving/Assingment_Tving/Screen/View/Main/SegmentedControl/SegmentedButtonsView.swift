@@ -94,9 +94,9 @@ final class SegmentedButtonsView: UIView {
             $0.edges.equalToSuperview()
         }
         
-        segmentButtonsScrollView.addSubview(bottomBorderView)
+        segmentButtonsStackView.addSubview(bottomBorderView)
         bottomBorderView.snp.makeConstraints {
-            $0.top.equalTo(segmentButtonsStackView.snp.bottom).offset(10)
+            $0.top.equalTo(segmentButtonsStackView.snp.bottom).offset(4)
             $0.leading.width.equalTo(segmentButtons[0].buttonTitleLabel)
             $0.height.equalTo(4)
         }
@@ -127,7 +127,7 @@ final class SegmentedButtonsView: UIView {
         }
         let originY = bottomBorderView.frame.origin.y
         let changedWidth = segmentButtons[i].buttonTitleLabel.frame.width
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.3) {
             self.bottomBorderView.transform = CGAffineTransform(translationX: xPos, y: 0)
             self.bottomBorderView.frame = .init(x: xPos, y: originY, width: changedWidth, height: 4)
         }

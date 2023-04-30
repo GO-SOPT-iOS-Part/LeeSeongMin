@@ -105,7 +105,7 @@ extension MainViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        print("scroll")
+        
     }
     
     
