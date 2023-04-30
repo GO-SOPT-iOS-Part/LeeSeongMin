@@ -34,10 +34,10 @@ final class MainView: BaseView {
     // MARK: -  set
     
     override func setLayout() {
-        addSubview(pageControlCollectionView)
-        pageControlCollectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+//        addSubview(pageControlCollectionView)
+//        pageControlCollectionView.snp.makeConstraints {
+//            $0.edges.equalToSuperview()
+//        }
         
         addSubview(segmentedButtonsView)
         segmentedButtonsView.snp.makeConstraints {

@@ -56,7 +56,6 @@ final class SegmentedButtonsView: UIView {
     lazy var segmentButtonsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: segmentButtons)
         stackView.axis = .horizontal
-//        stackView.spacing = 30
         return stackView
     }()
     
@@ -73,7 +72,6 @@ final class SegmentedButtonsView: UIView {
         
         setTitleButtons()
         setLayout()
-//        configBottomSelector(to: 0)
     }
     
     @available(*, unavailable)
@@ -112,6 +110,7 @@ final class SegmentedButtonsView: UIView {
             
             let action = UIAction { [weak self] _ in
                 self?.configBottomSelector(to: i)
+                self?.segementedControlDelegate?.indexChanged(to: i)
             }
             segmentButton.addAction(action, for: .touchUpInside)
             segmentButtons.append(segmentButton)
@@ -138,11 +137,7 @@ final class SegmentedButtonsView: UIView {
 extension SegmentedButtonsView: CollectionViewStartScrollDelegate {
     
     func collectionViewStartScroll(to x: CGFloat) {
-//        if x < 0 && selectedButtonIndex < titles.count - 1 {
-//            selectedButtonIndex += 1
-//        } else if x > 0 && selectedButtonIndex > 1 {
-//            selectedButtonIndex -= 1
-//        }
+        
     }
     
 }

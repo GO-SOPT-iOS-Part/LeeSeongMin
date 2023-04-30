@@ -73,33 +73,27 @@ final class MainViewController: BaseViewController {
 }
 
 
-//extension MainViewController: SegmentedControlDelegate {
-//
-//    func indexChanged(to index: Int) {
-//        <#code#>
-//    }
-//
-//}
+// MARK: - extension SegmentedControlDelegate
 
 extension MainViewController: SegmentedControlDelegate {
     
     func indexChanged(to index: Int) {
-//        let xOffset = SizeLiteral.Screen.width * CGFloat(index)
-//        moveToFrame(contentOffset: xOffset)
+        let scrollView = baseView.segmentedButtonsView.segmentButtonsScrollView
+        if index == 1 {
+            scrollView.scrollToLeft()
+        } else if index == 4 {
+            scrollView.scrollToRight()
+        }
     }
     
     func moveToFrame(contentOffset: CGFloat) {
-//        let collectionView = self.baseView.pageControlCollectionView
-//        let frame = CGRect(
-//            x: contentOffset,
-//            y: collectionView.contentOffset.y,
-//            width: collectionView.frame.width,
-//            height: collectionView.frame.height
-//        )
-//        collectionView.scrollRectToVisible(frame, animated: true)
+        
     }
     
 }
+
+
+// MARK: - extension UIScrollViewDelegate
 
 extension MainViewController: UIScrollViewDelegate {
     
@@ -109,22 +103,31 @@ extension MainViewController: UIScrollViewDelegate {
     }
     
     
+
 }
 
+
+// MARK: - extension UICollectionViewDelegateFlowLayout
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
 
 }
 
+
+// MARK: - extension UICollectionViewDelegate
+
 extension MainViewController: UICollectionViewDelegate {
 
 }
+
+
+// MARK: - extension UICollectionViewDataSource
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return titles.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.Collection.pageControl, for: indexPath) as? PageControlCollectionViewCell
         else { return UICollectionViewCell() }
@@ -132,6 +135,5 @@ extension MainViewController: UICollectionViewDataSource {
         cell.configureCell(titles[indexPath.row], .systemGray)
         return cell
     }
-
-
+    
 }
