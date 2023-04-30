@@ -25,7 +25,8 @@ enum ImageLiteral {
     
     // MARK: - image
     
-    static let mainPoster = UIImage.load(name: "mainPoster")
+    static let tvingPoster = UIImage.load(name: "tvingPoster")
+    static let tvingLogo = UIImage.load(name: "tvingBanner")
     static let profileImage = UIImage.load(name: "profileImage")
     static let tvN = UIImage.load(name: "tvN")
     static let jtbc = UIImage.load(name: "JTBC")

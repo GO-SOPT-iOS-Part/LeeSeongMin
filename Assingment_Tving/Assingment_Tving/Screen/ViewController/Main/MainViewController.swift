@@ -36,12 +36,18 @@ final class MainViewController: BaseViewController {
         self.view = baseView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     // MARK: - set
     
     override func setDelegate() {
         baseView.segmentedButtonsView.segementedControlDelegate = self
-        baseView.pageControlCollectionView.delegate = self
-        baseView.pageControlCollectionView.dataSource = self
+//        baseView.pageControlCollectionView.delegate = self
+//        baseView.pageControlCollectionView.dataSource = self
         baseView.segmentedButtonsView.segmentButtonsScrollView.delegate = self
     }
     
@@ -102,8 +108,6 @@ extension MainViewController: UIScrollViewDelegate {
         
     }
     
-    
-
 }
 
 
