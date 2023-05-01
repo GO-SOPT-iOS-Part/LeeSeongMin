@@ -16,8 +16,8 @@ class BaseView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setStyle()
         setLayout()
+        setStyle()
     }
     
     @available(*, unavailable)

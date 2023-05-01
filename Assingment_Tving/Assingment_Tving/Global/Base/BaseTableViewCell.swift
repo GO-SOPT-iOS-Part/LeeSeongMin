@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BaseTableViewCell: UITableViewCell {
+class BaseTableViewCell: UITableViewCell {
     
     // MARK: - init
     

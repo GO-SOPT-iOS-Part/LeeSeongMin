@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class SettingTableViewCell: UITableViewCell {
+final class SettingTableViewCell: BaseTableViewCell {
     
     static let identifier = "SettingTableViewCell"
     
@@ -29,23 +29,9 @@ final class SettingTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    // MARK: - init
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setLayout()
-        setStyle()
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: -  set
     
-    private func setLayout() {
+    override func setLayout() {
         addSubview(menuTitleLabel)
         menuTitleLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(SizeLiteral.Common.sidePadding)
@@ -59,7 +45,7 @@ final class SettingTableViewCell: UITableViewCell {
         }
     }
     
-    private func setStyle() {
+    override func setStyle() {
         backgroundColor = .black1
         selectionStyle = .none
     }
