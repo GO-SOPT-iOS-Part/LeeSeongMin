@@ -31,17 +31,7 @@ final class MainView: BaseView {
     
     let segmentedButtonsView = SegmentedButtonsView()
     
-//    lazy var pageControlCollectionView = PageControlCollectionView(frame: .zero, collectionViewLayout: flowLayout)
-//
-//    let flowLayout: UICollectionViewFlowLayout = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = .init(width: SizeLiteral.Screen.width, height: SizeLiteral.Screen.height)
-//        layout.scrollDirection = .horizontal
-//        layout.minimumLineSpacing = 0
-//        return layout
-//    }()
-    
-    
+    let mainTableView = MainTableView()
     
     // MARK: - init
     
@@ -51,10 +41,10 @@ final class MainView: BaseView {
     
     override func setLayout() {
         
-//        addSubview(pageControlCollectionView)
-//        pageControlCollectionView.snp.makeConstraints {
-//            $0.edges.equalToSuperview()
-//        }
+        addSubview(mainTableView)
+        mainTableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
         
         addSubview(tvingBannerView)
         tvingBannerView.snp.makeConstraints {

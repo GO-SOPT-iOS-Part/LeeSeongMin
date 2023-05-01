@@ -31,6 +31,7 @@ class BaseTableViewCell: UITableViewCell {
     
     func setStyle() {
         // override to use
+        backgroundColor = .clear
     }
     
 }

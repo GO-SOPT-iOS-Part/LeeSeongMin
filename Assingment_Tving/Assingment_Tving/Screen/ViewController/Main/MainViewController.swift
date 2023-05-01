@@ -21,8 +21,7 @@ final class MainViewController: BaseViewController {
     
     private let titles = Titles.allCases.map { $0.rawValue }
     
-    
-    
+    private let data = DummyColor.dummy()
     
     weak var scrollDelegate: CollectionViewStartScrollDelegate?
     
@@ -36,19 +35,18 @@ final class MainViewController: BaseViewController {
         self.view = baseView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    // MARK: - set
+    
+    override func setNavigationBar() {
         navigationController?.navigationBar.isHidden = true
     }
     
-    // MARK: - set
-    
     override func setDelegate() {
-        baseView.segmentedButtonsView.segementedControlDelegate = self
-//        baseView.pageControlCollectionView.delegate = self
-//        baseView.pageControlCollectionView.dataSource = self
         baseView.segmentedButtonsView.segmentButtonsScrollView.delegate = self
+        baseView.segmentedButtonsView.segementedControlDelegate = self
+        
+        baseView.mainTableView.delegate = self
+        baseView.mainTableView.dataSource = self
     }
     
     override func setButtonTarget() {
@@ -62,18 +60,28 @@ final class MainViewController: BaseViewController {
     
     // MARK: - functions
     
-    
-    
-    // MARK: - objc functions
-    
     private func segmentedButtonTapped(_ index: Int) {
         indexChanged(to: index)
     }
+    
+    // MARK: - objc functions
     
     @objc
     private func myPageButtonTapped() {
         let viewController = MyPageViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+}
+
+
+// MARK: - extension UIScrollViewDelegate
+
+extension MainViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        
     }
     
 }
@@ -99,45 +107,42 @@ extension MainViewController: SegmentedControlDelegate {
 }
 
 
-// MARK: - extension UIScrollViewDelegate
+// MARK: - extension UITableViewDelegate
 
-extension MainViewController: UIScrollViewDelegate {
+extension MainViewController: UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return data.count
+    }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
+    }
+}
+
+
+// MARK: - extension
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // FIXME: 데이터 추가해 둔 뒤 switch case 문으로 바꾸기
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let largeCell = tableView.dequeueReusableCell(withIdentifier: TvingLargeCollectionView.identifier) as? TvingLargeCollectionView,
+              let smallCell = tableView.dequeueReusableCell(withIdentifier: TvingSmallCollectionView.identifier) as? TvingSmallCollectionView
+        else { return UITableViewCell() }
         
+        largeCell.selectionStyle = .none
+        smallCell.selectionStyle = .none
         
+        if indexPath.section == 0 {
+            return largeCell
+        } else {
+            smallCell.prepareCells(data[indexPath.section])
+            return smallCell
+        }
     }
     
-}
-
-
-// MARK: - extension UICollectionViewDelegateFlowLayout
-
-extension MainViewController: UICollectionViewDelegateFlowLayout {
-
-}
-
-
-// MARK: - extension UICollectionViewDelegate
-
-extension MainViewController: UICollectionViewDelegate {
-
-}
-
-
-// MARK: - extension UICollectionViewDataSource
-
-extension MainViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.Collection.pageControl, for: indexPath) as? PageControlCollectionViewCell
-        else { return UICollectionViewCell() }
-        // FIXME: 색이 아닌 페이지로 바꾸기
-        cell.configureCell(titles[indexPath.row], .systemGray)
-        return cell
-    }
     
 }
