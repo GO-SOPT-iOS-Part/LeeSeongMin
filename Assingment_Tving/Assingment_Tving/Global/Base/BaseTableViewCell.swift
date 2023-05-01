@@ -25,11 +25,11 @@ class BaseTableViewCell: UITableViewCell {
     
     // MARK: -  set
     
-    private func setStyle() {
+    func setLayout() {
         // override to use
     }
     
-    private func setLayout() {
+    func setStyle() {
         // override to use
     }
     

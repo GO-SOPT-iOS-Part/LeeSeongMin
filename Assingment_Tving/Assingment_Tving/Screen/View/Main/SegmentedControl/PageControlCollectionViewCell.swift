@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class PageControlCollectionViewCell: UICollectionViewCell {
+final class PageControlCollectionViewCell: BaseCollectionViewCell {
     
     static let identifier = "PageControlCollectionViewCell"
     
@@ -24,22 +24,9 @@ final class PageControlCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    // MARK: - init
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setLayout()
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: -  set
     
-    private func setLayout() {
+    override func setLayout() {
         contentView.addSubview(baseCellView)
         baseCellView.snp.makeConstraints {
             $0.edges.equalToSuperview()

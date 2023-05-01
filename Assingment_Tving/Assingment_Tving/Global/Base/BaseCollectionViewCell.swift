@@ -14,8 +14,8 @@ class BaseCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setStyle()
         setLayout()
+        setStyle()
     }
     
     @available(*, unavailable)
@@ -25,11 +25,11 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     // MARK: -  set
     
-    private func setStyle() {
+    func setLayout() {
         // override to use
     }
     
-    private func setLayout() {
+    func setStyle() {
         // override to use
     }
     
