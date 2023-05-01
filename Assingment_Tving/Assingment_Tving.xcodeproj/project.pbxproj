@@ -29,6 +29,10 @@
 		3E83B13229FBD5D90015A7E0 /* SegmentedButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B13129FBD5D90015A7E0 /* SegmentedButtonsView.swift */; };
 		3E83B15F29FC080C0015A7E0 /* SegmentedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B15E29FC080C0015A7E0 /* SegmentedButton.swift */; };
 		3E83B16529FE568D0015A7E0 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16429FE568D0015A7E0 /* UIScrollView+Extension.swift */; };
+		3E83B1692A002ED40015A7E0 /* TvingSmallCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1682A002ED40015A7E0 /* TvingSmallCollectionView.swift */; };
+		3E83B16B2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16A2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift */; };
+		3E83B16D2A002FAF0015A7E0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16C2A002FAF0015A7E0 /* BaseCollectionViewCell.swift */; };
+		3E83B16F2A0030940015A7E0 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16E2A0030940015A7E0 /* BaseTableViewCell.swift */; };
 		3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CED29ED80850076FA7A /* UIView+Extension.swift */; };
 		3EF790B629E678D00052578E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B529E678D00052578E /* AppDelegate.swift */; };
 		3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B729E678D00052578E /* SceneDelegate.swift */; };
@@ -82,6 +86,10 @@
 		3E83B13129FBD5D90015A7E0 /* SegmentedButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButtonsView.swift; sourceTree = "<group>"; };
 		3E83B15E29FC080C0015A7E0 /* SegmentedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButton.swift; sourceTree = "<group>"; };
 		3E83B16429FE568D0015A7E0 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		3E83B1682A002ED40015A7E0 /* TvingSmallCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingSmallCollectionView.swift; sourceTree = "<group>"; };
+		3E83B16A2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingSmallCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E83B16C2A002FAF0015A7E0 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E83B16E2A0030940015A7E0 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		3EF53CED29ED80850076FA7A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3EF790B229E678D00052578E /* Assingment_Tving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assingment_Tving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF790B529E678D00052578E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +210,7 @@
 		3E83B10129F833790015A7E0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3E83B1672A002DE80015A7E0 /* TvingCollection */,
 				3E83B12C29FBBEED0015A7E0 /* SegmentedControl */,
 				3E83B10329F8338E0015A7E0 /* MainView.swift */,
 			);
@@ -243,6 +252,15 @@
 				3E83B15E29FC080C0015A7E0 /* SegmentedButton.swift */,
 			);
 			path = SegmentedControl;
+			sourceTree = "<group>";
+		};
+		3E83B1672A002DE80015A7E0 /* TvingCollection */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B1682A002ED40015A7E0 /* TvingSmallCollectionView.swift */,
+				3E83B16A2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift */,
+			);
+			path = TvingCollection;
 			sourceTree = "<group>";
 		};
 		3EF790A929E678D00052578E = {
@@ -341,6 +359,8 @@
 			children = (
 				3EF790DB29E67E140052578E /* BaseViewController.swift */,
 				3E83B0F129F7A2650015A7E0 /* BaseView.swift */,
+				3E83B16C2A002FAF0015A7E0 /* BaseCollectionViewCell.swift */,
+				3E83B16E2A0030940015A7E0 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -485,11 +505,15 @@
 				3E83B10629F834190015A7E0 /* MainViewController.swift in Sources */,
 				3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */,
 				3E83B13029FBC2E70015A7E0 /* IdentifierLiteral.swift in Sources */,
+				3E83B16D2A002FAF0015A7E0 /* BaseCollectionViewCell.swift in Sources */,
+				3E83B1692A002ED40015A7E0 /* TvingSmallCollectionView.swift in Sources */,
 				3EF790D929E67C5E0052578E /* UIColor+Extension.swift in Sources */,
+				3E83B16B2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift in Sources */,
 				3E83B12E29FBBF000015A7E0 /* PageControlCollectionViewCell.swift in Sources */,
 				3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */,
 				3E83B11629F98B230015A7E0 /* MovieModel.swift in Sources */,
 				3EF7910629E86FAE0052578E /* BackButton.swift in Sources */,
+				3E83B16F2A0030940015A7E0 /* BaseTableViewCell.swift in Sources */,
 				3E83B10429F8338E0015A7E0 /* MainView.swift in Sources */,
 				3E83B0FC29F82E670015A7E0 /* MyPageView.swift in Sources */,
 				3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */,
