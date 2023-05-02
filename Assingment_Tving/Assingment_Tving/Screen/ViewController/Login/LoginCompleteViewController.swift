@@ -50,7 +50,7 @@ final class LoginCompleteViewController: BaseViewController {
     
     @objc
     private func completeButtonTapped() {
-        let viewController = MainViewController()
+        let viewController = HomeViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

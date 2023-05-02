@@ -41,7 +41,7 @@ final class TvingLargeCollectionView: BaseTableViewCell {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
-        layout.itemSize = .init(width: Size.cellWidth, height: Size.cellHeight)
+        layout.itemSize = .init(width: Size.cellWidth, height: Size.cellHeight - 1)
         return layout
     }()
     
