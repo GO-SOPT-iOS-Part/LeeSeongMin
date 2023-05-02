@@ -57,8 +57,7 @@ final class TvingLargeCollectionView: BaseTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setDataSource()
-        setPageControl()
+        setDelegate()
     }
     
     // MARK: -  set
@@ -77,12 +76,9 @@ final class TvingLargeCollectionView: BaseTableViewCell {
         }
     }
     
-    private func setDataSource() {
-        self.largeCollectionView.dataSource = self
-    }
-    
-    private func setPageControl() {
+    private func setDelegate() {
         self.largeCollectionView.delegate = self
+        self.largeCollectionView.dataSource = self
     }
     
     // MARK: - functions
