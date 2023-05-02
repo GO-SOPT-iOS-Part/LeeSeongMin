@@ -31,11 +31,16 @@ final class MainView: BaseView {
     
     let segmentedButtonsView = SegmentedButtonsView()
     
-    let mainTableView = MainTableView()
-    
-    // MARK: - init
-    
-    
+    let mainTableView: UITableView = {
+        let view = UITableView()
+        view.backgroundColor = .clear
+        view.separatorStyle = .none
+        view.showsVerticalScrollIndicator = false
+        view.contentInsetAdjustmentBehavior = .never
+        view.register(TvingLargeCollectionView.self, forCellReuseIdentifier: TvingLargeCollectionView.identifier)
+        view.register(TvingSmallCollectionView.self, forCellReuseIdentifier: TvingSmallCollectionView.identifier)
+        return view
+    }()
     
     // MARK: -  set
     

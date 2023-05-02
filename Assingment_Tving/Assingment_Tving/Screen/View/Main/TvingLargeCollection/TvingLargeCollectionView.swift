@@ -18,6 +18,7 @@ final class TvingLargeCollectionView: BaseTableViewCell {
     }
     
     private var data = [DummyColor]()
+    private var originalDataCount = 0
     
     // MARK: - properties
     
@@ -88,6 +89,14 @@ final class TvingLargeCollectionView: BaseTableViewCell {
     
     func prepareCells(_ data: [DummyColor]) {
         self.data = data
+        self.originalDataCount = data.count
+        appendFirstAndLastData()
+    }
+    
+    private func appendFirstAndLastData() {
+        guard let firstData = data.first, let lastData = data.last else { return }
+        self.data.append(firstData)
+        self.data.insert(lastData, at: 0)
     }
     
 }
@@ -97,34 +106,37 @@ final class TvingLargeCollectionView: BaseTableViewCell {
 
 extension TvingLargeCollectionView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageIndicator.currentPage = Int(
-            (largeCollectionView.contentOffset.x / largeCollectionView.frame.width).rounded(.toNearestOrAwayFromZero)
-        )
+        let page = Int((largeCollectionView.contentOffset.x / largeCollectionView.frame.width)
+            .rounded(.toNearestOrAwayFromZero)) % originalDataCount
+        
+        if largeCollectionView.contentOffset.x > Size.cellWidth * CGFloat(originalDataCount) {
+            largeCollectionView.scrollToItem(at: [0, 0], at: .left, animated: false)
+        } else if largeCollectionView.contentOffset.x < 0 {
+            largeCollectionView.scrollToItem(at: [0, originalDataCount], at: .left, animated: false)
+        }
+        
+        pageIndicator.currentPage = page
     }
 }
 
 
 // MARK: - extension UICollectionViewDelegate
 
-extension TvingLargeCollectionView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: Size.cellWidth, height: Size.cellHeight)
-    }
-}
+extension TvingLargeCollectionView: UICollectionViewDelegate { }
 
 
 // MARK: - extension UICollectionViewDataSource
 
 extension TvingLargeCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pageIndicator.numberOfPages = data.count
+        pageIndicator.numberOfPages = originalDataCount
         return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TvingLargeCollectionViewCell.identifier, for: indexPath) as? TvingLargeCollectionViewCell
         else { return UICollectionViewCell() }
-        cell.configureCell(data[indexPath.row], description: "test")
+        cell.configureCell(data[(indexPath.row + 1) % data.count], description: "test")
         return cell
     }
     

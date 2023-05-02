@@ -21,13 +21,17 @@ extension UIView {
     
     func setGradient(colors: [UIColor], position: [NSNumber]) {
         let gradientLayer = CAGradientLayer()
+        gradientLayer.name = "gradient"
         gradientLayer.type = .axial
         gradientLayer.colors = colors.map { $0.cgColor }
         gradientLayer.locations = position
         gradientLayer.startPoint = CGPoint(x: 0, y: 1)
         gradientLayer.endPoint = CGPoint(x: 0, y: 0)
         gradientLayer.frame = self.bounds
-        self.layer.insertSublayer(gradientLayer, at: 0)
-//        self.layer.addSublayer(gradientLayer)
+        
+        guard let sublayers = self.layer.sublayers else { return }
+        if sublayers.filter({ $0.name == "gradient" }).isEmpty {
+            self.layer.insertSublayer(gradientLayer, at: 0)
+        }
     }
 }

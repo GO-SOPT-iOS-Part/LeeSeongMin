@@ -60,7 +60,6 @@ final class TvingLargeCollectionViewCell: BaseCollectionViewCell {
         dummyView.backgroundColor = color.color
         descriptionLabel.text = description
         bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
-//        setLayout()
     }
 
 }

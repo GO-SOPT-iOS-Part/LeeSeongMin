@@ -33,7 +33,6 @@
 		3E83B16B2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16A2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift */; };
 		3E83B16D2A002FAF0015A7E0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16C2A002FAF0015A7E0 /* BaseCollectionViewCell.swift */; };
 		3E83B16F2A0030940015A7E0 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16E2A0030940015A7E0 /* BaseTableViewCell.swift */; };
-		3E83B1732A0033FF0015A7E0 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1722A0033FF0015A7E0 /* MainTableView.swift */; };
 		3E83B1752A003C9D0015A7E0 /* DummyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1742A003C9D0015A7E0 /* DummyColor.swift */; };
 		3E83B1782A003D4E0015A7E0 /* TvingLargeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1772A003D4E0015A7E0 /* TvingLargeCollectionView.swift */; };
 		3E83B17A2A00A1610015A7E0 /* TvingLargeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1792A00A1610015A7E0 /* TvingLargeCollectionViewCell.swift */; };
@@ -94,7 +93,6 @@
 		3E83B16A2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingSmallCollectionViewCell.swift; sourceTree = "<group>"; };
 		3E83B16C2A002FAF0015A7E0 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		3E83B16E2A0030940015A7E0 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		3E83B1722A0033FF0015A7E0 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		3E83B1742A003C9D0015A7E0 /* DummyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyColor.swift; sourceTree = "<group>"; };
 		3E83B1772A003D4E0015A7E0 /* TvingLargeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingLargeCollectionView.swift; sourceTree = "<group>"; };
 		3E83B1792A00A1610015A7E0 /* TvingLargeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingLargeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				3E83B1762A003D330015A7E0 /* TvingLargeCollection */,
-				3E83B1702A0033EA0015A7E0 /* MainTable */,
 				3E83B1672A002DE80015A7E0 /* TvingSmallCollection */,
 				3E83B12C29FBBEED0015A7E0 /* SegmentedControl */,
 				3E83B10329F8338E0015A7E0 /* MainView.swift */,
@@ -272,14 +269,6 @@
 				3E83B16A2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift */,
 			);
 			path = TvingSmallCollection;
-			sourceTree = "<group>";
-		};
-		3E83B1702A0033EA0015A7E0 /* MainTable */ = {
-			isa = PBXGroup;
-			children = (
-				3E83B1722A0033FF0015A7E0 /* MainTableView.swift */,
-			);
-			path = MainTable;
 			sourceTree = "<group>";
 		};
 		3E83B1762A003D330015A7E0 /* TvingLargeCollection */ = {
@@ -534,7 +523,6 @@
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
 				3E83B10629F834190015A7E0 /* MainViewController.swift in Sources */,
 				3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */,
-				3E83B1732A0033FF0015A7E0 /* MainTableView.swift in Sources */,
 				3E83B13029FBC2E70015A7E0 /* IdentifierLiteral.swift in Sources */,
 				3E83B16D2A002FAF0015A7E0 /* BaseCollectionViewCell.swift in Sources */,
 				3E83B1692A002ED40015A7E0 /* TvingSmallCollectionView.swift in Sources */,
