@@ -32,6 +32,7 @@ final class MainTableView: UITableView {
         backgroundColor = .clear
         separatorStyle = .none
         showsVerticalScrollIndicator = false
+        contentInsetAdjustmentBehavior = .never
         register(TvingLargeCollectionView.self, forCellReuseIdentifier: TvingLargeCollectionView.identifier)
         register(TvingSmallCollectionView.self, forCellReuseIdentifier: TvingSmallCollectionView.identifier)
     }

@@ -115,7 +115,14 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        switch indexPath.section {
+        case 0:
+            return TvingLargeCollectionView.Size.cellHeight
+        case 1:
+            return TvingSmallCollectionView.Size.collectionViewHeight
+        default:
+            return 0
+        }
     }
 }
 
@@ -137,6 +144,7 @@ extension MainViewController: UITableViewDataSource {
         smallCell.selectionStyle = .none
         
         if indexPath.section == 0 {
+            largeCell.prepareCells(data[indexPath.section])
             return largeCell
         } else {
             smallCell.prepareCells(data[indexPath.section])

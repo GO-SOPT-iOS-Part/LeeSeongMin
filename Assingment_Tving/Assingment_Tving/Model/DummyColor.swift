@@ -15,7 +15,11 @@ extension DummyColor {
     static func dummy() -> [[DummyColor]] {
         return [
             [
-                DummyColor(color: .systemGray2)
+                DummyColor(color: .systemGray),
+                DummyColor(color: .systemGray2),
+                DummyColor(color: .systemGray3),
+                DummyColor(color: .systemGray4),
+                DummyColor(color: .systemGray5)
             ],
             [
                 DummyColor(color: .systemBlue),
