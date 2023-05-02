@@ -30,6 +30,7 @@ final class TvingLargeCollectionView: BaseTableViewCell {
         view.clipsToBounds = true
         view.isPagingEnabled = true
         view.contentInsetAdjustmentBehavior = .never
+        view.insetsLayoutMarginsFromSafeArea = false
         view.register(TvingLargeCollectionViewCell.self, forCellWithReuseIdentifier: TvingLargeCollectionViewCell.identifier)
         return view
     }()
@@ -103,10 +104,12 @@ extension TvingLargeCollectionView: UIScrollViewDelegate {
 }
 
 
-// MARK: - extension
+// MARK: - extension UICollectionViewDelegate
 
-extension TvingLargeCollectionView: UICollectionViewDelegate {
-    
+extension TvingLargeCollectionView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: Size.cellWidth, height: Size.cellHeight)
+    }
 }
 
 

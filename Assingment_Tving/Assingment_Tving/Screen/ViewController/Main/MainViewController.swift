@@ -117,7 +117,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return TvingLargeCollectionView.Size.cellHeight
+            return TvingLargeCollectionView.Size.collectionViewHeight
         case 1:
             return TvingSmallCollectionView.Size.collectionViewHeight
         default:

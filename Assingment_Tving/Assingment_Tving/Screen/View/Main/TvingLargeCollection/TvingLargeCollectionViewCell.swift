@@ -13,13 +13,9 @@ final class TvingLargeCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - properties
     
-//    private let videoImageView: UIImageView = {
-//        let view = UIImageView()
-//        view.contentMode = .scaleAspectFit
-//        return view
-//    }()
-    
     private let dummyView = UIView()
+    
+    private let bottomGradientView = UIView()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
@@ -31,7 +27,11 @@ final class TvingLargeCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - init
     
-    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        layoutIfNeeded()
+    }
     
     // MARK: -  set
     
@@ -41,7 +41,13 @@ final class TvingLargeCollectionViewCell: BaseCollectionViewCell {
             $0.edges.equalToSuperview()
         }
         
-        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(bottomGradientView)
+        bottomGradientView.snp.makeConstraints {
+            $0.bottom.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(200)
+        }
+        
+        bottomGradientView.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview().inset(40)
@@ -50,14 +56,11 @@ final class TvingLargeCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - functions
     
-//    func configureCell(_ image: UIImage, description: String) {
-//        videoImageView.image = image
-//        descriptionLabel.text = description
-//    }
-    
     func configureCell(_ color: DummyColor, description: String) {
         dummyView.backgroundColor = color.color
         descriptionLabel.text = description
+        bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
+//        setLayout()
     }
 
 }
