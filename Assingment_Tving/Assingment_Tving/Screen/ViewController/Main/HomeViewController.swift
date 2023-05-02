@@ -10,20 +10,7 @@ import UIKit
 final class HomeViewController: BaseViewController {
     
     // FIXME: 색이 아닌 페이지로 바꾸기
-    enum Titles: String, CaseIterable {
-        case home = "홈"
-        case live = "􀵨 실시간"
-        case tvProgram = "TV프로그램"
-        case movie = "영화"
-        case paramount = "파라마운트"
-        case kids = "키즈"
-    }
-    
-    private let titles = Titles.allCases.map { $0.rawValue }
-    
     private let data = DummyColor.dummy()
-    
-    weak var scrollDelegate: CollectionViewStartScrollDelegate?
     
     // MARK: - properties
     
@@ -37,71 +24,9 @@ final class HomeViewController: BaseViewController {
     
     // MARK: - set
     
-    override func setNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
-    }
-    
     override func setDelegate() {
-        baseView.segmentedButtonsView.segmentButtonsScrollView.delegate = self
-        baseView.segmentedButtonsView.segementedControlDelegate = self
-        
-        baseView.mainTableView.delegate = self
-        baseView.mainTableView.dataSource = self
-    }
-    
-    override func setButtonTarget() {
-        for (i, button) in baseView.segmentedButtonsView.segmentButtons.enumerated() {
-            let action = UIAction { [weak self] _ in
-                self?.segmentedButtonTapped(i)
-            }
-            button.addAction(action, for: .touchUpInside)
-        }
-    }
-    
-    // MARK: - functions
-    
-    private func segmentedButtonTapped(_ index: Int) {
-        indexChanged(to: index)
-    }
-    
-    // MARK: - objc functions
-    
-    @objc
-    private func myPageButtonTapped() {
-        let viewController = MyPageViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-}
-
-
-// MARK: - extension UIScrollViewDelegate
-
-extension HomeViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        
-    }
-    
-}
-
-
-// MARK: - extension SegmentedControlDelegate
-
-extension HomeViewController: SegmentedControlDelegate {
-    
-    func indexChanged(to index: Int) {
-        let scrollView = baseView.segmentedButtonsView.segmentButtonsScrollView
-        if index == 1 {
-            scrollView.scrollToLeft()
-        } else if index == 4 {
-            scrollView.scrollToRight()
-        }
-    }
-    
-    func moveToFrame(contentOffset: CGFloat) {
-        
+        baseView.homeTableView.delegate = self
+        baseView.homeTableView.dataSource = self
     }
     
 }

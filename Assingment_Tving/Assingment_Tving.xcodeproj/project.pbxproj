@@ -240,17 +240,13 @@
 		3E83B10129F833790015A7E0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				3E83B18B2A016C850015A7E0 /* Kids */,
-				3E83B1882A016C780015A7E0 /* Paramount */,
-				3E83B1852A016C690015A7E0 /* Movie */,
-				3E83B1822A016C330015A7E0 /* TV */,
-				3E83B17F2A016C1B0015A7E0 /* Live */,
-				3E83B17E2A016C070015A7E0 /* Home */,
-				3E83B17D2A0151AA0015A7E0 /* TvingMediumCollection */,
-				3E83B1762A003D330015A7E0 /* TvingLargeCollection */,
-				3E83B1672A002DE80015A7E0 /* TvingSmallCollection */,
-				3E83B12C29FBBEED0015A7E0 /* SegmentedControl */,
 				3E83B19A2A016D210015A7E0 /* MainView.swift */,
+				3E83B17E2A016C070015A7E0 /* Home */,
+				3E83B17F2A016C1B0015A7E0 /* Live */,
+				3E83B1822A016C330015A7E0 /* TV */,
+				3E83B1852A016C690015A7E0 /* Movie */,
+				3E83B1882A016C780015A7E0 /* Paramount */,
+				3E83B18B2A016C850015A7E0 /* Kids */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -424,6 +420,10 @@
 		3EF790D029E67AA30052578E /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				3E83B17D2A0151AA0015A7E0 /* TvingMediumCollection */,
+				3E83B1762A003D330015A7E0 /* TvingLargeCollection */,
+				3E83B1672A002DE80015A7E0 /* TvingSmallCollection */,
+				3E83B12C29FBBEED0015A7E0 /* SegmentedControl */,
 				3EF790D629E67B430052578E /* CustomTextField.swift */,
 				3EF790FC29E710ED0052578E /* CustomButton.swift */,
 				3EF7910529E86FAE0052578E /* BackButton.swift */,
