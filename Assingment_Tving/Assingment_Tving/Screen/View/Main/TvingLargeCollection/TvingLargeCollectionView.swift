@@ -21,12 +21,6 @@ final class TvingLargeCollectionView: BaseTableViewCell {
     
     // MARK: - properties
     
-    private let movieImageView: UIImageView = {
-        let view = UIImageView(image: ImageLiteral.aboutTime)
-        view.contentMode = .scaleToFill
-        return view
-    }()
-    
     lazy var largeCollectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         view.isScrollEnabled = true
@@ -49,12 +43,20 @@ final class TvingLargeCollectionView: BaseTableViewCell {
         return layout
     }()
     
+    private lazy var pageIndicator: UIPageControl = {
+        let indicator = UIPageControl()
+        indicator.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        indicator.isUserInteractionEnabled = false
+        return indicator
+    }()
+    
     // MARK: - init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setDataSource()
+        setPageControl()
     }
     
     // MARK: -  set
@@ -65,10 +67,20 @@ final class TvingLargeCollectionView: BaseTableViewCell {
             $0.top.horizontalEdges.equalToSuperview()
             $0.height.equalTo(Size.cellHeight)
         }
+        
+        contentView.addSubview(pageIndicator)
+        pageIndicator.snp.makeConstraints {
+            $0.leading.equalTo(largeCollectionView).offset(-33)
+            $0.bottom.equalToSuperview().inset(5)
+        }
     }
     
     private func setDataSource() {
         self.largeCollectionView.dataSource = self
+    }
+    
+    private func setPageControl() {
+        self.largeCollectionView.delegate = self
     }
     
     // MARK: - functions
@@ -80,11 +92,30 @@ final class TvingLargeCollectionView: BaseTableViewCell {
 }
 
 
+// MARK: - extension UIScrollViewDelegate
+
+extension TvingLargeCollectionView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageIndicator.currentPage = Int(
+            (largeCollectionView.contentOffset.x / largeCollectionView.frame.width).rounded(.toNearestOrAwayFromZero)
+        )
+    }
+}
+
+
 // MARK: - extension
+
+extension TvingLargeCollectionView: UICollectionViewDelegate {
+    
+}
+
+
+// MARK: - extension UICollectionViewDataSource
 
 extension TvingLargeCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+        pageIndicator.numberOfPages = data.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

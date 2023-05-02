@@ -44,7 +44,7 @@ final class TvingLargeCollectionViewCell: BaseCollectionViewCell {
         contentView.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(20)
-            $0.bottom.equalToSuperview().inset(SizeLiteral.Common.sideMediumPadding)
+            $0.bottom.equalToSuperview().inset(40)
         }
     }
     
