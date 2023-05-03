@@ -147,8 +147,6 @@ final class MainViewController: BaseViewController {
         currentIndex = index
     }
     
-    var nextpage = 0
-    
 }
 
 
@@ -156,10 +154,7 @@ final class MainViewController: BaseViewController {
 
 extension MainViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        print("te")
-    }
+    
     
 }
 
@@ -189,15 +184,24 @@ extension MainViewController: SegmentedControlDelegate {
 extension MainViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         guard let viewController = pendingViewControllers.first as? BaseViewController else { return }
-        guard let index = pageViewControllerData.firstIndex(of: viewController) else { return }
+        guard let incomingIndex = pageViewControllerData.firstIndex(of: viewController) else { return }
+        
+        if incomingIndex >= 3 {
+            segmentedButtonsView.segmentButtonsScrollView.scrollToRight()
+        } else if incomingIndex <= 2 {
+            segmentedButtonsView.segmentButtonsScrollView.scrollToLeft()
+        }
+        
         previousIndex = currentIndex
-        currentIndex = index
+        currentIndex = incomingIndex
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if !completed {
-            currentIndex = previousIndex
-        }
+        
+        guard let viewController = pageViewController.viewControllers?.first as? BaseViewController else { return }
+        guard let index = pageViewControllerData.firstIndex(of: viewController) else { return }
+        
+        currentIndex = index
     }
 }
 
@@ -214,8 +218,10 @@ extension MainViewController: UIPageViewControllerDataSource {
               let index = pageViewControllerData.firstIndex(of: vc)
         else { return nil }
         
-        let pageCount = pageViewControllerData.count
-        let previousIndex = (index + pageCount - 1) % pageCount
+        let previousIndex = index - 1
+        if previousIndex < 0 {
+            return nil
+        }
         return pageViewControllerData[previousIndex]
     }
     
@@ -224,7 +230,10 @@ extension MainViewController: UIPageViewControllerDataSource {
               let index = pageViewControllerData.firstIndex(of: vc)
         else { return nil }
         
-        let nextIndex = (index + 1) % pageViewControllerData.count
+        let nextIndex = index + 1
+        if nextIndex >= pageViewControllerData.count {
+            return nil
+        }
         return pageViewControllerData[nextIndex]
     }
     
