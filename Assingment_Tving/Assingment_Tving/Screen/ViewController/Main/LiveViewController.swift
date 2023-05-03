@@ -9,5 +9,26 @@ import UIKit
 
 final class LiveViewController: BaseViewController {
     
+    // MARK: - properties
+    
+    let baseView = LiveView()
+    
+    // MARK: - life cycles
+    
+    override func loadView() {
+        self.view = baseView
+    }
+    
+    // MARK: - set
+    
+    
+    
+    // MARK: - functions
+    
+    
+    
+    // MARK: - objc functions
+    
+
     
 }

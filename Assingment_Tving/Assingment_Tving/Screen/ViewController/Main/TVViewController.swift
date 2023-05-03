@@ -9,5 +9,23 @@ import UIKit
 
 final class TVViewController: BaseViewController {
     
+    // MARK: - properties
     
+    let baseView = TVView()
+    
+    // MARK: - life cycles
+    
+    override func loadView() {
+        self.view = baseView
+    }
+    
+    // MARK: - set
+    
+    
+    
+    // MARK: - functions
+    
+    
+    
+    // MARK: - objc functions
 }

@@ -9,6 +9,24 @@ import UIKit
 
 final class MovieViewController: BaseViewController {
     
+    // MARK: - properties
     
+    let baseView = MovieView()
+    
+    // MARK: - life cycles
+    
+    override func loadView() {
+        self.view = baseView
+    }
+    
+    // MARK: - set
+    
+    
+    
+    // MARK: - functions
+    
+    
+    
+    // MARK: - objc functions
 }
 

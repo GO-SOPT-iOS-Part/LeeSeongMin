@@ -41,20 +41,12 @@ final class MainViewController: BaseViewController {
             movieViewController,
             paramountViewController,
             kidsViewController
-            
         ]
     }()
     
-    lazy var pageViewController: UIPageViewController = {
-        let viewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
-        return viewController
-    }()
+    lazy var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     
     // MARK: - life cycles
-    
-    override func loadView() {
-        self.view = baseView
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +88,7 @@ final class MainViewController: BaseViewController {
         
         view.addSubview(baseView)
         baseView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.horizontalEdges.equalToSuperview()
         }
     }
     
@@ -104,6 +96,7 @@ final class MainViewController: BaseViewController {
         if let firstViewController = pageViewControllerData.first {
             pageViewController.setViewControllers([firstViewController], direction: .forward, animated: true)
         }
+        pageViewController.didMove(toParent: self)
     }
     
     // MARK: - functions
@@ -160,15 +153,17 @@ extension MainViewController: UIPageViewControllerDelegate {
 // MARK: - extension
 
 extension MainViewController: UIPageViewControllerDataSource {
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return self.pageViewControllerData.count
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let vc = viewController as? BaseViewController,
               let index = pageViewControllerData.firstIndex(of: vc)
         else { return nil }
         
-        let previousIndex = (index - 1)
-        if previousIndex < 0 {
-            return pageViewControllerData[titles.count - 1]
-        }
+        let pageCount = pageViewControllerData.count
+        let previousIndex = (index + pageCount - 1) % pageCount
         return pageViewControllerData[previousIndex]
     }
     
@@ -177,8 +172,8 @@ extension MainViewController: UIPageViewControllerDataSource {
               let index = pageViewControllerData.firstIndex(of: vc)
         else { return nil }
         
-        let previousIndex = (index + 1) % pageViewControllerData.count
-        return pageViewControllerData[previousIndex]
+        let nextIndex = (index + 1) % pageViewControllerData.count
+        return pageViewControllerData[nextIndex]
     }
     
     

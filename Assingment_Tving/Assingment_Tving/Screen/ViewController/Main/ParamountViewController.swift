@@ -9,5 +9,23 @@ import UIKit
 
 final class ParamountViewController: BaseViewController {
     
+    // MARK: - properties
     
+    let baseView = ParamountView()
+    
+    // MARK: - life cycles
+    
+    override func loadView() {
+        self.view = baseView
+    }
+    
+    // MARK: - set
+    
+    
+    
+    // MARK: - functions
+    
+    
+    
+    // MARK: - objc functions
 }
