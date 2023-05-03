@@ -22,7 +22,7 @@ class BaseViewController: UIViewController {
         
         setNavigationBar()
         setDelegate()
-        setButtonTarget()
+        setButtonAction()
     }
     
     // MARK: - setup functions
@@ -41,7 +41,7 @@ class BaseViewController: UIViewController {
         // override to use
     }
     
-    func setButtonTarget() {
+    func setButtonAction() {
         // override to use
     }
     

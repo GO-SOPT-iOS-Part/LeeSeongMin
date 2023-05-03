@@ -21,9 +21,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         
-        let navigationController = UINavigationController(rootViewController: MainViewController())
+        let navigationController = UINavigationController(rootViewController: LoginViewController())
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
+    }
+    
+    func changeRootViewController(to rootViewController: BaseViewController) {
+        guard let window = window else { return }
+        let rootViewController = UINavigationController(rootViewController: rootViewController)
+        window.rootViewController = rootViewController
+        UIView.transition(with: window, duration: 0.2, options: [.transitionCrossDissolve], animations: nil)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

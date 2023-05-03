@@ -43,6 +43,7 @@ final class MyPageViewController: BaseViewController {
     
     override func setNavigationBar() {
         super.setNavigationBar()
+//        navigationController?.navigationBar.isHidden = false
         
         let backButton = BackButton()
         backButton.addTarget(self, action: #selector(popViewController), for: .touchUpInside)

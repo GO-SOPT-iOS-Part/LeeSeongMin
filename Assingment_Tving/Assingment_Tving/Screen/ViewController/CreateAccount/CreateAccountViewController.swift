@@ -33,7 +33,7 @@ final class CreateAccountViewController: BaseViewController {
     
     // MARK: - set
     
-    override func setButtonTarget() {
+    override func setButtonAction() {
         baseView.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
     

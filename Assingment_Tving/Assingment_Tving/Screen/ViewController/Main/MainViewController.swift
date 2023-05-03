@@ -68,6 +68,16 @@ final class MainViewController: BaseViewController {
         setPageViewController()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+        super.viewWillDisappear(animated)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     // MARK: - set
     
     override func setNavigationBar() {
@@ -82,13 +92,18 @@ final class MainViewController: BaseViewController {
         pageViewController.dataSource = self
     }
     
-    override func setButtonTarget() {
+    override func setButtonAction() {
         for (i, button) in segmentedButtonsView.segmentButtons.enumerated() {
             let action = UIAction { [weak self] _ in
                 self?.segmentedButtonTapped(i)
             }
             button.addAction(action, for: .touchUpInside)
         }
+        
+        let profileButtonAction = UIAction { [weak self] _ in
+            self?.navigationController?.pushViewController(MyPageViewController(), animated: true)
+        }
+        profileButton.addAction(profileButtonAction, for: .touchUpInside)
     }
     
     private func setLayout() {

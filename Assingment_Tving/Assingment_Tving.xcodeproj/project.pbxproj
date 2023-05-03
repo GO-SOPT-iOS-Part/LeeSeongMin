@@ -47,7 +47,6 @@
 		3E83B1952A016CDF0015A7E0 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1942A016CDF0015A7E0 /* MovieViewController.swift */; };
 		3E83B1972A016CF00015A7E0 /* ParamountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1962A016CF00015A7E0 /* ParamountViewController.swift */; };
 		3E83B1992A016CFD0015A7E0 /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1982A016CFD0015A7E0 /* KidsViewController.swift */; };
-		3E83B19B2A016D210015A7E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B19A2A016D210015A7E0 /* MainView.swift */; };
 		3E83B19F2A022DEA0015A7E0 /* SmallContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B19E2A022DEA0015A7E0 /* SmallContentCollectionView.swift */; };
 		3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CED29ED80850076FA7A /* UIView+Extension.swift */; };
 		3EF790B629E678D00052578E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B529E678D00052578E /* AppDelegate.swift */; };
@@ -120,7 +119,6 @@
 		3E83B1942A016CDF0015A7E0 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		3E83B1962A016CF00015A7E0 /* ParamountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamountViewController.swift; sourceTree = "<group>"; };
 		3E83B1982A016CFD0015A7E0 /* KidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
-		3E83B19A2A016D210015A7E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3E83B19E2A022DEA0015A7E0 /* SmallContentCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallContentCollectionView.swift; sourceTree = "<group>"; };
 		3EF53CED29ED80850076FA7A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3EF790B229E678D00052578E /* Assingment_Tving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assingment_Tving.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,7 +240,6 @@
 		3E83B10129F833790015A7E0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				3E83B19A2A016D210015A7E0 /* MainView.swift */,
 				3E83B17E2A016C070015A7E0 /* Home */,
 				3E83B17F2A016C1B0015A7E0 /* Live */,
 				3E83B1822A016C330015A7E0 /* TV */,
@@ -601,7 +598,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EF7910929E8768D0052578E /* CreateAccountViewController.swift in Sources */,
-				3E83B19B2A016D210015A7E0 /* MainView.swift in Sources */,
 				3E83B11129F9472B0015A7E0 /* MyPageHeaderView.swift in Sources */,
 				3EF790D729E67B430052578E /* CustomTextField.swift in Sources */,
 				3E83B1782A003D4E0015A7E0 /* LargeContentCollectionView.swift in Sources */,
