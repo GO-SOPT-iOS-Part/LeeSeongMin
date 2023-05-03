@@ -11,10 +11,6 @@ import SnapKit
 
 // MARK: - protocols
 
-protocol CollectionViewStartScrollDelegate: AnyObject {
-    func collectionViewStartScroll(to x: CGFloat)
-}
-
 protocol SegmentedControlDelegate: AnyObject {
     func scrollToCorrectPos(near index: Int)
 }
@@ -126,12 +122,4 @@ final class SegmentedButtonsView: UIView {
         }
     }
 
-}
-
-extension SegmentedButtonsView: CollectionViewStartScrollDelegate {
-    
-    func collectionViewStartScroll(to x: CGFloat) {
-        
-    }
-    
 }

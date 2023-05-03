@@ -27,6 +27,20 @@ extension DummyColor {
                 DummyColor(color: .systemMint),
                 DummyColor(color: .systemPink),
                 DummyColor(color: .systemTeal)
+            ],
+            [
+                DummyColor(color: .systemBlue),
+                DummyColor(color: .systemCyan),
+                DummyColor(color: .systemMint),
+                DummyColor(color: .systemPink),
+                DummyColor(color: .systemTeal)
+            ],
+            [
+                DummyColor(color: .systemBlue),
+                DummyColor(color: .systemCyan),
+                DummyColor(color: .systemMint),
+                DummyColor(color: .systemPink),
+                DummyColor(color: .systemTeal)
             ]
         ]
     }

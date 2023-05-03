@@ -43,10 +43,8 @@ extension HomeViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             return LargeContentCollectionView.Size.collectionViewHeight
-        case 1:
-            return CommonContentCollectionView.Size.collectionViewHeight
         default:
-            return 0
+            return CommonContentCollectionView.Size.collectionViewHeight
         }
     }
 }
@@ -56,8 +54,12 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // FIXME: 데이터 추가해 둔 뒤 switch case 문으로 바꾸기
-        return 1
+        switch section {
+        case 0:
+            return 1
+        default:
+            return data.count - 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,10 +70,11 @@ extension HomeViewController: UITableViewDataSource {
         largeCell.selectionStyle = .none
         smallCell.selectionStyle = .none
         
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             largeCell.prepareCells(data[indexPath.section])
             return largeCell
-        } else {
+        default:
             smallCell.prepareCells(data[indexPath.section])
             return smallCell
         }
