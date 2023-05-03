@@ -24,23 +24,32 @@ final class MainViewController: BaseViewController {
     
     // MARK: - properties
     
-    let baseView = MainView()
+    let tvingBannerImageView: UIImageView = {
+        let imageView = UIImageView(image: ImageLiteral.tvingLogo)
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     
-    let homeViewController = HomeViewController()
-    let liveViewController = LiveViewController()
-    let tvViewController = TVViewController()
-    let movieViewController = MovieViewController()
-    let paramountViewController = ParamountViewController()
-    let kidsViewController = KidsViewController()
+    let profileButton: UIButton = {
+        let button = UIButton()
+        button.setImage(ImageLiteral.profileImage, for: .normal)
+        button.imageView?.contentMode = .scaleToFill
+        button.setCornerRadius(to: 4)
+        return button
+    }()
+    
+    let tvingBannerView = UIView()
+    
+    let segmentedButtonsView = SegmentedButtonsView()
     
     lazy var pageViewControllerData: [BaseViewController] = {
         return [
-            homeViewController,
-            liveViewController,
-            tvViewController,
-            movieViewController,
-            paramountViewController,
-            kidsViewController
+            HomeViewController(),
+            LiveViewController(),
+            TVViewController(),
+            MovieViewController(),
+            ParamountViewController(),
+            KidsViewController()
         ]
     }()
     
@@ -51,7 +60,7 @@ final class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setHierarchy()
+        setLayout()
         setPageViewController()
     }
     
@@ -62,15 +71,15 @@ final class MainViewController: BaseViewController {
     }
     
     override func setDelegate() {
-        baseView.segmentedButtonsView.segmentButtonsScrollView.delegate = self
-        baseView.segmentedButtonsView.segementedControlDelegate = self
+        segmentedButtonsView.segmentButtonsScrollView.delegate = self
+        segmentedButtonsView.segementedControlDelegate = self
         
         pageViewController.delegate = self
         pageViewController.dataSource = self
     }
     
     override func setButtonTarget() {
-        for (i, button) in baseView.segmentedButtonsView.segmentButtons.enumerated() {
+        for (i, button) in segmentedButtonsView.segmentButtons.enumerated() {
             let action = UIAction { [weak self] _ in
                 self?.segmentedButtonTapped(i)
             }
@@ -78,7 +87,7 @@ final class MainViewController: BaseViewController {
         }
     }
     
-    private func setHierarchy() {
+    private func setLayout() {
         addChild(pageViewController)
         
         view.addSubview(pageViewController.view)
@@ -86,9 +95,29 @@ final class MainViewController: BaseViewController {
             $0.edges.equalToSuperview()
         }
         
-        view.addSubview(baseView)
-        baseView.snp.makeConstraints {
-            $0.top.horizontalEdges.equalToSuperview()
+        view.addSubview(tvingBannerView)
+        tvingBannerView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+        }
+        
+        tvingBannerView.addSubview(tvingBannerImageView)
+        tvingBannerImageView.snp.makeConstraints {
+            $0.leading.verticalEdges.equalToSuperview().inset(SizeLiteral.Common.sideSmallPadding)
+            $0.height.equalTo(33)
+        }
+        
+        tvingBannerView.addSubview(profileButton)
+        profileButton.snp.makeConstraints {
+            $0.trailing.verticalEdges.equalToSuperview().inset(SizeLiteral.Common.sideSmallPadding)
+            $0.size.equalTo(33)
+        }
+        
+        view.addSubview(segmentedButtonsView)
+        segmentedButtonsView.snp.makeConstraints {
+            $0.top.equalTo(tvingBannerView.snp.bottom)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(50)
         }
     }
     
@@ -128,7 +157,7 @@ extension MainViewController: UIScrollViewDelegate {
 extension MainViewController: SegmentedControlDelegate {
     
     func indexChanged(to index: Int) {
-        let scrollView = baseView.segmentedButtonsView.segmentButtonsScrollView
+        let scrollView = segmentedButtonsView.segmentButtonsScrollView
         if index == 1 {
             scrollView.scrollToLeft()
         } else if index == 4 {
