@@ -42,9 +42,9 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return TvingLargeCollectionView.Size.collectionViewHeight
+            return LargeContentCollectionView.Size.collectionViewHeight
         case 1:
-            return TvingSmallCollectionView.Size.collectionViewHeight
+            return CommonContentCollectionView.Size.collectionViewHeight
         default:
             return 0
         }
@@ -61,8 +61,8 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let largeCell = tableView.dequeueReusableCell(withIdentifier: TvingLargeCollectionView.identifier) as? TvingLargeCollectionView,
-              let smallCell = tableView.dequeueReusableCell(withIdentifier: TvingSmallCollectionView.identifier) as? TvingSmallCollectionView
+        guard let largeCell = tableView.dequeueReusableCell(withIdentifier: LargeContentCollectionView.identifier) as? LargeContentCollectionView,
+              let smallCell = tableView.dequeueReusableCell(withIdentifier: CommonContentCollectionView.identifier) as? CommonContentCollectionView
         else { return UITableViewCell() }
         
         largeCell.selectionStyle = .none

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TvingSmallCollectionViewCell: BaseCollectionViewCell {
+final class CommonContentCollectionViewCell: BaseCollectionViewCell {
     
     static let identifier = "TvingSmallTableViewCell"
     

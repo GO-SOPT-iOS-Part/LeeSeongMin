@@ -26,19 +26,15 @@ final class MainViewController: BaseViewController {
         }
     }
     
-    private var previousIndex = 0
-    
-    weak var scrollDelegate: CollectionViewStartScrollDelegate?
-    
     // MARK: - properties
     
-    let tvingBannerImageView: UIImageView = {
+    private let tvingBannerImageView: UIImageView = {
         let imageView = UIImageView(image: ImageLiteral.tvingLogo)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    let profileButton: UIButton = {
+    private let profileButton: UIButton = {
         let button = UIButton()
         button.setImage(ImageLiteral.profileImage, for: .normal)
         button.imageView?.contentMode = .scaleToFill
@@ -46,11 +42,11 @@ final class MainViewController: BaseViewController {
         return button
     }()
     
-    let tvingBannerView = UIView()
+    private let tvingBannerView = UIView()
     
-    let segmentedButtonsView = SegmentedButtonsView()
+    private let segmentedButtonsView = SegmentedButtonsView()
     
-    lazy var pageViewControllerData: [BaseViewController] = {
+    private lazy var pageViewControllerData: [BaseViewController] = {
         return [
             HomeViewController(),
             LiveViewController(),
@@ -61,7 +57,7 @@ final class MainViewController: BaseViewController {
         ]
     }()
     
-    lazy var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+    private lazy var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     
     // MARK: - life cycles
     
@@ -97,7 +93,6 @@ final class MainViewController: BaseViewController {
     
     private func setLayout() {
         addChild(pageViewController)
-        
         view.addSubview(pageViewController.view)
         pageViewController.view.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -152,47 +147,31 @@ final class MainViewController: BaseViewController {
 
 // MARK: - extension UIScrollViewDelegate
 
-extension MainViewController: UIScrollViewDelegate {
-    
-    
-    
-}
+extension MainViewController: UIScrollViewDelegate { }
 
 
 // MARK: - extension SegmentedControlDelegate
 
 extension MainViewController: SegmentedControlDelegate {
-    
-    func indexChanged(to index: Int) {
+    func scrollToCorrectPos(near index: Int) {
         let scrollView = segmentedButtonsView.segmentButtonsScrollView
-        if index == 1 {
+        if index <= 2 {
             scrollView.scrollToLeft()
-        } else if index == 4 {
+        } else if index >= 3 {
             scrollView.scrollToRight()
         }
     }
-    
-    func moveToFrame(contentOffset: CGFloat) {
-        
-    }
-    
 }
 
 
-// MARK: - extension
+// MARK: - extension UIPageViewControllerDelegate
 
 extension MainViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         guard let viewController = pendingViewControllers.first as? BaseViewController else { return }
         guard let incomingIndex = pageViewControllerData.firstIndex(of: viewController) else { return }
         
-        if incomingIndex >= 3 {
-            segmentedButtonsView.segmentButtonsScrollView.scrollToRight()
-        } else if incomingIndex <= 2 {
-            segmentedButtonsView.segmentButtonsScrollView.scrollToLeft()
-        }
-        
-        previousIndex = currentIndex
+        scrollToCorrectPos(near: incomingIndex)
         currentIndex = incomingIndex
     }
     

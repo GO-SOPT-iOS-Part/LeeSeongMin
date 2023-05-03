@@ -29,13 +29,13 @@
 		3E83B13229FBD5D90015A7E0 /* SegmentedButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B13129FBD5D90015A7E0 /* SegmentedButtonsView.swift */; };
 		3E83B15F29FC080C0015A7E0 /* SegmentedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B15E29FC080C0015A7E0 /* SegmentedButton.swift */; };
 		3E83B16529FE568D0015A7E0 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16429FE568D0015A7E0 /* UIScrollView+Extension.swift */; };
-		3E83B1692A002ED40015A7E0 /* TvingSmallCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1682A002ED40015A7E0 /* TvingSmallCollectionView.swift */; };
-		3E83B16B2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16A2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift */; };
+		3E83B1692A002ED40015A7E0 /* CommonContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1682A002ED40015A7E0 /* CommonContentCollectionView.swift */; };
+		3E83B16B2A002F280015A7E0 /* CommonContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16A2A002F280015A7E0 /* CommonContentCollectionViewCell.swift */; };
 		3E83B16D2A002FAF0015A7E0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16C2A002FAF0015A7E0 /* BaseCollectionViewCell.swift */; };
 		3E83B16F2A0030940015A7E0 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B16E2A0030940015A7E0 /* BaseTableViewCell.swift */; };
 		3E83B1752A003C9D0015A7E0 /* DummyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1742A003C9D0015A7E0 /* DummyColor.swift */; };
-		3E83B1782A003D4E0015A7E0 /* TvingLargeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1772A003D4E0015A7E0 /* TvingLargeCollectionView.swift */; };
-		3E83B17A2A00A1610015A7E0 /* TvingLargeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1792A00A1610015A7E0 /* TvingLargeCollectionViewCell.swift */; };
+		3E83B1782A003D4E0015A7E0 /* LargeContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1772A003D4E0015A7E0 /* LargeContentCollectionView.swift */; };
+		3E83B17A2A00A1610015A7E0 /* LargeContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1792A00A1610015A7E0 /* LargeContentCollectionViewCell.swift */; };
 		3E83B1812A016C2B0015A7E0 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1802A016C2B0015A7E0 /* LiveView.swift */; };
 		3E83B1842A016C660015A7E0 /* TVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1832A016C660015A7E0 /* TVView.swift */; };
 		3E83B1872A016C740015A7E0 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1862A016C740015A7E0 /* MovieView.swift */; };
@@ -48,6 +48,7 @@
 		3E83B1972A016CF00015A7E0 /* ParamountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1962A016CF00015A7E0 /* ParamountViewController.swift */; };
 		3E83B1992A016CFD0015A7E0 /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B1982A016CFD0015A7E0 /* KidsViewController.swift */; };
 		3E83B19B2A016D210015A7E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B19A2A016D210015A7E0 /* MainView.swift */; };
+		3E83B19F2A022DEA0015A7E0 /* SmallContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B19E2A022DEA0015A7E0 /* SmallContentCollectionView.swift */; };
 		3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CED29ED80850076FA7A /* UIView+Extension.swift */; };
 		3EF790B629E678D00052578E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B529E678D00052578E /* AppDelegate.swift */; };
 		3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B729E678D00052578E /* SceneDelegate.swift */; };
@@ -101,13 +102,13 @@
 		3E83B13129FBD5D90015A7E0 /* SegmentedButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButtonsView.swift; sourceTree = "<group>"; };
 		3E83B15E29FC080C0015A7E0 /* SegmentedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButton.swift; sourceTree = "<group>"; };
 		3E83B16429FE568D0015A7E0 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
-		3E83B1682A002ED40015A7E0 /* TvingSmallCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingSmallCollectionView.swift; sourceTree = "<group>"; };
-		3E83B16A2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingSmallCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E83B1682A002ED40015A7E0 /* CommonContentCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonContentCollectionView.swift; sourceTree = "<group>"; };
+		3E83B16A2A002F280015A7E0 /* CommonContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		3E83B16C2A002FAF0015A7E0 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		3E83B16E2A0030940015A7E0 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		3E83B1742A003C9D0015A7E0 /* DummyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyColor.swift; sourceTree = "<group>"; };
-		3E83B1772A003D4E0015A7E0 /* TvingLargeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingLargeCollectionView.swift; sourceTree = "<group>"; };
-		3E83B1792A00A1610015A7E0 /* TvingLargeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvingLargeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E83B1772A003D4E0015A7E0 /* LargeContentCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeContentCollectionView.swift; sourceTree = "<group>"; };
+		3E83B1792A00A1610015A7E0 /* LargeContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		3E83B1802A016C2B0015A7E0 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
 		3E83B1832A016C660015A7E0 /* TVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVView.swift; sourceTree = "<group>"; };
 		3E83B1862A016C740015A7E0 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		3E83B1962A016CF00015A7E0 /* ParamountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamountViewController.swift; sourceTree = "<group>"; };
 		3E83B1982A016CFD0015A7E0 /* KidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
 		3E83B19A2A016D210015A7E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3E83B19E2A022DEA0015A7E0 /* SmallContentCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallContentCollectionView.swift; sourceTree = "<group>"; };
 		3EF53CED29ED80850076FA7A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3EF790B229E678D00052578E /* Assingment_Tving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assingment_Tving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF790B529E678D00052578E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -295,29 +297,30 @@
 			path = SegmentedControl;
 			sourceTree = "<group>";
 		};
-		3E83B1672A002DE80015A7E0 /* TvingSmallCollection */ = {
+		3E83B1672A002DE80015A7E0 /* CommonCollection */ = {
 			isa = PBXGroup;
 			children = (
-				3E83B1682A002ED40015A7E0 /* TvingSmallCollectionView.swift */,
-				3E83B16A2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift */,
+				3E83B1682A002ED40015A7E0 /* CommonContentCollectionView.swift */,
+				3E83B16A2A002F280015A7E0 /* CommonContentCollectionViewCell.swift */,
 			);
-			path = TvingSmallCollection;
+			path = CommonCollection;
 			sourceTree = "<group>";
 		};
-		3E83B1762A003D330015A7E0 /* TvingLargeCollection */ = {
+		3E83B1762A003D330015A7E0 /* LargeCollection */ = {
 			isa = PBXGroup;
 			children = (
-				3E83B1772A003D4E0015A7E0 /* TvingLargeCollectionView.swift */,
-				3E83B1792A00A1610015A7E0 /* TvingLargeCollectionViewCell.swift */,
+				3E83B1772A003D4E0015A7E0 /* LargeContentCollectionView.swift */,
+				3E83B1792A00A1610015A7E0 /* LargeContentCollectionViewCell.swift */,
 			);
-			path = TvingLargeCollection;
+			path = LargeCollection;
 			sourceTree = "<group>";
 		};
-		3E83B17D2A0151AA0015A7E0 /* TvingMediumCollection */ = {
+		3E83B17D2A0151AA0015A7E0 /* SmallCollection */ = {
 			isa = PBXGroup;
 			children = (
+				3E83B19E2A022DEA0015A7E0 /* SmallContentCollectionView.swift */,
 			);
-			path = TvingMediumCollection;
+			path = SmallCollection;
 			sourceTree = "<group>";
 		};
 		3E83B17E2A016C070015A7E0 /* Home */ = {
@@ -366,6 +369,16 @@
 				3E83B18C2A016C8F0015A7E0 /* KidsView.swift */,
 			);
 			path = Kids;
+			sourceTree = "<group>";
+		};
+		3E83B19D2A022DAB0015A7E0 /* ContentCollection */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B1672A002DE80015A7E0 /* CommonCollection */,
+				3E83B1762A003D330015A7E0 /* LargeCollection */,
+				3E83B17D2A0151AA0015A7E0 /* SmallCollection */,
+			);
+			path = ContentCollection;
 			sourceTree = "<group>";
 		};
 		3EF790A929E678D00052578E = {
@@ -420,9 +433,7 @@
 		3EF790D029E67AA30052578E /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				3E83B17D2A0151AA0015A7E0 /* TvingMediumCollection */,
-				3E83B1762A003D330015A7E0 /* TvingLargeCollection */,
-				3E83B1672A002DE80015A7E0 /* TvingSmallCollection */,
+				3E83B19D2A022DAB0015A7E0 /* ContentCollection */,
 				3E83B12C29FBBEED0015A7E0 /* SegmentedControl */,
 				3EF790D629E67B430052578E /* CustomTextField.swift */,
 				3EF790FC29E710ED0052578E /* CustomButton.swift */,
@@ -593,7 +604,7 @@
 				3E83B19B2A016D210015A7E0 /* MainView.swift in Sources */,
 				3E83B11129F9472B0015A7E0 /* MyPageHeaderView.swift in Sources */,
 				3EF790D729E67B430052578E /* CustomTextField.swift in Sources */,
-				3E83B1782A003D4E0015A7E0 /* TvingLargeCollectionView.swift in Sources */,
+				3E83B1782A003D4E0015A7E0 /* LargeContentCollectionView.swift in Sources */,
 				3E83B10E29F8FE1F0015A7E0 /* SettingTableViewCell.swift in Sources */,
 				3E83B10A29F8F49D0015A7E0 /* TextLiteral.swift in Sources */,
 				3E83B1872A016C740015A7E0 /* MovieView.swift in Sources */,
@@ -604,13 +615,14 @@
 				3E83B1992A016CFD0015A7E0 /* KidsViewController.swift in Sources */,
 				3E83B1952A016CDF0015A7E0 /* MovieViewController.swift in Sources */,
 				3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */,
+				3E83B19F2A022DEA0015A7E0 /* SmallContentCollectionView.swift in Sources */,
 				3EF7910429E868490052578E /* LoginCompleteViewController.swift in Sources */,
 				3E83B10029F8314E0015A7E0 /* SizeLiteral.swift in Sources */,
 				3EF790CA29E678F40052578E /* LoginViewController.swift in Sources */,
 				3E83B1932A016CD60015A7E0 /* TVViewController.swift in Sources */,
 				3EF790B629E678D00052578E /* AppDelegate.swift in Sources */,
 				3E83B1842A016C660015A7E0 /* TVView.swift in Sources */,
-				3E83B17A2A00A1610015A7E0 /* TvingLargeCollectionViewCell.swift in Sources */,
+				3E83B17A2A00A1610015A7E0 /* LargeContentCollectionViewCell.swift in Sources */,
 				3E83B15F29FC080C0015A7E0 /* SegmentedButton.swift in Sources */,
 				3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */,
 				3E83B12229FAABC70015A7E0 /* SettingTableViewFooter.swift in Sources */,
@@ -627,10 +639,10 @@
 				3E83B13029FBC2E70015A7E0 /* IdentifierLiteral.swift in Sources */,
 				3E83B1912A016CC10015A7E0 /* LiveViewController.swift in Sources */,
 				3E83B16D2A002FAF0015A7E0 /* BaseCollectionViewCell.swift in Sources */,
-				3E83B1692A002ED40015A7E0 /* TvingSmallCollectionView.swift in Sources */,
+				3E83B1692A002ED40015A7E0 /* CommonContentCollectionView.swift in Sources */,
 				3E83B18A2A016C810015A7E0 /* ParamountView.swift in Sources */,
 				3EF790D929E67C5E0052578E /* UIColor+Extension.swift in Sources */,
-				3E83B16B2A002F280015A7E0 /* TvingSmallCollectionViewCell.swift in Sources */,
+				3E83B16B2A002F280015A7E0 /* CommonContentCollectionViewCell.swift in Sources */,
 				3E83B12E29FBBF000015A7E0 /* PageControlCollectionViewCell.swift in Sources */,
 				3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */,
 				3E83B11629F98B230015A7E0 /* MovieModel.swift in Sources */,

@@ -19,8 +19,8 @@ final class HomeView: BaseView {
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
-        view.register(TvingLargeCollectionView.self, forCellReuseIdentifier: TvingLargeCollectionView.identifier)
-        view.register(TvingSmallCollectionView.self, forCellReuseIdentifier: TvingSmallCollectionView.identifier)
+        view.register(LargeContentCollectionView.self, forCellReuseIdentifier: LargeContentCollectionView.identifier)
+        view.register(CommonContentCollectionView.self, forCellReuseIdentifier: CommonContentCollectionView.identifier)
         return view
     }()
     

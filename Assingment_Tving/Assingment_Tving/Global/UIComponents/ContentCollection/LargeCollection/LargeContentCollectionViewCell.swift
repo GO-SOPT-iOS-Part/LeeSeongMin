@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class TvingLargeCollectionViewCell: BaseCollectionViewCell {
+final class LargeContentCollectionViewCell: BaseCollectionViewCell {
     
-    static let identifier = "TvingLargeCollectionViewCell"
+    static let identifier = "LargeContentCollectionViewCell"
     
     // MARK: - properties
     

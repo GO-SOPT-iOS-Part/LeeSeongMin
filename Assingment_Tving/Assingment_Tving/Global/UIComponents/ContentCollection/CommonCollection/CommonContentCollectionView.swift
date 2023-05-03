@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TvingSmallCollectionView: BaseTableViewCell {
+final class CommonContentCollectionView: BaseTableViewCell {
     
     static let identifier = "TvingSmallCollectionView"
     enum Size {
@@ -35,7 +35,7 @@ final class TvingSmallCollectionView: BaseTableViewCell {
         view.showsVerticalScrollIndicator = false
         view.backgroundColor = .clear
         view.clipsToBounds = true
-        view.register(TvingSmallCollectionViewCell.self, forCellWithReuseIdentifier: TvingSmallCollectionViewCell.identifier)
+        view.register(CommonContentCollectionViewCell.self, forCellWithReuseIdentifier: CommonContentCollectionViewCell.identifier)
         return view
     }()
     
@@ -85,13 +85,13 @@ final class TvingSmallCollectionView: BaseTableViewCell {
 
 // MARK: - extension
 
-extension TvingSmallCollectionView: UICollectionViewDataSource {
+extension CommonContentCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TvingSmallCollectionViewCell.identifier, for: indexPath) as? TvingSmallCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CommonContentCollectionViewCell.identifier, for: indexPath) as? CommonContentCollectionViewCell
         else { return UICollectionViewCell() }
         cell.configureCell(data[indexPath.row])
         return cell

@@ -29,10 +29,6 @@ final class MainView: BaseView {
     
     let segmentedButtonsView = SegmentedButtonsView()
     
-    // MARK: - init
-    
-    
-    
     // MARK: -  set
     
     override func setLayout() {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TvingLargeCollectionView: BaseTableViewCell {
+final class LargeContentCollectionView: BaseTableViewCell {
     
     static let identifier = "TvingLargeCollectionView"
     
@@ -32,7 +32,7 @@ final class TvingLargeCollectionView: BaseTableViewCell {
         view.isPagingEnabled = true
         view.contentInsetAdjustmentBehavior = .never
         view.insetsLayoutMarginsFromSafeArea = false
-        view.register(TvingLargeCollectionViewCell.self, forCellWithReuseIdentifier: TvingLargeCollectionViewCell.identifier)
+        view.register(LargeContentCollectionViewCell.self, forCellWithReuseIdentifier: LargeContentCollectionViewCell.identifier)
         return view
     }()
     
@@ -100,7 +100,7 @@ final class TvingLargeCollectionView: BaseTableViewCell {
 
 // MARK: - extension UIScrollViewDelegate
 
-extension TvingLargeCollectionView: UIScrollViewDelegate {
+extension LargeContentCollectionView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = Int((largeCollectionView.contentOffset.x / largeCollectionView.frame.width)
             .rounded(.toNearestOrAwayFromZero)) % originalDataCount
@@ -118,19 +118,19 @@ extension TvingLargeCollectionView: UIScrollViewDelegate {
 
 // MARK: - extension UICollectionViewDelegate
 
-extension TvingLargeCollectionView: UICollectionViewDelegate { }
+extension LargeContentCollectionView: UICollectionViewDelegate { }
 
 
 // MARK: - extension UICollectionViewDataSource
 
-extension TvingLargeCollectionView: UICollectionViewDataSource {
+extension LargeContentCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pageIndicator.numberOfPages = originalDataCount
         return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TvingLargeCollectionViewCell.identifier, for: indexPath) as? TvingLargeCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeContentCollectionViewCell.identifier, for: indexPath) as? LargeContentCollectionViewCell
         else { return UICollectionViewCell() }
         cell.configureCell(data[(indexPath.row + 1) % data.count], description: "test")
         return cell

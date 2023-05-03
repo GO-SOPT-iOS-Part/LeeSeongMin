@@ -16,7 +16,7 @@ protocol CollectionViewStartScrollDelegate: AnyObject {
 }
 
 protocol SegmentedControlDelegate: AnyObject {
-    func indexChanged(to index: Int)
+    func scrollToCorrectPos(near index: Int)
 }
 
 
@@ -104,7 +104,7 @@ final class SegmentedButtonsView: UIView {
             
             let action = UIAction { [weak self] _ in
                 self?.configBottomIndicator(to: i)
-                self?.segementedControlDelegate?.indexChanged(to: i)
+                self?.segementedControlDelegate?.scrollToCorrectPos(near: i)
             }
             segmentButton.addAction(action, for: .touchUpInside)
             segmentButtons.append(segmentButton)
