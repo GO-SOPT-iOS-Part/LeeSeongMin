@@ -20,6 +20,14 @@ final class MainViewController: BaseViewController {
     
     private let titles = Titles.allCases.map { $0.rawValue }
     
+    private var currentIndex = 0 {
+        didSet {
+            segmentedButtonsView.configBottomIndicator(to: currentIndex)
+        }
+    }
+    
+    private var previousIndex = 0
+    
     weak var scrollDelegate: CollectionViewStartScrollDelegate?
     
     // MARK: - properties
@@ -131,12 +139,16 @@ final class MainViewController: BaseViewController {
     // MARK: - functions
     
     private func segmentedButtonTapped(_ index: Int) {
-        indexChanged(to: index)
+        if index > currentIndex {
+            pageViewController.setViewControllers([pageViewControllerData[index]], direction: .forward, animated: true)
+        } else if index < currentIndex {
+            pageViewController.setViewControllers([pageViewControllerData[index]], direction: .reverse, animated: true)
+        }
+        currentIndex = index
     }
     
-    // MARK: - objc functions
+    var nextpage = 0
     
-
 }
 
 
@@ -146,7 +158,7 @@ extension MainViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        
+        print("te")
     }
     
 }
@@ -175,7 +187,18 @@ extension MainViewController: SegmentedControlDelegate {
 // MARK: - extension
 
 extension MainViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        guard let viewController = pendingViewControllers.first as? BaseViewController else { return }
+        guard let index = pageViewControllerData.firstIndex(of: viewController) else { return }
+        previousIndex = currentIndex
+        currentIndex = index
+    }
     
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if !completed {
+            currentIndex = previousIndex
+        }
+    }
 }
 
 

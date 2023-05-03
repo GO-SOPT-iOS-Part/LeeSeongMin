@@ -113,7 +113,7 @@ final class SegmentedButtonsView: UIView {
     
     // MARK: - functions
     
-    private func configBottomIndicator(to i: Int) {
+    func configBottomIndicator(to i: Int) {
         var posX: CGFloat = 15
         for button in segmentButtons[0..<i] {
             posX += button.frame.width
