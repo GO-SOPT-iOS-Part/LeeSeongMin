@@ -101,7 +101,7 @@ final class MainViewController: BaseViewController {
         }
         
         let profileButtonAction = UIAction { [weak self] _ in
-            self?.navigationController?.pushViewController(MyPageViewController(), animated: true)
+            self?.navigationController?.pushViewController(MyPageViewController(), animated: false)
         }
         profileButton.addAction(profileButtonAction, for: .touchUpInside)
     }

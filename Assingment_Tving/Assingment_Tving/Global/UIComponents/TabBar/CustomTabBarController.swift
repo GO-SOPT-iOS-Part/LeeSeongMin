@@ -9,12 +9,6 @@ import UIKit
 
 final class CustomTabBarController: UITabBarController {
     
-    var defaultIndex = 0 {
-        didSet {
-            self.selectedIndex = defaultIndex
-        }
-    }
-    
     private enum TabBarItem: CaseIterable {
         case home
         case beforeRelease
@@ -30,7 +24,7 @@ final class CustomTabBarController: UITabBarController {
             case .search:
                 return ImageLiteral.search
             case .record:
-                return ImageLiteral.search
+                return ImageLiteral.record
             }
         }
         
@@ -73,18 +67,21 @@ final class CustomTabBarController: UITabBarController {
     // MARK: -  set
     
     private func setTabBarItems() {
-        
-        var tabBarItems: [UITabBarItem] = []
         var viewControllers: [UIViewController] = []
         TabBarItem.allCases.enumerated().forEach { (i, item) in
             let tabBarItem = UITabBarItem(title: item.label, image: item.image, tag: i)
-            tabBarItems.append(tabBarItem)
-            viewControllers.append(item.viewController)
+            let viewController = UINavigationController(rootViewController: item.viewController)
+            viewController.tabBarItem = tabBarItem
+            viewControllers.append(viewController)
         }
+        self.viewControllers = viewControllers
     }
     
     private func setStyle() {
-        self.tabBar.backgroundColor = .black1
+        self.tabBar.tintColor = .white1
+        self.tabBar.barTintColor = .black1
+        self.tabBar.isTranslucent = false
+        self.tabBar.unselectedItemTintColor = .gray3
     }
-
+    
 }

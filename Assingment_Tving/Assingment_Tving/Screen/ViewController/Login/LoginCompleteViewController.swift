@@ -38,7 +38,8 @@ final class LoginCompleteViewController: BaseViewController {
     override func setButtonAction() {
         let action = UIAction { _ in
             let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
-            sceneDelegate?.changeRootViewController(to: MainViewController())
+//            sceneDelegate?.changeRootViewController(to: MainViewController())
+            sceneDelegate?.changeRooViewController()
         }
         baseView.completeButton.addAction(action, for: .touchUpInside)
     }

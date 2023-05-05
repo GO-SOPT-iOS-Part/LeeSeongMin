@@ -30,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let window = window else { return }
         let customTabBarController = CustomTabBarController()
         window.rootViewController = customTabBarController
+        UIView.transition(with: window, duration: 0.2, options: [.transitionCrossDissolve], animations: nil)
     }
     
     func changeRootViewController(to rootViewController: BaseViewController) {
