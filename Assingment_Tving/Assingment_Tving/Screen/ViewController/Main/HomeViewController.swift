@@ -38,7 +38,10 @@ final class HomeViewController: BaseViewController {
 
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        scrollView.contentOffset.y
+        if scrollView.contentOffset.y > 0 {
+            guard let parentViewController = parent?.parent as? MainViewController else { return }
+            parentViewController.scrollStickyHeader(to: scrollView.contentOffset.y)
+        }
     }
 }
 

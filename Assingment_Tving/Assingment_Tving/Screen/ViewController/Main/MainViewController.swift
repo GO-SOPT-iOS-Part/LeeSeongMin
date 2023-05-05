@@ -21,13 +21,15 @@ final class MainViewController: BaseViewController {
     }
     
     enum Size {
-        static let headerBannerContentHeight: CGFloat = 33
+        static let headerBannerContentHeight: CGFloat = 40
         static let headerBannerHeight: CGFloat = headerBannerContentHeight + 2 * SizeLiteral.Common.sideSmallPadding
         
-        static let segmentedButtonHeight: CGFloat = 50
+        static let segmentedButtonHeight: CGFloat = 40
         
         static let headerMaxHeight: CGFloat = headerBannerHeight + segmentedButtonHeight
         static let headerMinHeight: CGFloat = segmentedButtonHeight
+        
+        static let headerMaxOffset: CGFloat = headerBannerHeight
     }
     
     private let titles = Titles.allCases.map { $0.rawValue }
@@ -38,7 +40,9 @@ final class MainViewController: BaseViewController {
         }
     }
     
-    private var headerHeightConstraint: Constraint?
+    private var headerTopConstraint: Constraint?
+    
+    private var scrollOffsetY: CGFloat = 0
     
     // MARK: - properties
     
@@ -131,9 +135,9 @@ final class MainViewController: BaseViewController {
         
         view.addSubview(headerView)
         headerView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            self.headerTopConstraint = $0.top.equalTo(view.safeAreaLayoutGuide).constraint
             $0.horizontalEdges.equalToSuperview()
-            self.headerHeightConstraint = $0.height.equalTo(Size.headerMaxHeight).constraint
+            $0.height.equalTo(Size.headerMaxHeight)
         }
         
         headerView.addSubview(tvingBannerView)
@@ -145,12 +149,14 @@ final class MainViewController: BaseViewController {
         tvingBannerView.addSubview(tvingBannerImageView)
         tvingBannerImageView.snp.makeConstraints {
             $0.leading.verticalEdges.equalToSuperview().inset(SizeLiteral.Common.sideSmallPadding)
+            $0.centerY.equalToSuperview()
             $0.height.equalTo(Size.headerBannerContentHeight)
         }
         
         tvingBannerView.addSubview(profileButton)
         profileButton.snp.makeConstraints {
             $0.trailing.verticalEdges.equalToSuperview().inset(SizeLiteral.Common.sideSmallPadding)
+            $0.centerY.equalToSuperview()
             $0.size.equalTo(Size.headerBannerContentHeight)
         }
         
@@ -158,7 +164,6 @@ final class MainViewController: BaseViewController {
         segmentedButtonsView.snp.makeConstraints {
             $0.top.equalTo(tvingBannerView.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(50)
             $0.bottom.equalTo(headerView)
         }
     }
@@ -179,6 +184,32 @@ final class MainViewController: BaseViewController {
             pageViewController.setViewControllers([pageViewControllerData[index]], direction: .reverse, animated: true)
         }
         currentIndex = index
+    }
+    
+    func scrollStickyHeader(to offset: CGFloat) {
+        headerTopConstraint?.update(offset: (-1) * min(offset, Size.headerMaxOffset))
+        configStickyHeader(offset)
+    }
+    
+    func configStickyHeader(_ offset: CGFloat) {
+        if offset >= SizeLiteral.Common.sidePadding {
+            tvingBannerImageView.isHidden = true
+            profileButton.isHidden = true
+        } else {
+            tvingBannerImageView.isHidden = false
+            profileButton.isHidden = false
+        }
+        
+        if offset > Size.headerBannerHeight {
+            headerView.backgroundColor = .black1.withAlphaComponent(0.8)
+        } else {
+            headerView.backgroundColor = .clear
+        }
+//        let maxDissolvePercentage = Size.headerMinHeight / Size.headerMaxHeight
+//        let currentDissolvePercentage = offset / Size.headerMaxOffset
+//        let dissolvePercentage = min(currentDissolvePercentage, maxDissolvePercentage)
+//        tvingBannerView.layer.opacity = 1 - Float(currentDissolvePercentage)
+        
     }
     
 }

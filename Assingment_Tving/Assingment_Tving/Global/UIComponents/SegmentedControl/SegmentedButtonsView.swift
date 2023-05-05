@@ -84,9 +84,9 @@ final class SegmentedButtonsView: UIView {
         
         segmentButtonsStackView.addSubview(bottomIndicatorView)
         bottomIndicatorView.snp.makeConstraints {
-            $0.top.equalTo(segmentButtonsStackView.snp.bottom).offset(4)
+            $0.top.equalTo(segmentButtonsStackView.snp.bottom)
             $0.leading.width.equalTo(segmentButtons[0].buttonTitleLabel)
-            $0.height.equalTo(4)
+            $0.height.equalTo(3)
         }
     }
     

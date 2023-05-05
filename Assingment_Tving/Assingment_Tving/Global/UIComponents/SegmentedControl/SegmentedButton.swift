@@ -24,6 +24,7 @@ final class SegmentedButton: UIButton {
     
     init(title: String) {
         super.init(frame: .zero)
+        
         setLayout()
         setTitleLabel(title)
     }
@@ -39,7 +40,7 @@ final class SegmentedButton: UIButton {
         addSubview(buttonTitleLabel)
         buttonTitleLabel.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(15)
-            $0.centerY.equalToSuperview()
+            $0.verticalEdges.equalToSuperview()
         }
     }
     
