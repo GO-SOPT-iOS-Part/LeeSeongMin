@@ -26,6 +26,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.makeKeyAndVisible()
     }
     
+    func changeRooViewController() {
+        guard let window = window else { return }
+        let customTabBarController = CustomTabBarController()
+        window.rootViewController = customTabBarController
+    }
+    
     func changeRootViewController(to rootViewController: BaseViewController) {
         guard let window = window else { return }
         let rootViewController = UINavigationController(rootViewController: rootViewController)

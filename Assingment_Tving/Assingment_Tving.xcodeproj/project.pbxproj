@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E5A9CD92A041B4000939718 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CD82A041B4000939718 /* CustomTabBar.swift */; };
+		3E5A9CDE2A04258F00939718 /* BeforeReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CDD2A04258F00939718 /* BeforeReleaseViewController.swift */; };
+		3E5A9CE02A04259A00939718 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CDF2A04259A00939718 /* SearchViewController.swift */; };
+		3E5A9CE22A0425A200939718 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CE12A0425A200939718 /* RecordViewController.swift */; };
+		3E5A9CE72A04261A00939718 /* BeforeReleaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CE62A04261A00939718 /* BeforeReleaseView.swift */; };
+		3E5A9CE92A0426B200939718 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CE82A0426B200939718 /* SearchView.swift */; };
+		3E5A9CEB2A042AF900939718 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CEA2A042AF900939718 /* RecordView.swift */; };
+		3E5A9CEE2A042E8200939718 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CED2A042E8200939718 /* CustomTabBarController.swift */; };
 		3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0EF29F7A2350015A7E0 /* CreateAccountView.swift */; };
 		3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F129F7A2650015A7E0 /* BaseView.swift */; };
 		3E83B0F629F7ABCE0015A7E0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */; };
@@ -79,6 +87,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E5A9CD82A041B4000939718 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		3E5A9CDD2A04258F00939718 /* BeforeReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeReleaseViewController.swift; sourceTree = "<group>"; };
+		3E5A9CDF2A04259A00939718 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3E5A9CE12A0425A200939718 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		3E5A9CE62A04261A00939718 /* BeforeReleaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeReleaseView.swift; sourceTree = "<group>"; };
+		3E5A9CE82A0426B200939718 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		3E5A9CEA2A042AF900939718 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		3E5A9CED2A042E8200939718 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		3E83B0EF29F7A2350015A7E0 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		3E83B0F129F7A2650015A7E0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -163,13 +179,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E5A9CDA2A04256400939718 /* BeforeRelease */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9CDD2A04258F00939718 /* BeforeReleaseViewController.swift */,
+			);
+			path = BeforeRelease;
+			sourceTree = "<group>";
+		};
+		3E5A9CDB2A04256F00939718 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9CDF2A04259A00939718 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		3E5A9CDC2A04257700939718 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9CE12A0425A200939718 /* RecordViewController.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		3E5A9CE32A0425E500939718 /* BeforeRelease */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9CE62A04261A00939718 /* BeforeReleaseView.swift */,
+			);
+			path = BeforeRelease;
+			sourceTree = "<group>";
+		};
+		3E5A9CE42A0425F100939718 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9CE82A0426B200939718 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		3E5A9CE52A0425F800939718 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9CEA2A042AF900939718 /* RecordView.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		3E5A9CEC2A042E7300939718 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9CD82A041B4000939718 /* CustomTabBar.swift */,
+				3E5A9CED2A042E8200939718 /* CustomTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		3E83B0EB29F7A1FF0015A7E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3E83B0ED29F7A20C0015A7E0 /* CreateAccount */,
 				3E83B0F429F7AB900015A7E0 /* Login */,
 				3E83B10129F833790015A7E0 /* Main */,
-				3E83B0F929F82E470015A7E0 /* MyPage */,
+				3E5A9CE32A0425E500939718 /* BeforeRelease */,
+				3E5A9CE42A0425F100939718 /* Search */,
+				3E5A9CE52A0425F800939718 /* Record */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,10 +251,11 @@
 		3E83B0EC29F7A2040015A7E0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3E83B0F329F7AB7E0015A7E0 /* CreateAccount */,
 				3E83B0EE29F7A2150015A7E0 /* Login */,
 				3E83B10229F833810015A7E0 /* Main */,
-				3E83B0FA29F82E4D0015A7E0 /* MyPage */,
+				3E5A9CDA2A04256400939718 /* BeforeRelease */,
+				3E5A9CDB2A04256F00939718 /* Search */,
+				3E5A9CDC2A04257700939718 /* Record */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -196,6 +271,7 @@
 		3E83B0EE29F7A2150015A7E0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				3E83B0F329F7AB7E0015A7E0 /* CreateAccount */,
 				3EF790C929E678F40052578E /* LoginViewController.swift */,
 				3EF7910329E868490052578E /* LoginCompleteViewController.swift */,
 			);
@@ -213,6 +289,7 @@
 		3E83B0F429F7AB900015A7E0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				3E83B0ED29F7A20C0015A7E0 /* CreateAccount */,
 				3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */,
 				3E83B0F729F7ABE70015A7E0 /* LoginCompleteView.swift */,
 			);
@@ -240,6 +317,7 @@
 		3E83B10129F833790015A7E0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3E83B0F929F82E470015A7E0 /* MyPage */,
 				3E83B17E2A016C070015A7E0 /* Home */,
 				3E83B17F2A016C1B0015A7E0 /* Live */,
 				3E83B1822A016C330015A7E0 /* TV */,
@@ -253,6 +331,7 @@
 		3E83B10229F833810015A7E0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3E83B0FA29F82E4D0015A7E0 /* MyPage */,
 				3E83B18E2A016CB60015A7E0 /* MainViewController.swift */,
 				3E83B10529F834190015A7E0 /* HomeViewController.swift */,
 				3E83B1902A016CC10015A7E0 /* LiveViewController.swift */,
@@ -430,6 +509,7 @@
 		3EF790D029E67AA30052578E /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				3E5A9CEC2A042E7300939718 /* TabBar */,
 				3E83B19D2A022DAB0015A7E0 /* ContentCollection */,
 				3E83B12C29FBBEED0015A7E0 /* SegmentedControl */,
 				3EF790D629E67B430052578E /* CustomTextField.swift */,
@@ -599,17 +679,22 @@
 			files = (
 				3EF7910929E8768D0052578E /* CreateAccountViewController.swift in Sources */,
 				3E83B11129F9472B0015A7E0 /* MyPageHeaderView.swift in Sources */,
+				3E5A9CEE2A042E8200939718 /* CustomTabBarController.swift in Sources */,
 				3EF790D729E67B430052578E /* CustomTextField.swift in Sources */,
 				3E83B1782A003D4E0015A7E0 /* LargeContentCollectionView.swift in Sources */,
 				3E83B10E29F8FE1F0015A7E0 /* SettingTableViewCell.swift in Sources */,
+				3E5A9CE72A04261A00939718 /* BeforeReleaseView.swift in Sources */,
 				3E83B10A29F8F49D0015A7E0 /* TextLiteral.swift in Sources */,
 				3E83B1872A016C740015A7E0 /* MovieView.swift in Sources */,
 				3E83B16529FE568D0015A7E0 /* UIScrollView+Extension.swift in Sources */,
 				3EF7910129E865B20052578E /* String+Extension.swift in Sources */,
+				3E5A9CEB2A042AF900939718 /* RecordView.swift in Sources */,
+				3E5A9CDE2A04258F00939718 /* BeforeReleaseViewController.swift in Sources */,
 				3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */,
 				3E83B1972A016CF00015A7E0 /* ParamountViewController.swift in Sources */,
 				3E83B1992A016CFD0015A7E0 /* KidsViewController.swift in Sources */,
 				3E83B1952A016CDF0015A7E0 /* MovieViewController.swift in Sources */,
+				3E5A9CE02A04259A00939718 /* SearchViewController.swift in Sources */,
 				3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */,
 				3E83B19F2A022DEA0015A7E0 /* SmallContentCollectionView.swift in Sources */,
 				3EF7910429E868490052578E /* LoginCompleteViewController.swift in Sources */,
@@ -622,6 +707,7 @@
 				3E83B15F29FC080C0015A7E0 /* SegmentedButton.swift in Sources */,
 				3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */,
 				3E83B12229FAABC70015A7E0 /* SettingTableViewFooter.swift in Sources */,
+				3E5A9CE22A0425A200939718 /* RecordViewController.swift in Sources */,
 				3EF790FD29E710EE0052578E /* CustomButton.swift in Sources */,
 				3EF790DE29E6801C0052578E /* UIViewController+Extension.swift in Sources */,
 				3EF790E129E687F40052578E /* ImageLiteral.swift in Sources */,
@@ -637,7 +723,9 @@
 				3E83B16D2A002FAF0015A7E0 /* BaseCollectionViewCell.swift in Sources */,
 				3E83B1692A002ED40015A7E0 /* CommonContentCollectionView.swift in Sources */,
 				3E83B18A2A016C810015A7E0 /* ParamountView.swift in Sources */,
+				3E5A9CD92A041B4000939718 /* CustomTabBar.swift in Sources */,
 				3EF790D929E67C5E0052578E /* UIColor+Extension.swift in Sources */,
+				3E5A9CE92A0426B200939718 /* SearchView.swift in Sources */,
 				3E83B16B2A002F280015A7E0 /* CommonContentCollectionViewCell.swift in Sources */,
 				3E83B12E29FBBF000015A7E0 /* PageControlCollectionViewCell.swift in Sources */,
 				3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */,

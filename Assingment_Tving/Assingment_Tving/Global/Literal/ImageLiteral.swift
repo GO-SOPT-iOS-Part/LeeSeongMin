@@ -11,6 +11,11 @@ enum ImageLiteral {
     
     // MARK: - icon
     
+    static let home = UIImage(systemName: "house")!
+    static let beforeRelease = UIImage(systemName: "play.rectangle.on.rectangle")!
+    static let search = UIImage(systemName: "magnifyingglass")!
+    static let record = UIImage(systemName: "clock.arrow.circlepath")!
+    
     static let previous = UIImage(systemName: "chevron.left")
     static let next = UIImage(systemName: "chevron.right")
     static let notification = UIImage(systemName: "bell")
