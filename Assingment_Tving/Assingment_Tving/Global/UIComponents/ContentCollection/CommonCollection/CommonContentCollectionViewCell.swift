@@ -11,12 +11,25 @@ final class CommonContentCollectionViewCell: BaseCollectionViewCell {
     
     static let identifier = "TvingSmallTableViewCell"
     
+    enum Size {
+        static let contentWidth: CGFloat = 100
+        static let contentHeight: CGFloat = 100 / 0.7
+    }
+    
     // MARK: - properties
     
     private let mainContentView: UIView = {
         let view = UIView()
-        // FIXME: content 추가
+        view.setCornerRadius(to: 4)
         return view
+    }()
+    
+    private let contentLabel: UILabel = {
+        let label = UILabel()
+        label.text = "제목"
+        label.textColor = .gray2
+        label.font = .smallRegular
+        return label
     }()
     
     // MARK: -  set
@@ -24,7 +37,13 @@ final class CommonContentCollectionViewCell: BaseCollectionViewCell {
     override func setLayout() {
         contentView.addSubview(mainContentView)
         mainContentView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(Size.contentHeight)
+        }
+        
+        contentView.addSubview(contentLabel)
+        contentLabel.snp.makeConstraints {
+            $0.leading.bottom.equalToSuperview()
         }
     }
     

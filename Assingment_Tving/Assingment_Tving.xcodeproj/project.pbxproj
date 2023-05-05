@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E5A9CD92A041B4000939718 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CD82A041B4000939718 /* CustomTabBar.swift */; };
 		3E5A9CDE2A04258F00939718 /* BeforeReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CDD2A04258F00939718 /* BeforeReleaseViewController.swift */; };
 		3E5A9CE02A04259A00939718 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CDF2A04259A00939718 /* SearchViewController.swift */; };
 		3E5A9CE22A0425A200939718 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CE12A0425A200939718 /* RecordViewController.swift */; };
@@ -87,7 +86,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3E5A9CD82A041B4000939718 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		3E5A9CDD2A04258F00939718 /* BeforeReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeReleaseViewController.swift; sourceTree = "<group>"; };
 		3E5A9CDF2A04259A00939718 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3E5A9CE12A0425A200939718 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
@@ -225,15 +223,6 @@
 				3E5A9CEA2A042AF900939718 /* RecordView.swift */,
 			);
 			path = Record;
-			sourceTree = "<group>";
-		};
-		3E5A9CEC2A042E7300939718 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				3E5A9CD82A041B4000939718 /* CustomTabBar.swift */,
-				3E5A9CED2A042E8200939718 /* CustomTabBarController.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		3E83B0EB29F7A1FF0015A7E0 /* View */ = {
@@ -509,11 +498,11 @@
 		3EF790D029E67AA30052578E /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				3E5A9CEC2A042E7300939718 /* TabBar */,
 				3E83B19D2A022DAB0015A7E0 /* ContentCollection */,
 				3E83B12C29FBBEED0015A7E0 /* SegmentedControl */,
 				3EF790D629E67B430052578E /* CustomTextField.swift */,
 				3EF790FC29E710ED0052578E /* CustomButton.swift */,
+				3E5A9CED2A042E8200939718 /* CustomTabBarController.swift */,
 				3EF7910529E86FAE0052578E /* BackButton.swift */,
 				3E83B12329FAEC5B0015A7E0 /* IconButton.swift */,
 			);
@@ -723,7 +712,6 @@
 				3E83B16D2A002FAF0015A7E0 /* BaseCollectionViewCell.swift in Sources */,
 				3E83B1692A002ED40015A7E0 /* CommonContentCollectionView.swift in Sources */,
 				3E83B18A2A016C810015A7E0 /* ParamountView.swift in Sources */,
-				3E5A9CD92A041B4000939718 /* CustomTabBar.swift in Sources */,
 				3EF790D929E67C5E0052578E /* UIColor+Extension.swift in Sources */,
 				3E5A9CE92A0426B200939718 /* SearchView.swift in Sources */,
 				3E83B16B2A002F280015A7E0 /* CommonContentCollectionViewCell.swift in Sources */,

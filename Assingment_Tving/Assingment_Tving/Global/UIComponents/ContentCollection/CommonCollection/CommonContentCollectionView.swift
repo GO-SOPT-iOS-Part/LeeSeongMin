@@ -11,9 +11,9 @@ final class CommonContentCollectionView: BaseTableViewCell {
     
     static let identifier = "TvingSmallCollectionView"
     enum Size {
-        static let collectionViewHeight: CGFloat = 200
+        static let collectionViewHeight: CGFloat = 240
         static let cellWidth: CGFloat = 100
-        static let cellHeight: CGFloat = 100 / 0.7
+        static let contentHeight: CGFloat = 100 / 0.7 + 20
     }
     
     private var data = [DummyColor]()
@@ -42,7 +42,7 @@ final class CommonContentCollectionView: BaseTableViewCell {
     private let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = .init(width: Size.cellWidth, height: Size.cellHeight)
+        layout.itemSize = .init(width: Size.cellWidth, height: Size.contentHeight)
         return layout
     }()
     
@@ -64,9 +64,9 @@ final class CommonContentCollectionView: BaseTableViewCell {
         
         contentView.addSubview(smallCollectionView)
         smallCollectionView.snp.makeConstraints {
-            $0.top.equalTo(smallCollectionViewTitleLabel.snp.bottom)
+            $0.top.equalTo(smallCollectionViewTitleLabel.snp.bottom).offset(8)
             $0.horizontalEdges.equalToSuperview().inset(SizeLiteral.Common.sideMediumPadding)
-            $0.height.equalTo(Size.cellHeight)
+            $0.height.equalTo(Size.contentHeight)
         }
     }
     
@@ -96,6 +96,5 @@ extension CommonContentCollectionView: UICollectionViewDataSource {
         cell.configureCell(data[indexPath.row])
         return cell
     }
-    
     
 }
