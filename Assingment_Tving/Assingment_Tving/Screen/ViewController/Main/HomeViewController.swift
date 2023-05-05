@@ -12,6 +12,8 @@ final class HomeViewController: BaseViewController {
     // FIXME: 색이 아닌 페이지로 바꾸기
     private let data = DummyColor.dummy()
     
+    var scrollViewContentOffsetY: CGFloat = 0
+    
     // MARK: - properties
     
     private let baseView = HomeView()
@@ -29,6 +31,15 @@ final class HomeViewController: BaseViewController {
         baseView.homeTableView.dataSource = self
     }
     
+}
+
+
+// MARK: - extension UIScrollViewDelegate
+
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        scrollView.contentOffset.y
+    }
 }
 
 

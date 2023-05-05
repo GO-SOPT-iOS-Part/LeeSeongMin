@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SnapKit
+
 final class MainViewController: BaseViewController {
     
     enum Titles: String, CaseIterable {
@@ -18,6 +20,16 @@ final class MainViewController: BaseViewController {
         case kids = "키즈"
     }
     
+    enum Size {
+        static let headerBannerContentHeight: CGFloat = 33
+        static let headerBannerHeight: CGFloat = headerBannerContentHeight + 2 * SizeLiteral.Common.sideSmallPadding
+        
+        static let segmentedButtonHeight: CGFloat = 50
+        
+        static let headerMaxHeight: CGFloat = headerBannerHeight + segmentedButtonHeight
+        static let headerMinHeight: CGFloat = segmentedButtonHeight
+    }
+    
     private let titles = Titles.allCases.map { $0.rawValue }
     
     private var currentIndex = 0 {
@@ -25,6 +37,8 @@ final class MainViewController: BaseViewController {
             segmentedButtonsView.configBottomIndicator(to: currentIndex)
         }
     }
+    
+    private var headerHeightConstraint: Constraint?
     
     // MARK: - properties
     
@@ -45,6 +59,8 @@ final class MainViewController: BaseViewController {
     private let tvingBannerView = UIView()
     
     private let segmentedButtonsView = SegmentedButtonsView()
+    
+    private let headerView = UIView()
     
     private lazy var pageViewControllerData: [BaseViewController] = {
         return [
@@ -113,29 +129,37 @@ final class MainViewController: BaseViewController {
             $0.edges.equalToSuperview()
         }
         
-        view.addSubview(tvingBannerView)
-        tvingBannerView.snp.makeConstraints {
+        view.addSubview(headerView)
+        headerView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+            self.headerHeightConstraint = $0.height.equalTo(Size.headerMaxHeight).constraint
+        }
+        
+        headerView.addSubview(tvingBannerView)
+        tvingBannerView.snp.makeConstraints {
+            $0.top.equalTo(headerView)
             $0.horizontalEdges.equalToSuperview()
         }
         
         tvingBannerView.addSubview(tvingBannerImageView)
         tvingBannerImageView.snp.makeConstraints {
             $0.leading.verticalEdges.equalToSuperview().inset(SizeLiteral.Common.sideSmallPadding)
-            $0.height.equalTo(33)
+            $0.height.equalTo(Size.headerBannerContentHeight)
         }
         
         tvingBannerView.addSubview(profileButton)
         profileButton.snp.makeConstraints {
             $0.trailing.verticalEdges.equalToSuperview().inset(SizeLiteral.Common.sideSmallPadding)
-            $0.size.equalTo(33)
+            $0.size.equalTo(Size.headerBannerContentHeight)
         }
         
-        view.addSubview(segmentedButtonsView)
+        headerView.addSubview(segmentedButtonsView)
         segmentedButtonsView.snp.makeConstraints {
             $0.top.equalTo(tvingBannerView.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(50)
+            $0.bottom.equalTo(headerView)
         }
     }
     
@@ -230,7 +254,6 @@ extension MainViewController: UIPageViewControllerDataSource {
         }
         return pageViewControllerData[nextIndex]
     }
-    
     
 }
 
