@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.makeKeyAndVisible()
     }
     
-    func changeRooViewController() {
+    func changeRootViewController() {
         guard let window = window else { return }
         let customTabBarController = CustomTabBarController()
         window.rootViewController = customTabBarController
