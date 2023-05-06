@@ -9,19 +9,33 @@
 /* Begin PBXBuildFile section */
 		3E5A9D1E2A06172D00939718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D1D2A06172D00939718 /* AppDelegate.swift */; };
 		3E5A9D202A06172D00939718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D1F2A06172D00939718 /* SceneDelegate.swift */; };
-		3E5A9D222A06172D00939718 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D212A06172D00939718 /* ViewController.swift */; };
 		3E5A9D272A06172F00939718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A9D262A06172F00939718 /* Assets.xcassets */; };
 		3E5A9D2A2A06172F00939718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A9D282A06172F00939718 /* LaunchScreen.storyboard */; };
+		3E5A9D372A06180900939718 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3E5A9D362A06180900939718 /* SnapKit */; };
+		3E5A9D3A2A06182900939718 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3E5A9D392A06182900939718 /* Alamofire */; };
+		3E5A9D3E2A06184700939718 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D3D2A06184700939718 /* BaseView.swift */; };
+		3E5A9D402A0618B800939718 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D3F2A0618B800939718 /* BaseViewController.swift */; };
+		3E5A9D422A0622E700939718 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D412A0622E700939718 /* NetworkResult.swift */; };
+		3E5A9D442A06230300939718 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D432A06230300939718 /* Config.swift */; };
+		3E5A9D472A06255200939718 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D462A06255200939718 /* SignUpModel.swift */; };
+		3E5A9D4A2A06263200939718 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D492A06263200939718 /* SignUpService.swift */; };
+		3E5A9D4C2A062C7700939718 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9D4B2A062C7700939718 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E5A9D1A2A06172D00939718 /* Fourth_Seminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fourth_Seminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5A9D1D2A06172D00939718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E5A9D1F2A06172D00939718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3E5A9D212A06172D00939718 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E5A9D262A06172F00939718 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E5A9D292A06172F00939718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E5A9D2B2A06172F00939718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E5A9D3D2A06184700939718 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		3E5A9D3F2A0618B800939718 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3E5A9D412A0622E700939718 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		3E5A9D432A06230300939718 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		3E5A9D462A06255200939718 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		3E5A9D492A06263200939718 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		3E5A9D4B2A062C7700939718 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E5A9D372A06180900939718 /* SnapKit in Frameworks */,
+				3E5A9D3A2A06182900939718 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,14 +70,76 @@
 		3E5A9D1C2A06172D00939718 /* Fourth_Seminar */ = {
 			isa = PBXGroup;
 			children = (
+				3E5A9D322A0617B800939718 /* Network */,
+				3E5A9D332A0617E600939718 /* Screen */,
+				3E5A9D342A0617EB00939718 /* Global */,
 				3E5A9D1D2A06172D00939718 /* AppDelegate.swift */,
 				3E5A9D1F2A06172D00939718 /* SceneDelegate.swift */,
-				3E5A9D212A06172D00939718 /* ViewController.swift */,
 				3E5A9D262A06172F00939718 /* Assets.xcassets */,
 				3E5A9D282A06172F00939718 /* LaunchScreen.storyboard */,
 				3E5A9D2B2A06172F00939718 /* Info.plist */,
 			);
 			path = Fourth_Seminar;
+			sourceTree = "<group>";
+		};
+		3E5A9D322A0617B800939718 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9D452A06254200939718 /* Model */,
+				3E5A9D482A06261100939718 /* Service */,
+				3E5A9D412A0622E700939718 /* NetworkResult.swift */,
+				3E5A9D432A06230300939718 /* Config.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3E5A9D332A0617E600939718 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9D4B2A062C7700939718 /* MainViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		3E5A9D342A0617EB00939718 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9D3B2A06183100939718 /* Base */,
+				3E5A9D3C2A06183500939718 /* Literal */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		3E5A9D3B2A06183100939718 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9D3D2A06184700939718 /* BaseView.swift */,
+				3E5A9D3F2A0618B800939718 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3E5A9D3C2A06183500939718 /* Literal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Literal;
+			sourceTree = "<group>";
+		};
+		3E5A9D452A06254200939718 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9D462A06255200939718 /* SignUpModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E5A9D482A06261100939718 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A9D492A06263200939718 /* SignUpService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +158,10 @@
 			dependencies = (
 			);
 			name = Fourth_Seminar;
+			packageProductDependencies = (
+				3E5A9D362A06180900939718 /* SnapKit */,
+				3E5A9D392A06182900939718 /* Alamofire */,
+			);
 			productName = Fourth_Seminar;
 			productReference = 3E5A9D1A2A06172D00939718 /* Fourth_Seminar.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +190,10 @@
 				Base,
 			);
 			mainGroup = 3E5A9D112A06172D00939718;
+			packageReferences = (
+				3E5A9D352A06180900939718 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3E5A9D382A06182900939718 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 3E5A9D1B2A06172D00939718 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,9 +220,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E5A9D222A06172D00939718 /* ViewController.swift in Sources */,
+				3E5A9D402A0618B800939718 /* BaseViewController.swift in Sources */,
 				3E5A9D1E2A06172D00939718 /* AppDelegate.swift in Sources */,
+				3E5A9D472A06255200939718 /* SignUpModel.swift in Sources */,
+				3E5A9D442A06230300939718 /* Config.swift in Sources */,
+				3E5A9D422A0622E700939718 /* NetworkResult.swift in Sources */,
 				3E5A9D202A06172D00939718 /* SceneDelegate.swift in Sources */,
+				3E5A9D4A2A06263200939718 /* SignUpService.swift in Sources */,
+				3E5A9D3E2A06184700939718 /* BaseView.swift in Sources */,
+				3E5A9D4C2A062C7700939718 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,11 +365,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://54.180.123.11";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9G6YGQ76H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fourth_Seminar/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -300,11 +394,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://54.180.123.11";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9G6YGQ76H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fourth_Seminar/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -344,6 +440,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3E5A9D352A06180900939718 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		3E5A9D382A06182900939718 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E5A9D362A06180900939718 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E5A9D352A06180900939718 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		3E5A9D392A06182900939718 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E5A9D382A06182900939718 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E5A9D122A06172D00939718 /* Project object */;
 }
