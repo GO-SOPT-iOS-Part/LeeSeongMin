@@ -11,13 +11,18 @@ import SnapKit
 
 class BaseViewController: UIViewController {
     
+    // MARK: - properties
+    
+    
+    
     // MARK: - life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setNavigationBar()
-        setLayout()
-        setStyle()
+        setDelegate()
+        setButtonTarget()
     }
     
     // MARK: - setup functions
@@ -32,13 +37,12 @@ class BaseViewController: UIViewController {
         navigationBar.scrollEdgeAppearance = appearance
     }
     
-    func setLayout() {
+    func setDelegate() {
         // override to use
     }
     
-    func setStyle() {
-        view.backgroundColor = .black1
+    func setButtonTarget() {
+        // override to use
     }
     
-    // MARK: - objc functions
 }
