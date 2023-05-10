@@ -86,6 +86,7 @@ final class MainViewController: BaseViewController {
         
         setLayout()
         setPageViewController()
+        fetchMovieData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -205,13 +206,15 @@ final class MainViewController: BaseViewController {
         } else {
             headerView.backgroundColor = .clear
         }
-//        let maxDissolvePercentage = Size.headerMinHeight / Size.headerMaxHeight
-//        let currentDissolvePercentage = offset / Size.headerMaxOffset
-//        let dissolvePercentage = min(currentDissolvePercentage, maxDissolvePercentage)
-//        tvingBannerView.layer.opacity = 1 - Float(currentDissolvePercentage)
-        
     }
     
+    // MARK: - api
+    
+    private func fetchMovieData() {
+        MovieService.shared.fetchMovieData(.fetchPopular) { response in
+            dump(response)
+        }
+    }
 }
 
 
@@ -255,7 +258,7 @@ extension MainViewController: UIPageViewControllerDelegate {
 }
 
 
-// MARK: - extension
+// MARK: - extension UIPageViewControllerDataSource
 
 extension MainViewController: UIPageViewControllerDataSource {
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
