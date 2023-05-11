@@ -17,7 +17,7 @@
 		3E6B66022A0B2619002B5DC7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66012A0B2619002B5DC7 /* Config.swift */; };
 		3E6B66222A0C98C4002B5DC7 /* MoviePopularModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66212A0C98C4002B5DC7 /* MoviePopularModel.swift */; };
 		3E6B66242A0C98E0002B5DC7 /* TVPopularModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66232A0C98E0002B5DC7 /* TVPopularModel.swift */; };
-		3E6B66262A0C9AC4002B5DC7 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66252A0C9AC4002B5DC7 /* HomeEndpoint.swift */; };
+		3E6B66262A0C9AC4002B5DC7 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66252A0C9AC4002B5DC7 /* HomeAPI.swift */; };
 		3E6B66292A0C9AE0002B5DC7 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66282A0C9AE0002B5DC7 /* RequestProtocol.swift */; };
 		3E6B662C2A0CA1CD002B5DC7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3E6B662B2A0CA1CD002B5DC7 /* Alamofire */; };
 		3E6B662F2A0CA240002B5DC7 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B662E2A0CA240002B5DC7 /* HomeService.swift */; };
@@ -107,7 +107,7 @@
 		3E6B66012A0B2619002B5DC7 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		3E6B66212A0C98C4002B5DC7 /* MoviePopularModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePopularModel.swift; sourceTree = "<group>"; };
 		3E6B66232A0C98E0002B5DC7 /* TVPopularModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVPopularModel.swift; sourceTree = "<group>"; };
-		3E6B66252A0C9AC4002B5DC7 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
+		3E6B66252A0C9AC4002B5DC7 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		3E6B66282A0C9AE0002B5DC7 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		3E6B662E2A0CA240002B5DC7 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		3E6B66302A0CA24D002B5DC7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 		3E6B661D2A0C987A002B5DC7 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
-				3E6B66252A0C9AC4002B5DC7 /* HomeEndpoint.swift */,
+				3E6B66252A0C9AC4002B5DC7 /* HomeAPI.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -798,7 +798,7 @@
 				3E6B66312A0CA24D002B5DC7 /* APIService.swift in Sources */,
 				3E83B1812A016C2B0015A7E0 /* LiveView.swift in Sources */,
 				3E83B0F629F7ABCE0015A7E0 /* LoginView.swift in Sources */,
-				3E6B66262A0C9AC4002B5DC7 /* HomeEndpoint.swift in Sources */,
+				3E6B66262A0C9AC4002B5DC7 /* HomeAPI.swift in Sources */,
 				3E83B12429FAEC5B0015A7E0 /* IconButton.swift in Sources */,
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
 				3E83B18D2A016C8F0015A7E0 /* KidsView.swift in Sources */,

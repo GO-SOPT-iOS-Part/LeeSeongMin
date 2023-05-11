@@ -9,7 +9,7 @@ import Foundation
 
 import Alamofire
 
-enum HomeEndpoint<T: Codable>: RequestProtocol, ResponseProtocol {
+enum HomeAPI<T: Codable>: RequestProtocol, ResponseProtocol {
     
     case fetchMoviePopular
     case fetchTVPopular
