@@ -19,7 +19,6 @@ struct TVPopularResponse: Codable {
     
 }
 
-// MARK: - Result
 struct TVPopularResponseDetail: Codable {
     
     let firstAirDate: String

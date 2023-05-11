@@ -24,6 +24,12 @@ final class HomeViewController: BaseViewController {
         self.view = baseView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        HomeAPIService.shared.callAPI(of: HomeEndpoint<VoidModel>.fetchMoviePopular)
+    }
+    
     // MARK: - set
     
     override func setDelegate() {
