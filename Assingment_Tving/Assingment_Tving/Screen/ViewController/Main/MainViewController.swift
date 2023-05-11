@@ -86,8 +86,8 @@ final class MainViewController: BaseViewController {
         
         setLayout()
         setPageViewController()
-        fetchMovieData()
-        fetchTVData()
+        fetchPopularMovieData()
+        fetchPopularTVData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -211,13 +211,13 @@ final class MainViewController: BaseViewController {
     
     // MARK: - api
     
-    private func fetchMovieData() {
+    private func fetchPopularMovieData() {
         MovieService.shared.fetchMovieData(.fetchPopular) { response in
             dump(response)
         }
     }
     
-    private func fetchTVData() {
+    private func fetchPopularTVData() {
         TVService.shared.fetchTVData(.fetchPopular) { response in
             dump(response)
         }

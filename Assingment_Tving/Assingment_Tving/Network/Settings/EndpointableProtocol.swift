@@ -12,6 +12,7 @@ protocol Endpointable {
     associatedtype T
     var path: String { get }
     var method: HTTPMethod { get }
+    var parameters: String? { get }
     var body: T? { get }
     var header: HTTPHeaders? { get }
     

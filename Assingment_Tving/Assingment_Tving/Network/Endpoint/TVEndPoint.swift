@@ -25,6 +25,12 @@ enum TVEndPoint<T: Codable>: Endpointable {
         }
     }
     
+    var parameters: String? {
+        switch self {
+        case .fetchPopular: return nil
+        }
+    }
+    
     var body: T? {
         switch self {
         case .fetchPopular: return nil
