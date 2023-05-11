@@ -15,6 +15,14 @@
 		3E5A9CEB2A042AF900939718 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CEA2A042AF900939718 /* RecordView.swift */; };
 		3E5A9CEE2A042E8200939718 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A9CED2A042E8200939718 /* CustomTabBarController.swift */; };
 		3E6B66022A0B2619002B5DC7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66012A0B2619002B5DC7 /* Config.swift */; };
+		3E6B66222A0C98C4002B5DC7 /* MoviePopularModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66212A0C98C4002B5DC7 /* MoviePopularModel.swift */; };
+		3E6B66242A0C98E0002B5DC7 /* TVPopularModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66232A0C98E0002B5DC7 /* TVPopularModel.swift */; };
+		3E6B66262A0C9AC4002B5DC7 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66252A0C9AC4002B5DC7 /* HomeEndpoint.swift */; };
+		3E6B66292A0C9AE0002B5DC7 /* Endpointable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66282A0C9AE0002B5DC7 /* Endpointable.swift */; };
+		3E6B662C2A0CA1CD002B5DC7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3E6B662B2A0CA1CD002B5DC7 /* Alamofire */; };
+		3E6B662F2A0CA240002B5DC7 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B662E2A0CA240002B5DC7 /* HomeService.swift */; };
+		3E6B66312A0CA24D002B5DC7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66302A0CA24D002B5DC7 /* APIService.swift */; };
+		3E6B66332A0CA284002B5DC7 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6B66322A0CA284002B5DC7 /* NetworkResult.swift */; };
 		3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0EF29F7A2350015A7E0 /* CreateAccountView.swift */; };
 		3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F129F7A2650015A7E0 /* BaseView.swift */; };
 		3E83B0F629F7ABCE0015A7E0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */; };
@@ -95,6 +103,13 @@
 		3E5A9CEA2A042AF900939718 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		3E5A9CED2A042E8200939718 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		3E6B66012A0B2619002B5DC7 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		3E6B66212A0C98C4002B5DC7 /* MoviePopularModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePopularModel.swift; sourceTree = "<group>"; };
+		3E6B66232A0C98E0002B5DC7 /* TVPopularModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVPopularModel.swift; sourceTree = "<group>"; };
+		3E6B66252A0C9AC4002B5DC7 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
+		3E6B66282A0C9AE0002B5DC7 /* Endpointable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpointable.swift; sourceTree = "<group>"; };
+		3E6B662E2A0CA240002B5DC7 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		3E6B66302A0CA24D002B5DC7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		3E6B66322A0CA284002B5DC7 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		3E83B0EF29F7A2350015A7E0 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		3E83B0F129F7A2650015A7E0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -171,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6B662C2A0CA1CD002B5DC7 /* Alamofire in Frameworks */,
 				3EF790CD29E679B40052578E /* SnapKit in Frameworks */,
 				3EF790E629E6FB970052578E /* Inject in Frameworks */,
 			);
@@ -230,9 +246,64 @@
 		3E6B66002A0B2610002B5DC7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3E6B66012A0B2619002B5DC7 /* Config.swift */,
+				3E6B66272A0C9AD4002B5DC7 /* Setting */,
+				3E6B661F2A0C9886002B5DC7 /* Model */,
+				3E6B661E2A0C987F002B5DC7 /* Service */,
+				3E6B661D2A0C987A002B5DC7 /* Endpoint */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3E6B661D2A0C987A002B5DC7 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				3E6B66252A0C9AC4002B5DC7 /* HomeEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		3E6B661E2A0C987F002B5DC7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3E6B662D2A0CA238002B5DC7 /* Home */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3E6B661F2A0C9886002B5DC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E6B66202A0C98A9002B5DC7 /* Home */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E6B66202A0C98A9002B5DC7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3E6B66212A0C98C4002B5DC7 /* MoviePopularModel.swift */,
+				3E6B66232A0C98E0002B5DC7 /* TVPopularModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3E6B66272A0C9AD4002B5DC7 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				3E6B66012A0B2619002B5DC7 /* Config.swift */,
+				3E6B66282A0C9AE0002B5DC7 /* Endpointable.swift */,
+				3E6B66302A0CA24D002B5DC7 /* APIService.swift */,
+				3E6B66322A0CA284002B5DC7 /* NetworkResult.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		3E6B662D2A0CA238002B5DC7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3E6B662E2A0CA240002B5DC7 /* HomeService.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		3E83B0EB29F7A1FF0015A7E0 /* View */ = {
@@ -609,6 +680,7 @@
 			packageProductDependencies = (
 				3EF790CC29E679B40052578E /* SnapKit */,
 				3EF790E529E6FB970052578E /* Inject */,
+				3E6B662B2A0CA1CD002B5DC7 /* Alamofire */,
 			);
 			productName = Assingment_Tving;
 			productReference = 3EF790B229E678D00052578E /* Assingment_Tving.app */;
@@ -641,6 +713,7 @@
 			packageReferences = (
 				3EF790CB29E679B40052578E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				3EF790E429E6FB970052578E /* XCRemoteSwiftPackageReference "Inject" */,
+				3E6B662A2A0CA1CD002B5DC7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3EF790B329E678D00052578E /* Products */;
 			projectDirPath = "";
@@ -689,15 +762,18 @@
 				3E83B16529FE568D0015A7E0 /* UIScrollView+Extension.swift in Sources */,
 				3EF7910129E865B20052578E /* String+Extension.swift in Sources */,
 				3E5A9CEB2A042AF900939718 /* RecordView.swift in Sources */,
+				3E6B66222A0C98C4002B5DC7 /* MoviePopularModel.swift in Sources */,
 				3E5A9CDE2A04258F00939718 /* BeforeReleaseViewController.swift in Sources */,
 				3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */,
 				3E83B1972A016CF00015A7E0 /* ParamountViewController.swift in Sources */,
 				3E83B1992A016CFD0015A7E0 /* KidsViewController.swift in Sources */,
 				3E83B1952A016CDF0015A7E0 /* MovieViewController.swift in Sources */,
+				3E6B662F2A0CA240002B5DC7 /* HomeService.swift in Sources */,
 				3E5A9CE02A04259A00939718 /* SearchViewController.swift in Sources */,
 				3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */,
 				3E83B19F2A022DEA0015A7E0 /* SmallContentCollectionView.swift in Sources */,
 				3EF7910429E868490052578E /* LoginCompleteViewController.swift in Sources */,
+				3E6B66332A0CA284002B5DC7 /* NetworkResult.swift in Sources */,
 				3E83B10029F8314E0015A7E0 /* SizeLiteral.swift in Sources */,
 				3EF790CA29E678F40052578E /* LoginViewController.swift in Sources */,
 				3E83B1932A016CD60015A7E0 /* TVViewController.swift in Sources */,
@@ -711,8 +787,10 @@
 				3EF790FD29E710EE0052578E /* CustomButton.swift in Sources */,
 				3EF790DE29E6801C0052578E /* UIViewController+Extension.swift in Sources */,
 				3EF790E129E687F40052578E /* ImageLiteral.swift in Sources */,
+				3E6B66312A0CA24D002B5DC7 /* APIService.swift in Sources */,
 				3E83B1812A016C2B0015A7E0 /* LiveView.swift in Sources */,
 				3E83B0F629F7ABCE0015A7E0 /* LoginView.swift in Sources */,
+				3E6B66262A0C9AC4002B5DC7 /* HomeEndpoint.swift in Sources */,
 				3E83B12429FAEC5B0015A7E0 /* IconButton.swift in Sources */,
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
 				3E83B18D2A016C8F0015A7E0 /* KidsView.swift in Sources */,
@@ -729,10 +807,12 @@
 				3E83B12E29FBBF000015A7E0 /* PageControlCollectionViewCell.swift in Sources */,
 				3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */,
 				3E83B11629F98B230015A7E0 /* MovieModel.swift in Sources */,
+				3E6B66292A0C9AE0002B5DC7 /* Endpointable.swift in Sources */,
 				3E83B18F2A016CB60015A7E0 /* MainViewController.swift in Sources */,
 				3EF7910629E86FAE0052578E /* BackButton.swift in Sources */,
 				3E83B16F2A0030940015A7E0 /* BaseTableViewCell.swift in Sources */,
 				3E83B10429F8338E0015A7E0 /* HomeView.swift in Sources */,
+				3E6B66242A0C98E0002B5DC7 /* TVPopularModel.swift in Sources */,
 				3E83B0FC29F82E670015A7E0 /* MyPageView.swift in Sources */,
 				3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */,
 				3EF790DC29E67E140052578E /* BaseViewController.swift in Sources */,
@@ -960,6 +1040,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3E6B662A2A0CA1CD002B5DC7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		3EF790CB29E679B40052578E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -979,6 +1067,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3E6B662B2A0CA1CD002B5DC7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E6B662A2A0CA1CD002B5DC7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		3EF790CC29E679B40052578E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3EF790CB29E679B40052578E /* XCRemoteSwiftPackageReference "SnapKit" */;
