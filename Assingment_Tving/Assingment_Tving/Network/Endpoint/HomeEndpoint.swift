@@ -9,10 +9,12 @@ import Foundation
 
 import Alamofire
 
-enum HomeEndpoint<T: Codable>: Endpointable {
+enum HomeEndpoint<T: Codable>: RequestProtocol, ResponseProtocol {
     
     case fetchMoviePopular
     case fetchTVPopular
+    
+    // MARK: - RequestProtocol
     
     var path: String {
         switch self {
@@ -28,13 +30,6 @@ enum HomeEndpoint<T: Codable>: Endpointable {
         }
     }
     
-    var body: T? {
-        switch self {
-        case .fetchMoviePopular: return nil
-        case .fetchTVPopular: return nil
-        }
-    }
-    
     var headers: HTTPHeaders? {
         switch self {
         case .fetchMoviePopular:
@@ -43,6 +38,15 @@ enum HomeEndpoint<T: Codable>: Endpointable {
         case .fetchTVPopular:
             return ["accept": "application/json",
                     "Authorization": "Bearer " + Config.apiKey]
+        }
+    }
+    
+    // MARK: - ResponseProtocol
+    
+    var type: T.Type {
+        switch self {
+        case .fetchMoviePopular: return T.self
+        case .fetchTVPopular: return T.self
         }
     }
     

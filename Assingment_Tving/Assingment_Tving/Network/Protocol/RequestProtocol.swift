@@ -1,5 +1,5 @@
 //
-//  Endpointable.swift
+//  RequestProtocol.swift
 //  Assingment_Tving
 //
 //  Created by 이성민 on 2023/05/11.
@@ -7,12 +7,10 @@
 
 import Alamofire
 
-protocol Endpointable {
+protocol RequestProtocol {
     
-    associatedtype T
     var path: String { get }
     var method: HTTPMethod { get }
-    var body: T? { get }
     var headers: HTTPHeaders? { get }
     
 }

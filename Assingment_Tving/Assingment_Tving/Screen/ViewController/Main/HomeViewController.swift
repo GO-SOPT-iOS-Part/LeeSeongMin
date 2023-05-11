@@ -27,7 +27,13 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        HomeAPIService.shared.callAPI(of: HomeEndpoint<VoidModel>.fetchMoviePopular)
+        HomeAPIService.shared.callAPI(of: HomeEndpoint<MoviePopularResponse>.fetchMoviePopular) { response in
+            dump(response)
+        }
+        
+        HomeAPIService.shared.callAPI(of: HomeEndpoint<TVPopularResponse>.fetchTVPopular) { response in
+            dump(response)
+        }
     }
     
     // MARK: - set

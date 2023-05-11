@@ -14,6 +14,5 @@ enum NetworkResult<T> {
     case decodingErr
     case serverErr
     case networkErr
-    case analysisError
     
 }

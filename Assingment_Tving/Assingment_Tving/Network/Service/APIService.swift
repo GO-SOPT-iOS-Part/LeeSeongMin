@@ -11,16 +11,17 @@ import Alamofire
 
 class APIService {
     
+    typealias NetworkClosure = (NetworkResult<Any>) -> Void
+    
 }
 
 extension APIService {
     
     func analyzeResponse<T: Decodable>(_ response: AFDataResponse<Data>,
-                                       of type: T.Type,
-                                       completion: @escaping (NetworkResult<Any>) -> Void) -> NetworkResult<Any> {
+                                       of type: T.Type) -> NetworkResult<Any> {
         guard let statusCode = response.response?.statusCode,
               let value = response.value
-        else { return .analysisError }
+        else { return .networkErr }
         
         let decoder = JSONDecoder()
         
@@ -29,10 +30,45 @@ extension APIService {
             guard let decodedData = try? decoder.decode(type, from: value)
             else { return .decodingErr }
             return .success(decodedData as Any)
+            
         case 500...599:
             return .serverErr
+            
         default:
             return .networkErr
+        }
+    }
+    
+    // api call without body
+    func callAPI(of api: any RequestProtocol & ResponseProtocol, completion: @escaping NetworkClosure) {
+        let request = AF.request(Config.baseUrl + api.path,
+                                 method: api.method,
+                                 encoding: JSONEncoding.default,
+                                 headers: api.headers)
+        request.responseData { response in
+            switch response.result {
+            case .success:
+                completion(self.analyzeResponse(response, of: api.type))
+            case .failure:
+                completion(.networkErr)
+            }
+        }
+    }
+    
+    // api call with body
+    func callAPI(of endpoint: any RequestProtocol, with body: [String: Any], completion: @escaping NetworkClosure) {
+        let request = AF.request(Config.baseUrl + endpoint.path,
+                                 method: endpoint.method,
+                                 parameters: body,
+                                 encoding: JSONEncoding.default,
+                                 headers: endpoint.headers)
+        request.responseData { response in
+            switch response.result {
+            case .success:
+                completion(self.analyzeResponse(response, of: MoviePopularResponse.self))
+            case .failure:
+                completion(.networkErr)
+            }
         }
     }
     
