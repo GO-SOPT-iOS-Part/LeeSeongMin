@@ -10,7 +10,7 @@ import Foundation
 struct MoviePopularResponse: Codable {
     
     let page: Int
-    let details: [TVPopularResponseDetail]
+    let details: [MoviePopularResponseDetail]
 
     enum CodingKeys: String, CodingKey {
         case page

@@ -11,8 +11,9 @@ enum NetworkResult<T> {
     
     case success(T)
     case requestErr(T)
-    case pathErr
+    case decodingErr
     case serverErr
     case networkErr
+    case analysisError
     
 }
