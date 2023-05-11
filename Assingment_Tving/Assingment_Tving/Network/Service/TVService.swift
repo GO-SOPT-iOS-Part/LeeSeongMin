@@ -1,21 +1,21 @@
 //
-//  TMDBService.swift
+//  TVService.swift
 //  Assingment_Tving
 //
-//  Created by 이성민 on 2023/05/10.
+//  Created by 이성민 on 2023/05/11.
 //
 
 import Foundation
 
 import Alamofire
 
-final class MovieService: APIService<MovieResponse> {
+final class TVService: APIService<TVResponse> {
     
-    static let shared = MovieService()
+    static let shared = TVService()
     
     override init() {}
     
-    func fetchMovieData(_ endpoint: MovieEndpoint<VoidModel>, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func fetchTVData(_ endpoint: TVEndPoint<VoidModel>, completion: @escaping (NetworkResult<Any>) -> Void) {
         let url = Config.baseUrl + endpoint.path
         
         let request = AF.request(url,

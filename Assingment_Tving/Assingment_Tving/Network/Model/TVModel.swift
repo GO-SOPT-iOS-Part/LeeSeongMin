@@ -5,16 +5,29 @@
 //  Created by 이성민 on 2023/05/10.
 //
 
+
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let welcome = try? JSONDecoder().decode(Welcome.self, from: jsonData)
+
 import Foundation
 
+// MARK: - Welcome
 struct TVResponse: Codable {
     
     let page: Int
-    let details: [TVDetail]
+    let details: [Result]
+
+    enum CodingKeys: String, CodingKey {
+        case page
+        case details = "results"
+    }
     
 }
 
-struct TVDetail: Codable {
+// MARK: - Result
+struct Result: Codable {
     
     let firstAirDate: String
     let id: Int
@@ -24,10 +37,9 @@ struct TVDetail: Codable {
 
     enum CodingKeys: String, CodingKey {
         case firstAirDate = "first_air_date"
-        case id
-        case name
+        case id, name
         case overview
         case posterPath = "poster_path"
     }
+    
 }
-

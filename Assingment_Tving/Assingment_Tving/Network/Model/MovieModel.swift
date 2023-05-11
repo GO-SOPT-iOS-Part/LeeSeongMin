@@ -16,6 +16,7 @@ struct MovieResponse: Codable {
         case page
         case details = "results"
     }
+    
 }
 
 struct MovieDetail: Codable {
