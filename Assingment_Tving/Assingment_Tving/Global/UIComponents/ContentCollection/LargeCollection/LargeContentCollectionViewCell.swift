@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SkeletonView
+
 final class LargeContentCollectionViewCell: BaseCollectionViewCell {
     
     enum Size {
@@ -24,9 +26,10 @@ final class LargeContentCollectionViewCell: BaseCollectionViewCell {
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "test"
+        label.text = "longer text to show skeleton"
         label.textColor = .white1
         label.font = .regular
+        label.isSkeletonable = true
         return label
     }()
     
@@ -73,11 +76,14 @@ final class LargeContentCollectionViewCell: BaseCollectionViewCell {
         let posterSize = CGSize(width: Size.cellWidth, height: Size.cellHeight)
         let posterScale = UIScreen.main.scale
         
+        descriptionLabel.showAnimatedGradientSkeleton(transition: .crossDissolve(1))
+        
         DispatchQueue.global().async {
             var downsampledImage = UIImage()
             downsampledImage = self.downsample(imageAt: posterPath, to: posterSize, scale: posterScale)
             
             DispatchQueue.main.async {
+                self.descriptionLabel.hideSkeleton()
                 self.posterView.image = downsampledImage
                 self.descriptionLabel.text = data.title
                 self.bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
