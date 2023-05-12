@@ -13,6 +13,7 @@ enum Config {
         enum Plist {
             static let baseUrl = "BASE_URL"
             static let apiKey = "API_KEY"
+            static let imageBaseUrl = "IMAGE_BASE_URL"
         }
     }
     
@@ -36,6 +37,12 @@ extension Config {
     static let apiKey: String = {
         guard let key = Config.infoDictionary[Keys.Plist.apiKey] as? String
         else { fatalError(TextLiteral.ConfigError.apiKeyError) }
+        return key
+    }()
+    
+    static let imageBaseUrl: String = {
+        guard let key = Config.infoDictionary[Keys.Plist.imageBaseUrl] as? String
+        else { fatalError(TextLiteral.ConfigError.baseUrlError) }
         return key
     }()
     

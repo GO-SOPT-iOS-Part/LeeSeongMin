@@ -975,6 +975,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9G6YGQ76H;
 				GENERATE_INFOPLIST_FILE = YES;
+				IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original/";
 				INFOPLIST_FILE = Assingment_Tving/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1009,6 +1010,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9G6YGQ76H;
 				GENERATE_INFOPLIST_FILE = YES;
+				IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original/";
 				INFOPLIST_FILE = Assingment_Tving/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

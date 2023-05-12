@@ -17,7 +17,7 @@ final class LargeContentCollectionView: BaseTableViewCell {
         static let cellWidth = SizeLiteral.Screen.width
     }
     
-    private var data = [DummyColor]()
+    private var data = [MoviePopularResponseDetail]()
     private var originalDataCount = 0
     
     // MARK: - properties
@@ -83,9 +83,10 @@ final class LargeContentCollectionView: BaseTableViewCell {
     
     // MARK: - functions
     
-    func prepareCells(_ data: [DummyColor]) {
+    func prepareCells(_ data: [MoviePopularResponseDetail]) {
         self.data = data
         self.originalDataCount = data.count
+        self.largeCollectionView.reloadData()
         appendFirstAndLastData()
     }
     
@@ -132,7 +133,7 @@ extension LargeContentCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeContentCollectionViewCell.identifier, for: indexPath) as? LargeContentCollectionViewCell
         else { return UICollectionViewCell() }
-        cell.configureCell(data[(indexPath.row + 1) % data.count], description: "test")
+        cell.configureCell(data[(indexPath.row + 1) % data.count])
         return cell
     }
     

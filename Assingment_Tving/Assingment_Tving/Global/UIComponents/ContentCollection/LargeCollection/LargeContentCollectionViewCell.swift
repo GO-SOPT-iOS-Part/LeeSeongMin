@@ -9,11 +9,16 @@ import UIKit
 
 final class LargeContentCollectionViewCell: BaseCollectionViewCell {
     
+    enum Size {
+        static let cellHeight = SizeLiteral.Screen.width / 0.7
+        static let cellWidth = SizeLiteral.Screen.width
+    }
+    
     static let identifier = "LargeContentCollectionViewCell"
     
     // MARK: - properties
     
-    private let dummyView = UIView()
+    private let posterView = UIImageView()
     
     private let bottomGradientView = UIView()
     
@@ -36,8 +41,8 @@ final class LargeContentCollectionViewCell: BaseCollectionViewCell {
     // MARK: -  set
     
     override func setLayout() {
-        contentView.addSubview(dummyView)
-        dummyView.snp.makeConstraints {
+        contentView.addSubview(posterView)
+        posterView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         
@@ -57,9 +62,20 @@ final class LargeContentCollectionViewCell: BaseCollectionViewCell {
     // MARK: - functions
     
     func configureCell(_ color: DummyColor, description: String) {
-        dummyView.backgroundColor = color.color
+        posterView.backgroundColor = color.color
         descriptionLabel.text = description
         bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
     }
-
+    
+    func configureCell(_ data: MoviePopularResponseDetail) {
+        guard let posterPath = URL(string: Config.imageBaseUrl + data.posterPath)
+        else { return }
+        let posterSize = CGSize(width: Size.cellWidth, height: Size.cellHeight)
+        let posterScale = UIScreen.main.scale
+        
+        posterView.image = downsample(imageAt: posterPath, to: posterSize, scale: posterScale)
+        descriptionLabel.text = data.title
+        bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
+    }
+    
 }

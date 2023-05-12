@@ -38,8 +38,7 @@ extension UIViewController {
     private func endEditing() {
         view.endEditing(true)
     }
-}
-
-extension UIViewController: UIGestureRecognizerDelegate {
     
 }
+
+extension UIViewController: UIGestureRecognizerDelegate {}
