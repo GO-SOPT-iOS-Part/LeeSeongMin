@@ -133,7 +133,9 @@ extension LargeContentCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeContentCollectionViewCell.identifier, for: indexPath) as? LargeContentCollectionViewCell
         else { return UICollectionViewCell() }
-        cell.configureCell(data[(indexPath.row + 1) % data.count])
+        cell.configureCell(data[(indexPath.row + 1) % data.count]) {
+            self.largeCollectionView.reloadData()
+        }
         return cell
     }
     

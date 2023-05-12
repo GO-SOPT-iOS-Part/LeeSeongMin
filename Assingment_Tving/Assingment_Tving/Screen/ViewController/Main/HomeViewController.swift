@@ -29,17 +29,7 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        HomeAPIService.shared.callAPI(of: HomeAPI<MoviePopularResponse>.fetchMoviePopular) { response in
-            dump(response)
-            switch response {
-            case .success(let data):
-                guard let movieData = data as? MoviePopularResponse else { return }
-                self.movieData = Array(movieData.details.prefix(5))
-                self.baseView.homeTableView.reloadData()
-            default:
-                print("error")
-            }
-        }
+        fetchMoviePopular()
         
 //        HomeAPIService.shared.callAPI(of: HomeAPI<TVPopularResponse>.fetchTVPopular) { response in
 //            dump(response)
@@ -51,6 +41,21 @@ final class HomeViewController: BaseViewController {
     override func setDelegate() {
         baseView.homeTableView.delegate = self
         baseView.homeTableView.dataSource = self
+    }
+    
+    // MARK: - api
+    
+    private func fetchMoviePopular() {
+        HomeAPIService.shared.callAPI(of: HomeAPI<MoviePopularResponse>.fetchMoviePopular) { response in
+            switch response {
+            case .success(let data):
+                guard let movieData = data as? MoviePopularResponse else { return }
+                self.movieData = Array(movieData.details.prefix(5))
+                self.baseView.homeTableView.reloadData()
+            default:
+                print("error")
+            }
+        }
     }
     
 }

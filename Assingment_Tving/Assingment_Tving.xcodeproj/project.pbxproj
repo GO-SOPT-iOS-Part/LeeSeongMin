@@ -26,6 +26,7 @@
 		3E6CF40D2A0CAD5400DC3B2B /* VoidModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CF40C2A0CAD5400DC3B2B /* VoidModel.swift */; };
 		3E6CF4102A0D410100DC3B2B /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CF40F2A0D410100DC3B2B /* APIServiceProtocol.swift */; };
 		3E6CF4122A0D518900DC3B2B /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CF4112A0D518900DC3B2B /* ResponseProtocol.swift */; };
+		3E6CF4162A0E0FE300DC3B2B /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CF4152A0E0FE300DC3B2B /* ImageCacheManager.swift */; };
 		3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0EF29F7A2350015A7E0 /* CreateAccountView.swift */; };
 		3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F129F7A2650015A7E0 /* BaseView.swift */; };
 		3E83B0F629F7ABCE0015A7E0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */; };
@@ -115,6 +116,7 @@
 		3E6CF40C2A0CAD5400DC3B2B /* VoidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidModel.swift; sourceTree = "<group>"; };
 		3E6CF40F2A0D410100DC3B2B /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		3E6CF4112A0D518900DC3B2B /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
+		3E6CF4152A0E0FE300DC3B2B /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		3E83B0EF29F7A2350015A7E0 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		3E83B0F129F7A2650015A7E0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			children = (
 				3E6B66012A0B2619002B5DC7 /* Config.swift */,
 				3E6B66322A0CA284002B5DC7 /* NetworkResult.swift */,
+				3E6CF4152A0E0FE300DC3B2B /* ImageCacheManager.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 				3E83B18D2A016C8F0015A7E0 /* KidsView.swift in Sources */,
 				3E83B10629F834190015A7E0 /* HomeViewController.swift in Sources */,
 				3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */,
+				3E6CF4162A0E0FE300DC3B2B /* ImageCacheManager.swift in Sources */,
 				3E83B13029FBC2E70015A7E0 /* IdentifierLiteral.swift in Sources */,
 				3E83B1912A016CC10015A7E0 /* LiveViewController.swift in Sources */,
 				3E83B16D2A002FAF0015A7E0 /* BaseCollectionViewCell.swift in Sources */,

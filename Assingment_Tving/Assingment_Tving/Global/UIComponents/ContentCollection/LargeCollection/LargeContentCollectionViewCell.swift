@@ -67,15 +67,22 @@ final class LargeContentCollectionViewCell: BaseCollectionViewCell {
         bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
     }
     
-    func configureCell(_ data: MoviePopularResponseDetail) {
+    func configureCell(_ data: MoviePopularResponseDetail, completion: @escaping () -> ()) {
         guard let posterPath = URL(string: Config.imageBaseUrl + data.posterPath)
         else { return }
         let posterSize = CGSize(width: Size.cellWidth, height: Size.cellHeight)
         let posterScale = UIScreen.main.scale
         
-        posterView.image = downsample(imageAt: posterPath, to: posterSize, scale: posterScale)
-        descriptionLabel.text = data.title
-        bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
+        DispatchQueue.global().async {
+            var downsampledImage = UIImage()
+            downsampledImage = self.downsample(imageAt: posterPath, to: posterSize, scale: posterScale)
+            
+            DispatchQueue.main.async {
+                self.posterView.image = downsampledImage
+                self.descriptionLabel.text = data.title
+                self.bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
+            }
+        }
     }
     
 }

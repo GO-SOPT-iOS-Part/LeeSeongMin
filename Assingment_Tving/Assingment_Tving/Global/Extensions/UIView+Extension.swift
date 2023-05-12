@@ -38,6 +38,12 @@ extension UIView {
     // MARK: - image downsample
     
     func downsample(imageAt imageURL: URL, to pointSize: CGSize, scale: CGFloat) -> UIImage {
+        
+        let cacheKey = NSString(string: imageURL.absoluteString)
+        if let cachedImage = ImageCacheManager.shared.object(forKey: cacheKey) {
+            return cachedImage
+        }
+        
         let imageSourceOptions = [kCGImageSourceShouldCache: false] as CFDictionary
         guard let imageSource = CGImageSourceCreateWithURL(imageURL as CFURL, imageSourceOptions)
         else { return UIImage() }
@@ -50,9 +56,12 @@ extension UIView {
             kCGImageSourceThumbnailMaxPixelSize: maxDimensionInPixels
         ] as [CFString: Any] as CFDictionary
 
-        guard let downsampledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, downsampleOptions)
+        guard let downsampledCGImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, downsampleOptions)
         else { return UIImage() }
+        let downsampledImage = UIImage(cgImage: downsampledCGImage)
         
-        return UIImage(cgImage: downsampledImage)
+        ImageCacheManager.shared.setObject(downsampledImage, forKey: cacheKey)
+        
+        return downsampledImage
     }
 }
