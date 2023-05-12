@@ -27,4 +27,12 @@ extension String {
         
         return attributedString
     }
+    
+    func setAttrubutedString(with icon: UIImage) -> NSMutableAttributedString {
+        let image = NSTextAttachment(image: icon)
+        let attributedString = NSMutableAttributedString()
+        attributedString.append(NSAttributedString(attachment: image))
+        attributedString.append(NSAttributedString(string: self))
+        return attributedString
+    }
 }

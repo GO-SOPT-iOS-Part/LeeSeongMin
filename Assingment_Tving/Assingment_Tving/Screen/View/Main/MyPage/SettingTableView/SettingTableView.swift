@@ -27,8 +27,8 @@ final class SettingTableView: UITableView {
     // MARK: -  set
     
     private func setTableViewCell() {
-        register(SettingTableViewFooter.self, forHeaderFooterViewReuseIdentifier: SettingTableViewFooter.identifier)
-        register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
+        register(SettingTableViewFooter.self, forHeaderFooterViewReuseIdentifier: Identifier.Table.settingFooter)
+        register(SettingTableViewCell.self, forCellReuseIdentifier: Identifier.Table.setting)
     }
     
     private func setTableViewStyle() {

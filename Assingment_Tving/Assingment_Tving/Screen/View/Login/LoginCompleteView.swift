@@ -13,7 +13,7 @@ final class LoginCompleteView: BaseView {
     
     // MARK: - properties
     
-    private let mainPosterImageView = UIImageView(image: ImageLiteral.mainPoster)
+    private let mainPosterImageView = UIImageView(image: ImageLiteral.tvingPoster)
     
     let completeLabel: UILabel = {
         let label = UILabel()

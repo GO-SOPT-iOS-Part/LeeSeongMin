@@ -1,15 +1,13 @@
 //
-//  BaseView.swift
+//  BaseCollectionViewCell.swift
 //  Assingment_Tving
 //
-//  Created by 이성민 on 2023/04/25.
+//  Created by 이성민 on 2023/05/02.
 //
 
 import UIKit
 
-import SnapKit
-
-class BaseView: UIView {
+class BaseCollectionViewCell: UICollectionViewCell {
     
     // MARK: - init
     
@@ -25,15 +23,14 @@ class BaseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - set
+    // MARK: -  set
+    
+    func setLayout() {
+        // override to use
+    }
     
     func setStyle() {
         // override to use
-        backgroundColor = .black1
-    }
-    
-    func setLayout() {
-        // ovverride to use
     }
     
 }

@@ -35,8 +35,13 @@ final class LoginCompleteViewController: BaseViewController {
         navigationItem.leftBarButtonItem = makeNavigationBarButton(with: backButton)
     }
     
-    override func setButtonTarget() {
-        baseView.completeButton.addTarget(self, action: #selector(completeButtonTapped), for: .touchUpInside)
+    override func setButtonAction() {
+        let action = UIAction { _ in
+            let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+//            sceneDelegate?.changeRootViewController(to: MainViewController())
+            sceneDelegate?.changeRootViewController()
+        }
+        baseView.completeButton.addAction(action, for: .touchUpInside)
     }
     
     // MARK: - functions
@@ -50,7 +55,7 @@ final class LoginCompleteViewController: BaseViewController {
     
     @objc
     private func completeButtonTapped() {
-        let viewController = MainViewController()
+        let viewController = HomeViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

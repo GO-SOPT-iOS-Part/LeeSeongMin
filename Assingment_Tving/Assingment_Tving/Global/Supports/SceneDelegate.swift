@@ -25,6 +25,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
+    
+    func changeRootViewController() {
+        guard let window = window else { return }
+        let customTabBarController = CustomTabBarController()
+        window.rootViewController = customTabBarController
+        UIView.transition(with: window, duration: 0.2, options: [.transitionCrossDissolve], animations: nil)
+    }
+    
+    func changeRootViewController(to rootViewController: BaseViewController) {
+        guard let window = window else { return }
+        let rootViewController = UINavigationController(rootViewController: rootViewController)
+        window.rootViewController = rootViewController
+        UIView.transition(with: window, duration: 0.2, options: [.transitionCrossDissolve], animations: nil)
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

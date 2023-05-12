@@ -43,6 +43,7 @@ final class MyPageViewController: BaseViewController {
     
     override func setNavigationBar() {
         super.setNavigationBar()
+//        navigationController?.navigationBar.isHidden = false
         
         let backButton = BackButton()
         backButton.addTarget(self, action: #selector(popViewController), for: .touchUpInside)
@@ -64,8 +65,8 @@ extension MyPageViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == 0 {
-            guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: SettingTableViewFooter.identifier)
-                    as? SettingTableViewFooter else { return UITableViewHeaderFooterView() }
+            guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: Identifier.Table.settingFooter) as? SettingTableViewFooter
+            else { return UITableViewHeaderFooterView() }
             return footer
         }
         return nil
@@ -92,7 +93,7 @@ extension MyPageViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = baseView.settingTableView.dequeueReusableCell(
-            withIdentifier: SettingTableViewCell.identifier) as? SettingTableViewCell
+            withIdentifier: Identifier.Table.setting) as? SettingTableViewCell
         else { return UITableViewCell() }
         cell.configureCell(title: settingList[indexPath.section][indexPath.row])
         return cell

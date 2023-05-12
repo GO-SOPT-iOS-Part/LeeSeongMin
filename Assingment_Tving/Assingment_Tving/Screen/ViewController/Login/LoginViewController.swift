@@ -36,7 +36,7 @@ final class LoginViewController: BaseViewController {
         navigationItem.leftBarButtonItem = makeNavigationBarButton(with: backButton)
     }
     
-    override func setButtonTarget() {
+    override func setButtonAction() {
         baseView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         baseView.createAccountButton.addTarget(self, action: #selector(createAccountButtonTapped), for: .touchUpInside)
         // FIXME: findIdButton target 추가
