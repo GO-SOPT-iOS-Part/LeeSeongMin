@@ -19,6 +19,6 @@ final class BackButton: UIButton {
     // MARK: - setup
     
     private func setButton() {
-        setImage(ImageLiteral.navigationBack, for: .normal)
+        setImage(ImageLiteral.previous?.withTintColor(.white1, renderingMode: .alwaysOriginal), for: .normal)
     }
 }

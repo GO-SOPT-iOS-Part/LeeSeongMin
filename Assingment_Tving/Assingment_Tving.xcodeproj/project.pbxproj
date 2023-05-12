@@ -11,6 +11,17 @@
 		3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F129F7A2650015A7E0 /* BaseView.swift */; };
 		3E83B0F629F7ABCE0015A7E0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */; };
 		3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0F729F7ABE70015A7E0 /* LoginCompleteView.swift */; };
+		3E83B0FC29F82E670015A7E0 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0FB29F82E670015A7E0 /* MyPageView.swift */; };
+		3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0FD29F82E970015A7E0 /* MyPageViewController.swift */; };
+		3E83B10029F8314E0015A7E0 /* SizeLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B0FF29F8314E0015A7E0 /* SizeLiteral.swift */; };
+		3E83B10429F8338E0015A7E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10329F8338E0015A7E0 /* MainView.swift */; };
+		3E83B10629F834190015A7E0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10529F834190015A7E0 /* MainViewController.swift */; };
+		3E83B10A29F8F49D0015A7E0 /* TextLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10929F8F49D0015A7E0 /* TextLiteral.swift */; };
+		3E83B10C29F8FE050015A7E0 /* SettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10B29F8FE050015A7E0 /* SettingTableView.swift */; };
+		3E83B10E29F8FE1F0015A7E0 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B10D29F8FE1F0015A7E0 /* SettingTableViewCell.swift */; };
+		3E83B11129F9472B0015A7E0 /* MyPageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B11029F9472B0015A7E0 /* MyPageHeaderView.swift */; };
+		3E83B12229FAABC70015A7E0 /* SettingTableViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B12129FAABC70015A7E0 /* SettingTableViewFooter.swift */; };
+		3E83B12429FAEC5B0015A7E0 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83B12329FAEC5B0015A7E0 /* IconButton.swift */; };
 		3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF53CED29ED80850076FA7A /* UIView+Extension.swift */; };
 		3EF790B629E678D00052578E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B529E678D00052578E /* AppDelegate.swift */; };
 		3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF790B729E678D00052578E /* SceneDelegate.swift */; };
@@ -46,6 +57,17 @@
 		3E83B0F129F7A2650015A7E0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3E83B0F529F7ABCE0015A7E0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3E83B0F729F7ABE70015A7E0 /* LoginCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCompleteView.swift; sourceTree = "<group>"; };
+		3E83B0FB29F82E670015A7E0 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		3E83B0FD29F82E970015A7E0 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		3E83B0FF29F8314E0015A7E0 /* SizeLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiteral.swift; sourceTree = "<group>"; };
+		3E83B10329F8338E0015A7E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3E83B10529F834190015A7E0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3E83B10929F8F49D0015A7E0 /* TextLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLiteral.swift; sourceTree = "<group>"; };
+		3E83B10B29F8FE050015A7E0 /* SettingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableView.swift; sourceTree = "<group>"; };
+		3E83B10D29F8FE1F0015A7E0 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		3E83B11029F9472B0015A7E0 /* MyPageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHeaderView.swift; sourceTree = "<group>"; };
+		3E83B12129FAABC70015A7E0 /* SettingTableViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewFooter.swift; sourceTree = "<group>"; };
+		3E83B12329FAEC5B0015A7E0 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		3EF53CED29ED80850076FA7A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3EF790B229E678D00052578E /* Assingment_Tving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assingment_Tving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF790B529E678D00052578E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +116,8 @@
 			children = (
 				3E83B0ED29F7A20C0015A7E0 /* CreateAccount */,
 				3E83B0F429F7AB900015A7E0 /* Login */,
+				3E83B10129F833790015A7E0 /* Main */,
+				3E83B0F929F82E470015A7E0 /* MyPage */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,6 +127,8 @@
 			children = (
 				3E83B0F329F7AB7E0015A7E0 /* CreateAccount */,
 				3E83B0EE29F7A2150015A7E0 /* Login */,
+				3E83B10229F833810015A7E0 /* Main */,
+				3E83B0FA29F82E4D0015A7E0 /* MyPage */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -139,6 +165,50 @@
 				3E83B0F729F7ABE70015A7E0 /* LoginCompleteView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3E83B0F929F82E470015A7E0 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B10F29F946F60015A7E0 /* SettingTableView */,
+				3E83B11029F9472B0015A7E0 /* MyPageHeaderView.swift */,
+				3E83B0FB29F82E670015A7E0 /* MyPageView.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		3E83B0FA29F82E4D0015A7E0 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B0FD29F82E970015A7E0 /* MyPageViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		3E83B10129F833790015A7E0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B10329F8338E0015A7E0 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3E83B10229F833810015A7E0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B10529F834190015A7E0 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3E83B10F29F946F60015A7E0 /* SettingTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3E83B10B29F8FE050015A7E0 /* SettingTableView.swift */,
+				3E83B10D29F8FE1F0015A7E0 /* SettingTableViewCell.swift */,
+				3E83B12129FAABC70015A7E0 /* SettingTableViewFooter.swift */,
+			);
+			path = SettingTableView;
 			sourceTree = "<group>";
 		};
 		3EF790A929E678D00052578E = {
@@ -195,6 +265,7 @@
 				3EF790D629E67B430052578E /* CustomTextField.swift */,
 				3EF790FC29E710ED0052578E /* CustomButton.swift */,
 				3EF7910529E86FAE0052578E /* BackButton.swift */,
+				3E83B12329FAEC5B0015A7E0 /* IconButton.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -243,6 +314,8 @@
 			children = (
 				3EF790E729E70A850052578E /* Font */,
 				3EF790E029E687F40052578E /* ImageLiteral.swift */,
+				3E83B0FF29F8314E0015A7E0 /* SizeLiteral.swift */,
+				3E83B10929F8F49D0015A7E0 /* TextLiteral.swift */,
 			);
 			path = Literal;
 			sourceTree = "<group>";
@@ -351,24 +424,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EF7910929E8768D0052578E /* CreateAccountViewController.swift in Sources */,
+				3E83B11129F9472B0015A7E0 /* MyPageHeaderView.swift in Sources */,
 				3EF790D729E67B430052578E /* CustomTextField.swift in Sources */,
+				3E83B10E29F8FE1F0015A7E0 /* SettingTableViewCell.swift in Sources */,
+				3E83B10A29F8F49D0015A7E0 /* TextLiteral.swift in Sources */,
 				3EF7910129E865B20052578E /* String+Extension.swift in Sources */,
 				3E83B0F229F7A2650015A7E0 /* BaseView.swift in Sources */,
 				3EF53CEE29ED80850076FA7A /* UIView+Extension.swift in Sources */,
 				3EF7910429E868490052578E /* LoginCompleteViewController.swift in Sources */,
+				3E83B10029F8314E0015A7E0 /* SizeLiteral.swift in Sources */,
 				3EF790CA29E678F40052578E /* LoginViewController.swift in Sources */,
 				3EF790B629E678D00052578E /* AppDelegate.swift in Sources */,
 				3EF790B829E678D00052578E /* SceneDelegate.swift in Sources */,
+				3E83B12229FAABC70015A7E0 /* SettingTableViewFooter.swift in Sources */,
 				3EF790FD29E710EE0052578E /* CustomButton.swift in Sources */,
 				3EF790DE29E6801C0052578E /* UIViewController+Extension.swift in Sources */,
 				3EF790E129E687F40052578E /* ImageLiteral.swift in Sources */,
 				3E83B0F629F7ABCE0015A7E0 /* LoginView.swift in Sources */,
+				3E83B12429FAEC5B0015A7E0 /* IconButton.swift in Sources */,
 				3EF790FB29E70BB80052578E /* UIFont+Extension.swift in Sources */,
+				3E83B10629F834190015A7E0 /* MainViewController.swift in Sources */,
 				3E83B0F829F7ABE70015A7E0 /* LoginCompleteView.swift in Sources */,
 				3EF790D929E67C5E0052578E /* UIColor+Extension.swift in Sources */,
+				3E83B0FE29F82E970015A7E0 /* MyPageViewController.swift in Sources */,
 				3EF7910629E86FAE0052578E /* BackButton.swift in Sources */,
+				3E83B10429F8338E0015A7E0 /* MainView.swift in Sources */,
+				3E83B0FC29F82E670015A7E0 /* MyPageView.swift in Sources */,
 				3E83B0F029F7A2350015A7E0 /* CreateAccountView.swift in Sources */,
 				3EF790DC29E67E140052578E /* BaseViewController.swift in Sources */,
+				3E83B10C29F8FE050015A7E0 /* SettingTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -104,7 +104,7 @@ final class LoginView: BaseView {
         loginButton.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
-            $0.height.equalTo(52)
+            $0.height.equalTo(SizeLiteral.Button.height)
         }
         
         addSubview(findViewDivider)

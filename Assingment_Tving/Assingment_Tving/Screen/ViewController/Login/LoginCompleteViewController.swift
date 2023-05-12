@@ -36,7 +36,7 @@ final class LoginCompleteViewController: BaseViewController {
     }
     
     override func setButtonTarget() {
-        baseView.completeButton.addTarget(self, action: #selector(popViewController), for: .touchUpInside)
+        baseView.completeButton.addTarget(self, action: #selector(completeButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - functions
@@ -44,6 +44,14 @@ final class LoginCompleteViewController: BaseViewController {
     func bindId(_ id: String) {
         print(id)
         baseView.completeLabel.text = id + "님\n반가워요"
+    }
+    
+    // MARK: - objc functions
+    
+    @objc
+    private func completeButtonTapped() {
+        let viewController = MainViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

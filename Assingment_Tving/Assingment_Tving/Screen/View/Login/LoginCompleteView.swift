@@ -49,7 +49,7 @@ final class LoginCompleteView: BaseView {
         completeButton.snp.makeConstraints {
             $0.bottom.equalTo(safeAreaLayoutGuide).offset(-10)
             $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.height.equalTo(52)
+            $0.height.equalTo(SizeLiteral.Button.height)
         }
     }
 
