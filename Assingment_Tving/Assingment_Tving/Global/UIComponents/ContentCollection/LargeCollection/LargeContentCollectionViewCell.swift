@@ -7,21 +7,29 @@
 
 import UIKit
 
+import SkeletonView
+
 final class LargeContentCollectionViewCell: BaseCollectionViewCell {
+    
+    enum Size {
+        static let cellHeight = SizeLiteral.Screen.width / 0.7
+        static let cellWidth = SizeLiteral.Screen.width
+    }
     
     static let identifier = "LargeContentCollectionViewCell"
     
     // MARK: - properties
     
-    private let dummyView = UIView()
+    private let posterView = UIImageView()
     
     private let bottomGradientView = UIView()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "test"
+        label.text = "longer text to show skeleton"
         label.textColor = .white1
         label.font = .regular
+        label.isSkeletonable = true
         return label
     }()
     
@@ -36,8 +44,8 @@ final class LargeContentCollectionViewCell: BaseCollectionViewCell {
     // MARK: -  set
     
     override func setLayout() {
-        contentView.addSubview(dummyView)
-        dummyView.snp.makeConstraints {
+        contentView.addSubview(posterView)
+        posterView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         
@@ -57,9 +65,30 @@ final class LargeContentCollectionViewCell: BaseCollectionViewCell {
     // MARK: - functions
     
     func configureCell(_ color: DummyColor, description: String) {
-        dummyView.backgroundColor = color.color
+        posterView.backgroundColor = color.color
         descriptionLabel.text = description
         bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
     }
-
+    
+    func configureCell(_ data: MoviePopularResponseDetail, completion: @escaping () -> ()) {
+        guard let posterPath = URL(string: Config.imageBaseUrl + data.posterPath)
+        else { return }
+        let posterSize = CGSize(width: Size.cellWidth, height: Size.cellHeight)
+        let posterScale = UIScreen.main.scale
+        
+        descriptionLabel.showAnimatedGradientSkeleton(transition: .crossDissolve(1))
+        
+        DispatchQueue.global().async {
+            var downsampledImage = UIImage()
+            downsampledImage = self.downsample(imageAt: posterPath, to: posterSize, scale: posterScale)
+            
+            DispatchQueue.main.async {
+                self.descriptionLabel.hideSkeleton()
+                self.posterView.image = downsampledImage
+                self.descriptionLabel.text = data.title
+                self.bottomGradientView.setGradient(colors: [.black1, .clear], position: [0, 1])
+            }
+        }
+    }
+    
 }

@@ -205,11 +205,6 @@ final class MainViewController: BaseViewController {
         } else {
             headerView.backgroundColor = .clear
         }
-//        let maxDissolvePercentage = Size.headerMinHeight / Size.headerMaxHeight
-//        let currentDissolvePercentage = offset / Size.headerMaxOffset
-//        let dissolvePercentage = min(currentDissolvePercentage, maxDissolvePercentage)
-//        tvingBannerView.layer.opacity = 1 - Float(currentDissolvePercentage)
-        
     }
     
 }

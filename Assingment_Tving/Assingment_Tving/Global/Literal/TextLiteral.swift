@@ -9,6 +9,11 @@ import UIKit
 
 enum TextLiteral {
     
+    enum ConfigError {
+        static let baseUrlError = "BASE_URL is not set in plist for this configuration."
+        static let apiKeyError = "API_KEY is not set in plist for this configuration."
+    }
+    
     static let buyTicketButtonString = {
         let tvN = NSTextAttachment(image: ImageLiteral.tvN)
         let jtbc = NSTextAttachment(image: ImageLiteral.jtbc)

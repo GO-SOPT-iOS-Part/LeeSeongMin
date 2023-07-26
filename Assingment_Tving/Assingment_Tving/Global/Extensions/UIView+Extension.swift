@@ -34,4 +34,34 @@ extension UIView {
             self.layer.insertSublayer(gradientLayer, at: 0)
         }
     }
+    
+    // MARK: - image downsample
+    
+    func downsample(imageAt imageURL: URL, to pointSize: CGSize, scale: CGFloat) -> UIImage {
+        
+        let cacheKey = NSString(string: imageURL.absoluteString)
+        if let cachedImage = ImageCacheManager.shared.object(forKey: cacheKey) {
+            return cachedImage
+        }
+        
+        let imageSourceOptions = [kCGImageSourceShouldCache: false] as CFDictionary
+        guard let imageSource = CGImageSourceCreateWithURL(imageURL as CFURL, imageSourceOptions)
+        else { return UIImage() }
+
+        let maxDimensionInPixels = max(pointSize.width, pointSize.height) * scale
+        let downsampleOptions = [
+            kCGImageSourceCreateThumbnailFromImageAlways: true,
+            kCGImageSourceShouldCacheImmediately: true,
+            kCGImageSourceCreateThumbnailWithTransform: true,
+            kCGImageSourceThumbnailMaxPixelSize: maxDimensionInPixels
+        ] as [CFString: Any] as CFDictionary
+
+        guard let downsampledCGImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, downsampleOptions)
+        else { return UIImage() }
+        let downsampledImage = UIImage(cgImage: downsampledCGImage)
+        
+        ImageCacheManager.shared.setObject(downsampledImage, forKey: cacheKey)
+        
+        return downsampledImage
+    }
 }

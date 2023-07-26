@@ -12,6 +12,8 @@ final class HomeViewController: BaseViewController {
     // FIXME: 색이 아닌 페이지로 바꾸기
     private let data = DummyColor.dummy()
     
+    private var movieData: [MoviePopularResponseDetail] = []
+    
     var scrollViewContentOffsetY: CGFloat = 0
     
     // MARK: - properties
@@ -24,11 +26,36 @@ final class HomeViewController: BaseViewController {
         self.view = baseView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fetchMoviePopular()
+        
+//        HomeAPIService.shared.callAPI(of: HomeAPI<TVPopularResponse>.fetchTVPopular) { response in
+//            dump(response)
+//        }
+    }
+    
     // MARK: - set
     
     override func setDelegate() {
         baseView.homeTableView.delegate = self
         baseView.homeTableView.dataSource = self
+    }
+    
+    // MARK: - api
+    
+    private func fetchMoviePopular() {
+        HomeAPIService.shared.callAPI(of: HomeAPI<MoviePopularResponse>.fetchMoviePopular) { response in
+            switch response {
+            case .success(let data):
+                guard let movieData = data as? MoviePopularResponse else { return }
+                self.movieData = Array(movieData.details.prefix(5))
+                self.baseView.homeTableView.reloadData()
+            default:
+                print("error")
+            }
+        }
     }
     
 }
@@ -50,7 +77,7 @@ extension HomeViewController: UIScrollViewDelegate {
 
 extension HomeViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count
+        return 5
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -72,7 +99,7 @@ extension HomeViewController: UITableViewDataSource {
         case 0:
             return 1
         default:
-            return data.count - 1
+            return 1
         }
     }
     
@@ -86,10 +113,10 @@ extension HomeViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            largeCell.prepareCells(data[indexPath.section])
+            largeCell.prepareCells(movieData)
             return largeCell
         default:
-            smallCell.prepareCells(data[indexPath.section])
+//            smallCell.prepareCells(data[indexPath.section])
             return smallCell
         }
     }
